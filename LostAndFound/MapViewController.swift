@@ -10,7 +10,7 @@ import UIKit
 
 class MapViewController: UIViewController
 {
-
+AIzaSyBMXx45gboA_F1bgsYqj027jzVzlQzX67k
     override func viewDidLoad()
     {
         super.viewDidLoad()

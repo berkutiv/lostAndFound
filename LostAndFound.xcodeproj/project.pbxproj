@@ -19,6 +19,7 @@
 		0DD1177C1E9E77000010AD72 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1177B1E9E77000010AD72 /* Chat.storyboard */; };
 		0DD117831E9E78980010AD72 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD117821E9E78980010AD72 /* Item.swift */; };
 		0DD117851E9E79A20010AD72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD117841E9E79A20010AD72 /* User.swift */; };
+		7D60BA26695041C3FBD5E1E9 /* Pods_LostAndFound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F9D53CD94FCFF233308190 /* Pods_LostAndFound.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,9 @@
 		0DD1177B1E9E77000010AD72 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		0DD117821E9E78980010AD72 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0DD117841E9E79A20010AD72 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		437909965923B821F6FCCE68 /* Pods-LostAndFound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAndFound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LostAndFound/Pods-LostAndFound.debug.xcconfig"; sourceTree = "<group>"; };
+		59F9D53CD94FCFF233308190 /* Pods_LostAndFound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LostAndFound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9623B7E562E5B1BBDA43167 /* Pods-LostAndFound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAndFound.release.xcconfig"; path = "Pods/Target Support Files/Pods-LostAndFound/Pods-LostAndFound.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D60BA26695041C3FBD5E1E9 /* Pods_LostAndFound.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +59,8 @@
 			children = (
 				0DD1175B1E9D66FD0010AD72 /* LostAndFound */,
 				0DD1175A1E9D66FD0010AD72 /* Products */,
+				E4E9A524EA59046D39252572 /* Pods */,
+				B1CC9D39BC0FBA1ED3B13407 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +124,23 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		B1CC9D39BC0FBA1ED3B13407 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59F9D53CD94FCFF233308190 /* Pods_LostAndFound.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4E9A524EA59046D39252572 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				437909965923B821F6FCCE68 /* Pods-LostAndFound.debug.xcconfig */,
+				A9623B7E562E5B1BBDA43167 /* Pods-LostAndFound.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DD1176E1E9D66FD0010AD72 /* Build configuration list for PBXNativeTarget "LostAndFound" */;
 			buildPhases = (
+				5A06C30A6A6D5B5231F4D0FA /* [CP] Check Pods Manifest.lock */,
 				0DD117551E9D66FD0010AD72 /* Sources */,
 				0DD117561E9D66FD0010AD72 /* Frameworks */,
 				0DD117571E9D66FD0010AD72 /* Resources */,
+				1F3FDE9EB97BFCEBE881D198 /* [CP] Embed Pods Frameworks */,
+				3A4742D0D9507F3D5DAE2FA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,6 +215,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F3FDE9EB97BFCEBE881D198 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LostAndFound/Pods-LostAndFound-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A4742D0D9507F3D5DAE2FA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LostAndFound/Pods-LostAndFound-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A06C30A6A6D5B5231F4D0FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DD117551E9D66FD0010AD72 /* Sources */ = {
@@ -317,6 +392,7 @@
 		};
 		0DD1176F1E9D66FD0010AD72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 437909965923B821F6FCCE68 /* Pods-LostAndFound.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8NZVXRT6W9;
@@ -330,6 +406,7 @@
 		};
 		0DD117701E9D66FD0010AD72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9623B7E562E5B1BBDA43167 /* Pods-LostAndFound.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8NZVXRT6W9;
