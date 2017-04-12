@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DD1175D1E9D66FD0010AD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1175C1E9D66FD0010AD72 /* AppDelegate.swift */; };
-		0DD1175F1E9D66FD0010AD72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1175E1E9D66FD0010AD72 /* ViewController.swift */; };
+		0DD1175F1E9D66FD0010AD72 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */; };
 		0DD117621E9D66FD0010AD72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD117601E9D66FD0010AD72 /* Main.storyboard */; };
 		0DD117651E9D66FD0010AD72 /* LostAndFound.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DD117631E9D66FD0010AD72 /* LostAndFound.xcdatamodeld */; };
 		0DD117671E9D66FD0010AD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD117661E9D66FD0010AD72 /* Assets.xcassets */; };
@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		0DD117591E9D66FD0010AD72 /* LostAndFound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LostAndFound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD1175C1E9D66FD0010AD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0DD1175E1E9D66FD0010AD72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0DD117611E9D66FD0010AD72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DD117641E9D66FD0010AD72 /* LostAndFound.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LostAndFound.xcdatamodel; sourceTree = "<group>"; };
 		0DD117661E9D66FD0010AD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		0DD1177F1E9E77B20010AD72 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0DD1175E1E9D66FD0010AD72 /* ViewController.swift */,
+				0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD117831E9E78980010AD72 /* Item.swift in Sources */,
-				0DD1175F1E9D66FD0010AD72 /* ViewController.swift in Sources */,
+				0DD1175F1E9D66FD0010AD72 /* MapViewController.swift in Sources */,
 				0DD117651E9D66FD0010AD72 /* LostAndFound.xcdatamodeld in Sources */,
 				0DD117851E9E79A20010AD72 /* User.swift in Sources */,
 				0DD1175D1E9D66FD0010AD72 /* AppDelegate.swift in Sources */,
