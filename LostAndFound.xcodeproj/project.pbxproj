@@ -13,6 +13,12 @@
 		0DD117651E9D66FD0010AD72 /* LostAndFound.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DD117631E9D66FD0010AD72 /* LostAndFound.xcdatamodeld */; };
 		0DD117671E9D66FD0010AD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD117661E9D66FD0010AD72 /* Assets.xcassets */; };
 		0DD1176A1E9D66FD0010AD72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD117681E9D66FD0010AD72 /* LaunchScreen.storyboard */; };
+		0DD117741E9E72680010AD72 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD117731E9E72680010AD72 /* Map.storyboard */; };
+		0DD117781E9E75CF0010AD72 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD117771E9E75CF0010AD72 /* Add.storyboard */; };
+		0DD1177A1E9E76C50010AD72 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD117791E9E76C50010AD72 /* Profile.storyboard */; };
+		0DD1177C1E9E77000010AD72 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1177B1E9E77000010AD72 /* Chat.storyboard */; };
+		0DD117831E9E78980010AD72 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD117821E9E78980010AD72 /* Item.swift */; };
+		0DD117851E9E79A20010AD72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD117841E9E79A20010AD72 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		0DD117661E9D66FD0010AD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DD117691E9D66FD0010AD72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DD1176B1E9D66FD0010AD72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DD117731E9E72680010AD72 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		0DD117771E9E75CF0010AD72 /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
+		0DD117791E9E76C50010AD72 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		0DD1177B1E9E77000010AD72 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		0DD117821E9E78980010AD72 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0DD117841E9E79A20010AD72 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,53 @@
 		0DD1175B1E9D66FD0010AD72 /* LostAndFound */ = {
 			isa = PBXGroup;
 			children = (
-				0DD1175C1E9D66FD0010AD72 /* AppDelegate.swift */,
-				0DD1175E1E9D66FD0010AD72 /* ViewController.swift */,
-				0DD117601E9D66FD0010AD72 /* Main.storyboard */,
-				0DD117661E9D66FD0010AD72 /* Assets.xcassets */,
-				0DD117681E9D66FD0010AD72 /* LaunchScreen.storyboard */,
-				0DD1176B1E9D66FD0010AD72 /* Info.plist */,
+				0DD1177F1E9E77B20010AD72 /* ViewControllers */,
+				0DD117811E9E78850010AD72 /* Models */,
+				0DD1177D1E9E77820010AD72 /* Storyboards */,
+				0DD1177E1E9E77950010AD72 /* System */,
 				0DD117631E9D66FD0010AD72 /* LostAndFound.xcdatamodeld */,
 			);
 			path = LostAndFound;
+			sourceTree = "<group>";
+		};
+		0DD1177D1E9E77820010AD72 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0DD117601E9D66FD0010AD72 /* Main.storyboard */,
+				0DD117731E9E72680010AD72 /* Map.storyboard */,
+				0DD117771E9E75CF0010AD72 /* Add.storyboard */,
+				0DD117791E9E76C50010AD72 /* Profile.storyboard */,
+				0DD1177B1E9E77000010AD72 /* Chat.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		0DD1177E1E9E77950010AD72 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				0DD1175C1E9D66FD0010AD72 /* AppDelegate.swift */,
+				0DD117661E9D66FD0010AD72 /* Assets.xcassets */,
+				0DD117681E9D66FD0010AD72 /* LaunchScreen.storyboard */,
+				0DD1176B1E9D66FD0010AD72 /* Info.plist */,
+			);
+			name = System;
+			sourceTree = "<group>";
+		};
+		0DD1177F1E9E77B20010AD72 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0DD1175E1E9D66FD0010AD72 /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0DD117811E9E78850010AD72 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0DD117821E9E78980010AD72 /* Item.swift */,
+				0DD117841E9E79A20010AD72 /* User.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,9 +177,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD1177C1E9E77000010AD72 /* Chat.storyboard in Resources */,
 				0DD1176A1E9D66FD0010AD72 /* LaunchScreen.storyboard in Resources */,
 				0DD117671E9D66FD0010AD72 /* Assets.xcassets in Resources */,
+				0DD117781E9E75CF0010AD72 /* Add.storyboard in Resources */,
+				0DD1177A1E9E76C50010AD72 /* Profile.storyboard in Resources */,
 				0DD117621E9D66FD0010AD72 /* Main.storyboard in Resources */,
+				0DD117741E9E72680010AD72 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,8 +194,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD117831E9E78980010AD72 /* Item.swift in Sources */,
 				0DD1175F1E9D66FD0010AD72 /* ViewController.swift in Sources */,
 				0DD117651E9D66FD0010AD72 /* LostAndFound.xcdatamodeld in Sources */,
+				0DD117851E9E79A20010AD72 /* User.swift in Sources */,
 				0DD1175D1E9D66FD0010AD72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +360,7 @@
 				0DD117701E9D66FD0010AD72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

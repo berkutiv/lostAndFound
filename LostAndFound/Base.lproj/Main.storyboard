@@ -1,26 +1,73 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JGA-bZ-Th2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--mapId-->
+        <scene sceneID="8uW-Pp-VBS">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="mapId" storyboardName="Map" referencedIdentifier="mapId" id="5Ft-QX-vo7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="JcJ-ce-ZJ0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yn6-4b-6Al" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="331" y="-950"/>
+        </scene>
+        <!--addId-->
+        <scene sceneID="9NJ-3t-lgz">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="addId" storyboardName="Add" referencedIdentifier="addId" id="D1F-cF-IRs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="L1j-Ot-0Jw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBm-tX-ZYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="327" y="-541"/>
+        </scene>
+        <!--profileId-->
+        <scene sceneID="LPO-VG-63t">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="profileId" id="xQ3-mG-vPe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="NgZ-hk-yXX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVn-hZ-1Px" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="-333"/>
+        </scene>
+        <!--chatId-->
+        <scene sceneID="DrB-e9-j7H">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chat" referencedIdentifier="chatId" id="hvE-gG-cU2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="opD-sY-1rk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3g-Lg-mht" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="330" y="-152"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="XfK-Qt-Ozc">
+            <objects>
+                <tabBarController id="JGA-bZ-Th2" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="g8I-p5-OQB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="5Ft-QX-vo7" kind="relationship" relationship="viewControllers" id="tlC-34-6fg"/>
+                        <segue destination="D1F-cF-IRs" kind="relationship" relationship="viewControllers" id="kcE-Ko-OrG"/>
+                        <segue destination="xQ3-mG-vPe" kind="relationship" relationship="viewControllers" id="Gbz-Zj-f8h"/>
+                        <segue destination="hvE-gG-cU2" kind="relationship" relationship="viewControllers" id="J3R-Ra-QxL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ta-0m-9uv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="-423"/>
         </scene>
     </scenes>
 </document>
