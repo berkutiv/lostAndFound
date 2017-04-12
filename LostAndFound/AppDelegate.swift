@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+    func applicationDidFinishLaunching(_ application: UIApplication)
+    {
+        GMSServices.provideAPIKey("AIzaSyBMXx45gboA_F1bgsYqj027jzVzlQzX67k")
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
