@@ -28,6 +28,8 @@ class Item
         self.photosURL = photosURL
         self.coordinates = coordinates
         self.userId = userId
+        
+        print("fuck you too")
     }
     
 }
