@@ -11,7 +11,8 @@ import GoogleMaps
 
 class MapViewController: UIViewController
 {
-
+    var tableView : MapTableView?
+    var map : GMSMapView?
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -20,22 +21,36 @@ class MapViewController: UIViewController
         print("ПРИВЕТ МАКС")
     }
     
-    override func loadView() {
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.isMyLocationEnabled = true
-        view = mapView
-        
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
-    }
+    override func viewWillAppear(_ animated: Bool)
+    {
+        if map == nil
+        {
+            let camera = GMSCameraPosition.camera(withLatitude: 55.45, longitude: 37.36, zoom: 6.0)
+            let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+            mapView.isMyLocationEnabled = true
+            map = mapView
+            
+            // Creates a marker in the center of the map.
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: 55.45, longitude: 37.36)
+            marker.title = "moscow"
+            marker.snippet = "Russia"
+            marker.map = mapView
+            
+            map!.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 144 )
 
+            view.addSubview(map!)
+        }
+        
+        
+        if tableView == nil
+        {
+            tableView = Bundle.main.loadNibNamed("MapTableView", owner: self, options: nil)![0] as? MapTableView
+            tableView?.frame = CGRect(x: 0, y: view.frame.size.height - 144, width: view.frame.width, height: view.frame.height)
+            view.addSubview(tableView!)
+        }
+        super.viewWillAppear(animated)
+    }
 
 
 }
