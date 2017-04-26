@@ -14,22 +14,22 @@ class Item
     var title: String
     var description: String
     var photosURL = NSMutableArray()
-    var coordinates: String
+    var longitude: String
+    var latitude: String
     var userName: String?
     var userId: String
     var userPhone: String?
     var userEmail: String?
     
-    init(id: String, title: String, description: String, photosURL: NSMutableArray, coordinates: String, userId: String)
+    init(id: String, title: String, description: String, photosURL: NSMutableArray, longitude: String, latitude: String, userId: String)
     {
         self.id = id
         self.title = title
         self.description = description
         self.photosURL = photosURL
-        self.coordinates = coordinates
+        self.longitude = longitude
+        self.latitude = latitude
         self.userId = userId
-        
-        print("fuck you too")
     }
     
 }
