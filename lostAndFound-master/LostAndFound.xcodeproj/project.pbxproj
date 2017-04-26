@@ -32,6 +32,20 @@
 		0DD8EF701EA0C47900CF5774 /* UserListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD8EF6E1EA0C47900CF5774 /* UserListTableViewCell.xib */; };
 		0DD8EF731EA0C4A100CF5774 /* UserButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD8EF711EA0C4A100CF5774 /* UserButtonsTableViewCell.swift */; };
 		0DD8EF741EA0C4A100CF5774 /* UserButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD8EF721EA0C4A100CF5774 /* UserButtonsTableViewCell.xib */; };
+		0DE6264A1EB115B800FECDF4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626491EB115B800FECDF4 /* ChatViewController.swift */; };
+		0DE6264C1EB115CD00FECDF4 /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6264B1EB115CD00FECDF4 /* ChatPresenter.swift */; };
+		0DE6264E1EB115D800FECDF4 /* ChatOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6264D1EB115D800FECDF4 /* ChatOperation.swift */; };
+		0DE626501EB115EC00FECDF4 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6264F1EB115EC00FECDF4 /* MapPresenter.swift */; };
+		0DE626521EB115F400FECDF4 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626511EB115F400FECDF4 /* MapManager.swift */; };
+		0DE626541EB115FB00FECDF4 /* MapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626531EB115FB00FECDF4 /* MapOperation.swift */; };
+		0DE626561EB1160800FECDF4 /* AddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626551EB1160800FECDF4 /* AddPresenter.swift */; };
+		0DE626581EB1160F00FECDF4 /* AddOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626571EB1160F00FECDF4 /* AddOperation.swift */; };
+		0DE6265A1EB1161500FECDF4 /* AddManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626591EB1161500FECDF4 /* AddManager.swift */; };
+		0DE6265C1EB1162200FECDF4 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6265B1EB1162200FECDF4 /* UserManager.swift */; };
+		0DE6265E1EB1162800FECDF4 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6265D1EB1162800FECDF4 /* UserPresenter.swift */; };
+		0DE626601EB1162F00FECDF4 /* UserOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6265F1EB1162F00FECDF4 /* UserOperation.swift */; };
+		0DE626621EB1163600FECDF4 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626611EB1163600FECDF4 /* ChatManager.swift */; };
+		0DE626661EB12B2500FECDF4 /* API_WRAPPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626651EB12B2500FECDF4 /* API_WRAPPER.swift */; };
 		0DFB00C31EA772480040B2A9 /* MapTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DFB00C21EA772480040B2A9 /* MapTableView.xib */; };
 		0DFB00C51EA7728B0040B2A9 /* MapTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */; };
 		3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */; };
@@ -67,6 +81,20 @@
 		0DD8EF6E1EA0C47900CF5774 /* UserListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserListTableViewCell.xib; sourceTree = "<group>"; };
 		0DD8EF711EA0C4A100CF5774 /* UserButtonsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserButtonsTableViewCell.swift; sourceTree = "<group>"; };
 		0DD8EF721EA0C4A100CF5774 /* UserButtonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserButtonsTableViewCell.xib; sourceTree = "<group>"; };
+		0DE626491EB115B800FECDF4 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0DE6264B1EB115CD00FECDF4 /* ChatPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
+		0DE6264D1EB115D800FECDF4 /* ChatOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatOperation.swift; sourceTree = "<group>"; };
+		0DE6264F1EB115EC00FECDF4 /* MapPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		0DE626511EB115F400FECDF4 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		0DE626531EB115FB00FECDF4 /* MapOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapOperation.swift; sourceTree = "<group>"; };
+		0DE626551EB1160800FECDF4 /* AddPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPresenter.swift; sourceTree = "<group>"; };
+		0DE626571EB1160F00FECDF4 /* AddOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOperation.swift; sourceTree = "<group>"; };
+		0DE626591EB1161500FECDF4 /* AddManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddManager.swift; sourceTree = "<group>"; };
+		0DE6265B1EB1162200FECDF4 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		0DE6265D1EB1162800FECDF4 /* UserPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
+		0DE6265F1EB1162F00FECDF4 /* UserOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserOperation.swift; sourceTree = "<group>"; };
+		0DE626611EB1163600FECDF4 /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		0DE626651EB12B2500FECDF4 /* API_WRAPPER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_WRAPPER.swift; sourceTree = "<group>"; };
 		0DFB00C21EA772480040B2A9 /* MapTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapTableView.xib; sourceTree = "<group>"; };
 		0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableView.swift; sourceTree = "<group>"; };
 		3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -93,8 +121,6 @@
 			children = (
 				0D2211991EAB65E70037E8F7 /* Presenter.swift */,
 				0D22119B1EAB65EC0037E8F7 /* View.swift */,
-				0D22119D1EAB65F90037E8F7 /* DependencyInjector.swift */,
-				0D2211A41EAF77130037E8F7 /* ModelsFactory.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -129,8 +155,13 @@
 		0DD1175B1E9D66FD0010AD72 /* LostAndFound */ = {
 			isa = PBXGroup;
 			children = (
+				0DE626641EB12B0500FECDF4 /* ApiWrapper */,
+				0DE626481EB115A200FECDF4 /* Chat */,
+				0DE626471EB1158900FECDF4 /* User */,
+				0DE626461EB1156C00FECDF4 /* Add */,
+				0DE626451EB1153F00FECDF4 /* Map */,
+				0DE626631EB1167000FECDF4 /* DependencyInjector */,
 				0D2211981EAB656B0037E8F7 /* Protocols */,
-				0DD1177F1E9E77B20010AD72 /* ViewControllers */,
 				0DD117811E9E78850010AD72 /* Models */,
 				0DD1177D1E9E77820010AD72 /* Storyboards */,
 				0DD1177E1E9E77950010AD72 /* System */,
@@ -143,10 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				0DD117601E9D66FD0010AD72 /* Main.storyboard */,
-				0DD117731E9E72680010AD72 /* Map.storyboard */,
-				0DD117771E9E75CF0010AD72 /* Add.storyboard */,
-				0DD117791E9E76C50010AD72 /* Profile.storyboard */,
-				0DD1177B1E9E77000010AD72 /* Chat.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -162,24 +189,10 @@
 			name = System;
 			sourceTree = "<group>";
 		};
-		0DD1177F1E9E77B20010AD72 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */,
-				0DD8EF661EA0C36800CF5774 /* UserPageViewController.swift */,
-				3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */,
-				3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */,
-				0DD8EF681EA0C43F00CF5774 /* Custom Cells */,
-				0DFB00C21EA772480040B2A9 /* MapTableView.xib */,
-				0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */,
-				0D22119F1EAF73ED0037E8F7 /* Map tableView Cells */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
 		0DD117811E9E78850010AD72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0D2211A41EAF77130037E8F7 /* ModelsFactory.swift */,
 				0DD117821E9E78980010AD72 /* Item.swift */,
 				0DD117841E9E79A20010AD72 /* User.swift */,
 			);
@@ -197,6 +210,75 @@
 				0DD8EF721EA0C4A100CF5774 /* UserButtonsTableViewCell.xib */,
 			);
 			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		0DE626451EB1153F00FECDF4 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */,
+				0DD117731E9E72680010AD72 /* Map.storyboard */,
+				0DE6264F1EB115EC00FECDF4 /* MapPresenter.swift */,
+				0DE626511EB115F400FECDF4 /* MapManager.swift */,
+				0DE626531EB115FB00FECDF4 /* MapOperation.swift */,
+				0DD8EF681EA0C43F00CF5774 /* Custom Cells */,
+				0DFB00C21EA772480040B2A9 /* MapTableView.xib */,
+				0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */,
+				0D22119F1EAF73ED0037E8F7 /* Map tableView Cells */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		0DE626461EB1156C00FECDF4 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */,
+				0DE626551EB1160800FECDF4 /* AddPresenter.swift */,
+				0DE626571EB1160F00FECDF4 /* AddOperation.swift */,
+				0DE626591EB1161500FECDF4 /* AddManager.swift */,
+				3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */,
+				0DD117771E9E75CF0010AD72 /* Add.storyboard */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
+		0DE626471EB1158900FECDF4 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				0DD8EF661EA0C36800CF5774 /* UserPageViewController.swift */,
+				0DD117791E9E76C50010AD72 /* Profile.storyboard */,
+				0DE6265B1EB1162200FECDF4 /* UserManager.swift */,
+				0DE6265D1EB1162800FECDF4 /* UserPresenter.swift */,
+				0DE6265F1EB1162F00FECDF4 /* UserOperation.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		0DE626481EB115A200FECDF4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				0DE626491EB115B800FECDF4 /* ChatViewController.swift */,
+				0DE6264B1EB115CD00FECDF4 /* ChatPresenter.swift */,
+				0DE6264D1EB115D800FECDF4 /* ChatOperation.swift */,
+				0DE626611EB1163600FECDF4 /* ChatManager.swift */,
+				0DD1177B1E9E77000010AD72 /* Chat.storyboard */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		0DE626631EB1167000FECDF4 /* DependencyInjector */ = {
+			isa = PBXGroup;
+			children = (
+				0D22119D1EAB65F90037E8F7 /* DependencyInjector.swift */,
+			);
+			name = DependencyInjector;
+			sourceTree = "<group>";
+		};
+		0DE626641EB12B0500FECDF4 /* ApiWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				0DE626651EB12B2500FECDF4 /* API_WRAPPER.swift */,
+			);
+			name = ApiWrapper;
 			sourceTree = "<group>";
 		};
 		B1CC9D39BC0FBA1ED3B13407 /* Frameworks */ = {
@@ -349,22 +431,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE626661EB12B2500FECDF4 /* API_WRAPPER.swift in Sources */,
 				0DFB00C51EA7728B0040B2A9 /* MapTableView.swift in Sources */,
 				0D22119A1EAB65E70037E8F7 /* Presenter.swift in Sources */,
+				0DE626581EB1160F00FECDF4 /* AddOperation.swift in Sources */,
 				0DD8EF731EA0C4A100CF5774 /* UserButtonsTableViewCell.swift in Sources */,
 				0DD8EF671EA0C36800CF5774 /* UserPageViewController.swift in Sources */,
 				0DD117831E9E78980010AD72 /* Item.swift in Sources */,
 				0DD1175F1E9D66FD0010AD72 /* MapViewController.swift in Sources */,
+				0DE626561EB1160800FECDF4 /* AddPresenter.swift in Sources */,
+				0DE6264C1EB115CD00FECDF4 /* ChatPresenter.swift in Sources */,
 				3DAA3D821EAE870E00824AAB /* SetLocationMapController.swift in Sources */,
+				0DE626501EB115EC00FECDF4 /* MapPresenter.swift in Sources */,
 				0DD117651E9D66FD0010AD72 /* LostAndFound.xcdatamodeld in Sources */,
 				0D2211A51EAF77130037E8F7 /* ModelsFactory.swift in Sources */,
+				0DE626541EB115FB00FECDF4 /* MapOperation.swift in Sources */,
 				3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */,
+				0DE626621EB1163600FECDF4 /* ChatManager.swift in Sources */,
+				0DE6264E1EB115D800FECDF4 /* ChatOperation.swift in Sources */,
 				0DD8EF6F1EA0C47900CF5774 /* UserListTableViewCell.swift in Sources */,
+				0DE6265E1EB1162800FECDF4 /* UserPresenter.swift in Sources */,
 				0D22119C1EAB65EC0037E8F7 /* View.swift in Sources */,
+				0DE6265C1EB1162200FECDF4 /* UserManager.swift in Sources */,
 				0D22119E1EAB65F90037E8F7 /* DependencyInjector.swift in Sources */,
+				0DE6265A1EB1161500FECDF4 /* AddManager.swift in Sources */,
+				0DE626601EB1162F00FECDF4 /* UserOperation.swift in Sources */,
+				0DE626521EB115F400FECDF4 /* MapManager.swift in Sources */,
 				0DD117851E9E79A20010AD72 /* User.swift in Sources */,
 				0DD8EF6B1EA0C46800CF5774 /* UserHeaderTableViewCell.swift in Sources */,
 				0D2211A21EAF74110037E8F7 /* ItemTableViewCell.swift in Sources */,
+				0DE6264A1EB115B800FECDF4 /* ChatViewController.swift in Sources */,
 				0DD1175D1E9D66FD0010AD72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
