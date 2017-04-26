@@ -32,8 +32,11 @@
 		0DD8EF701EA0C47900CF5774 /* UserListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD8EF6E1EA0C47900CF5774 /* UserListTableViewCell.xib */; };
 		0DD8EF731EA0C4A100CF5774 /* UserButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD8EF711EA0C4A100CF5774 /* UserButtonsTableViewCell.swift */; };
 		0DD8EF741EA0C4A100CF5774 /* UserButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD8EF721EA0C4A100CF5774 /* UserButtonsTableViewCell.xib */; };
+
 		0DFB00C31EA772480040B2A9 /* MapTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DFB00C21EA772480040B2A9 /* MapTableView.xib */; };
 		0DFB00C51EA7728B0040B2A9 /* MapTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */; };
+		3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */; };
+		3DAA3D821EAE870E00824AAB /* SetLocationMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */; };
 		7D60BA26695041C3FBD5E1E9 /* Pods_LostAndFound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F9D53CD94FCFF233308190 /* Pods_LostAndFound.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +68,12 @@
 		0DD8EF6E1EA0C47900CF5774 /* UserListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserListTableViewCell.xib; sourceTree = "<group>"; };
 		0DD8EF711EA0C4A100CF5774 /* UserButtonsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserButtonsTableViewCell.swift; sourceTree = "<group>"; };
 		0DD8EF721EA0C4A100CF5774 /* UserButtonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserButtonsTableViewCell.xib; sourceTree = "<group>"; };
+
 		0DFB00C21EA772480040B2A9 /* MapTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapTableView.xib; sourceTree = "<group>"; };
 		0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableView.swift; sourceTree = "<group>"; };
+		3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationMapController.swift; sourceTree = "<group>"; };
+
 		437909965923B821F6FCCE68 /* Pods-LostAndFound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAndFound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LostAndFound/Pods-LostAndFound.debug.xcconfig"; sourceTree = "<group>"; };
 		59F9D53CD94FCFF233308190 /* Pods_LostAndFound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LostAndFound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9623B7E562E5B1BBDA43167 /* Pods-LostAndFound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAndFound.release.xcconfig"; path = "Pods/Target Support Files/Pods-LostAndFound/Pods-LostAndFound.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +170,8 @@
 			children = (
 				0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */,
 				0DD8EF661EA0C36800CF5774 /* UserPageViewController.swift */,
+				3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */,
+				3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */,
 				0DD8EF681EA0C43F00CF5774 /* Custom Cells */,
 				0DFB00C21EA772480040B2A9 /* MapTableView.xib */,
 				0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */,
@@ -240,7 +249,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Иван";
 				TargetAttributes = {
 					0DD117581E9D66FD0010AD72 = {
@@ -349,8 +358,12 @@
 				0DD8EF671EA0C36800CF5774 /* UserPageViewController.swift in Sources */,
 				0DD117831E9E78980010AD72 /* Item.swift in Sources */,
 				0DD1175F1E9D66FD0010AD72 /* MapViewController.swift in Sources */,
+				3DAA3D821EAE870E00824AAB /* SetLocationMapController.swift in Sources */,
 				0DD117651E9D66FD0010AD72 /* LostAndFound.xcdatamodeld in Sources */,
+
 				0D2211A51EAF77130037E8F7 /* ModelsFactory.swift in Sources */,
+				3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */,
+
 				0DD8EF6F1EA0C47900CF5774 /* UserListTableViewCell.swift in Sources */,
 				0D22119C1EAB65EC0037E8F7 /* View.swift in Sources */,
 				0D22119E1EAB65F90037E8F7 /* DependencyInjector.swift in Sources */,
@@ -478,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 437909965923B821F6FCCE68 /* Pods-LostAndFound.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8NZVXRT6W9;
 				INFOPLIST_FILE = LostAndFound/Info.plist;
@@ -492,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9623B7E562E5B1BBDA43167 /* Pods-LostAndFound.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8NZVXRT6W9;
 				INFOPLIST_FILE = LostAndFound/Info.plist;

@@ -24,5 +24,7 @@ class User
         self.phone = phone
         self.email = email
         self.photo = photo
+        
+        print("fuck")
     }
 }
