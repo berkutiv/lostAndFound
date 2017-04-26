@@ -10,7 +10,7 @@ import UIKit
 
 class UserPageViewController: UIViewController
 {
-
+    
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad()
