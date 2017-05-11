@@ -51,8 +51,19 @@
 		0DE6266A1EB1366800FECDF4 /* tableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626691EB1366800FECDF4 /* tableViewHeader.swift */; };
 		0DFB00C31EA772480040B2A9 /* MapTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DFB00C21EA772480040B2A9 /* MapTableView.xib */; };
 		0DFB00C51EA7728B0040B2A9 /* MapTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */; };
+		3D1CC3E01EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3DE1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift */; };
+		3D1CC3E11EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3DF1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.xib */; };
+		3D1CC3E51EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E31EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib */; };
+		3D1CC3E81EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E61EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift */; };
+		3D1CC3E91EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E71EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib */; };
+		3D1CC3EC1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EA1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift */; };
+		3D1CC3ED1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EB1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib */; };
+		3D1CC3F01EC4A59100EDD9B5 /* ItemFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EE1EC4A59100EDD9B5 /* ItemFooterTableViewCell.swift */; };
+		3D1CC3F11EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EF1EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib */; };
 		3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */; };
 		3DAA3D821EAE870E00824AAB /* SetLocationMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */; };
+		3DF13BCA1EBBE8D100EF5EE7 /* API_GeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF13BC91EBBE8D100EF5EE7 /* API_GeoCoder.swift */; };
+		3DF13BCC1EBBEA1B00EF5EE7 /* AdressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF13BCB1EBBEA1B00EF5EE7 /* AdressManager.swift */; };
 		7D60BA26695041C3FBD5E1E9 /* Pods_LostAndFound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F9D53CD94FCFF233308190 /* Pods_LostAndFound.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,8 +114,19 @@
 		0DE626691EB1366800FECDF4 /* tableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewHeader.swift; sourceTree = "<group>"; };
 		0DFB00C21EA772480040B2A9 /* MapTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapTableView.xib; sourceTree = "<group>"; };
 		0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableView.swift; sourceTree = "<group>"; };
+		3D1CC3DE1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPhotoCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		3D1CC3DF1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemPhotoCollectionTableViewCell.xib; sourceTree = "<group>"; };
+		3D1CC3E31EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		3D1CC3E61EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		3D1CC3E71EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		3D1CC3EA1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMapTableViewCell.swift; sourceTree = "<group>"; };
+		3D1CC3EB1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemMapTableViewCell.xib; sourceTree = "<group>"; };
+		3D1CC3EE1EC4A59100EDD9B5 /* ItemFooterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemFooterTableViewCell.swift; sourceTree = "<group>"; };
+		3D1CC3EF1EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemFooterTableViewCell.xib; sourceTree = "<group>"; };
 		3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationMapController.swift; sourceTree = "<group>"; };
+		3DF13BC91EBBE8D100EF5EE7 /* API_GeoCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_GeoCoder.swift; sourceTree = "<group>"; };
+		3DF13BCB1EBBEA1B00EF5EE7 /* AdressManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdressManager.swift; sourceTree = "<group>"; };
 		437909965923B821F6FCCE68 /* Pods-LostAndFound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAndFound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LostAndFound/Pods-LostAndFound.debug.xcconfig"; sourceTree = "<group>"; };
 		59F9D53CD94FCFF233308190 /* Pods_LostAndFound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LostAndFound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9623B7E562E5B1BBDA43167 /* Pods-LostAndFound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAndFound.release.xcconfig"; path = "Pods/Target Support Files/Pods-LostAndFound/Pods-LostAndFound.release.xcconfig"; sourceTree = "<group>"; };
@@ -244,7 +266,10 @@
 				0DE626571EB1160F00FECDF4 /* AddOperation.swift */,
 				0DE626591EB1161500FECDF4 /* AddManager.swift */,
 				3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */,
+				3DF13BC91EBBE8D100EF5EE7 /* API_GeoCoder.swift */,
+				3DF13BCB1EBBEA1B00EF5EE7 /* AdressManager.swift */,
 				0DD117771E9E75CF0010AD72 /* Add.storyboard */,
+				3D1CC3D91EC4A0A900EDD9B5 /* Item Cells */,
 			);
 			name = Add;
 			sourceTree = "<group>";
@@ -288,6 +313,22 @@
 				0DE626651EB12B2500FECDF4 /* API_WRAPPER.swift */,
 			);
 			name = ApiWrapper;
+			sourceTree = "<group>";
+		};
+		3D1CC3D91EC4A0A900EDD9B5 /* Item Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D1CC3DE1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift */,
+				3D1CC3DF1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.xib */,
+				3D1CC3E31EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib */,
+				3D1CC3E61EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift */,
+				3D1CC3E71EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib */,
+				3D1CC3EA1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift */,
+				3D1CC3EB1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib */,
+				3D1CC3EE1EC4A59100EDD9B5 /* ItemFooterTableViewCell.swift */,
+				3D1CC3EF1EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib */,
+			);
+			name = "Item Cells";
 			sourceTree = "<group>";
 		};
 		B1CC9D39BC0FBA1ED3B13407 /* Frameworks */ = {
@@ -342,7 +383,7 @@
 				TargetAttributes = {
 					0DD117581E9D66FD0010AD72 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8NZVXRT6W9;
+						DevelopmentTeam = WP92F9M5L5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -370,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1CC3F11EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib in Resources */,
 				0DD1177C1E9E77000010AD72 /* Chat.storyboard in Resources */,
 				0DFB00C31EA772480040B2A9 /* MapTableView.xib in Resources */,
 				0D75285A1EB9DDED002919DD /* UserHeaderTableViewCell.xib in Resources */,
@@ -381,6 +423,7 @@
 				0DD117781E9E75CF0010AD72 /* Add.storyboard in Resources */,
 				0DE626681EB133A900FECDF4 /* tableViewHeader.xib in Resources */,
 				0DD1177A1E9E76C50010AD72 /* Profile.storyboard in Resources */,
+
 				0DD117621E9D66FD0010AD72 /* Main.storyboard in Resources */,
 				0DD117741E9E72680010AD72 /* Map.storyboard in Resources */,
 			);
@@ -442,12 +485,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DE626661EB12B2500FECDF4 /* API_WRAPPER.swift in Sources */,
+				3D1CC3E01EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift in Sources */,
 				0DFB00C51EA7728B0040B2A9 /* MapTableView.swift in Sources */,
 				0D22119A1EAB65E70037E8F7 /* Presenter.swift in Sources */,
 				0D7528641EB9E013002919DD /* UsersFactory.swift in Sources */,
 				0DE626581EB1160F00FECDF4 /* AddOperation.swift in Sources */,
 				0DD8EF671EA0C36800CF5774 /* UserPageViewController.swift in Sources */,
 				0DD117831E9E78980010AD72 /* Item.swift in Sources */,
+				3D1CC3E81EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift in Sources */,
 				0DD1175F1E9D66FD0010AD72 /* MapViewController.swift in Sources */,
 				0DE626561EB1160800FECDF4 /* AddPresenter.swift in Sources */,
 				0DE6264C1EB115CD00FECDF4 /* ChatPresenter.swift in Sources */,
@@ -456,15 +501,19 @@
 				0DE626501EB115EC00FECDF4 /* MapPresenter.swift in Sources */,
 				0DD117651E9D66FD0010AD72 /* LostAndFound.xcdatamodeld in Sources */,
 				0D2211A51EAF77130037E8F7 /* ModelsFactory.swift in Sources */,
+				3DF13BCA1EBBE8D100EF5EE7 /* API_GeoCoder.swift in Sources */,
 				0DE626541EB115FB00FECDF4 /* MapOperation.swift in Sources */,
 				3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */,
 				0DE626621EB1163600FECDF4 /* ChatManager.swift in Sources */,
 				0DE6264E1EB115D800FECDF4 /* ChatOperation.swift in Sources */,
+				3D1CC3EC1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift in Sources */,
+				0DD8EF6F1EA0C47900CF5774 /* UserListTableViewCell.swift in Sources */,
 				0DE6265E1EB1162800FECDF4 /* UserPresenter.swift in Sources */,
 				0D22119C1EAB65EC0037E8F7 /* View.swift in Sources */,
 				0DE6265C1EB1162200FECDF4 /* UserManager.swift in Sources */,
 				0D22119E1EAB65F90037E8F7 /* DependencyInjector.swift in Sources */,
 				0DE6265A1EB1161500FECDF4 /* AddManager.swift in Sources */,
+				3DF13BCC1EBBEA1B00EF5EE7 /* AdressManager.swift in Sources */,
 				0DE626601EB1162F00FECDF4 /* UserOperation.swift in Sources */,
 				0DE626521EB115F400FECDF4 /* MapManager.swift in Sources */,
 				0DD117851E9E79A20010AD72 /* User.swift in Sources */,
@@ -596,9 +645,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8NZVXRT6W9;
+				DEVELOPMENT_TEAM = WP92F9M5L5;
 				INFOPLIST_FILE = LostAndFound/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = berkutiv.LostAndFound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -612,9 +661,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8NZVXRT6W9;
+				DEVELOPMENT_TEAM = WP92F9M5L5;
 				INFOPLIST_FILE = LostAndFound/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = berkutiv.LostAndFound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
