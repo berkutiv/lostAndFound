@@ -14,6 +14,7 @@ class MapViewController: UIViewController
 {
     var dataSource = NSMutableArray()
     
+    @IBOutlet weak var blackView: UIView!
     var tableView : MapTableView?
     var map : GMSMapView?
     
@@ -23,15 +24,10 @@ class MapViewController: UIViewController
     var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 15.0
     
-    // An array to hold the list of likely places.
     var likelyPlaces: [GMSPlace] = []
-    
-    // The currently selected place.
     var selectedPlace: GMSPlace?
-    
     let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
 
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -69,7 +65,6 @@ class MapViewController: UIViewController
             
             for i in 0..<dataSource.count
             {
-                print("i \(i)")
                 let item = dataSource[i] as! Item
                 let position = CLLocationCoordinate2D(latitude: Double(item.latitude)!, longitude: Double(item.longitude)!)
                 let marker = GMSMarker(position: position)
@@ -80,6 +75,11 @@ class MapViewController: UIViewController
             map!.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 144 )
 
             view.addSubview(map!)
+            blackView.backgroundColor = UIColor.black
+            blackView.alpha = 0
+            
+            view.addSubview(blackView)
+        
             listLikelyPlaces()
         }
         
@@ -90,6 +90,13 @@ class MapViewController: UIViewController
             tableView?.frame = CGRect(x: 0, y: view.frame.size.height - 144, width: view.frame.width, height: view.frame.height)
             tableView?.blockWithCoordinates = {[weak self] (longtitude, latitude) in
                 self?.locateMarker(longitude: longtitude, latitude: latitude)
+                self?.blackView.alpha = 0
+            }
+            tableView?.blockWithAlpha = {[weak self] (float) in
+                //print("высота \(self?.view.frame.height)")
+                let alpha = float/(self?.view.frame.height)!*0.8
+                self?.blackView.alpha = 1 - alpha
+                print("alpha \(self?.blackView.alpha)")
             }
             view.addSubview(tableView!)
         }
@@ -141,8 +148,6 @@ class MapViewController: UIViewController
 //            }
 //        }
 //    }
-
-
 }
 
 extension MapViewController: CLLocationManagerDelegate {

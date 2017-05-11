@@ -13,6 +13,8 @@ class MapTableView: UIView, UIGestureRecognizerDelegate
 {
     var dataSource = NSMutableArray()
     var blockWithCoordinates: ((String, String) -> Void)!
+    var blockWithAlpha: ((CGFloat) -> Void)!
+    var headerView: UIView?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,8 +26,10 @@ class MapTableView: UIView, UIGestureRecognizerDelegate
         tableView.isScrollEnabled = false
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 66.0
+        tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedSectionHeaderHeight = 50
+        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
         tableView.register(kItemTableNIB, forCellReuseIdentifier: kItemTableViewCellReuseIdentifier)
         
         dataSource = ModelsFactory.generateModels() as! NSMutableArray
@@ -42,34 +46,32 @@ class MapTableView: UIView, UIGestureRecognizerDelegate
         {
             
         }
-        
         if rec.state == .changed
         {
             let translation = rec.translation(in: self)
-            
             self.frame.origin.y += translation.y
+            print("translation \(translation)")
             
             rec.setTranslation(CGPoint.zero, in: self)
+            blockWithAlpha(self.frame.origin.y)
         }
         
         if rec.state == .ended
         {
-            
             if self.frame.origin.y > self.frame.height / 2
             {
-                print("должно ехать вниз")
+                //вниз
                 hideTable()
             }
             
             if self.frame.origin.y < self.frame.height / 2
             {
-                print("должно ехать вверх")
+                //вверх
                 showTable()
             }
             
             if self.frame.origin.y == 0 || self.frame.origin.y <= 5
             {
-                print("верх")
                 tableView.isScrollEnabled = true
             }
         }
@@ -98,6 +100,23 @@ extension MapTableView: UITableViewDelegate, UITableViewDataSource
     {
         let model = dataSource[indexPath.row] as! Item
         blockWithCoordinates(model.longitude, model.latitude)
+        hideTable()
+        tableView.isScrollEnabled = false
+        var indexPath = IndexPath(item: 0, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        if self.headerView != nil
+        {
+            return self.headerView
+        }
+        
+        let headerView = Bundle.main.loadNibNamed("tableViewHeader", owner: nil, options: nil)?[0] as! tableViewHeader
+        self.headerView = headerView
+        
+        return headerView
     }
     
 }
@@ -109,12 +128,12 @@ extension MapTableView
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
         let currentOffset = scrollView.contentOffset.y
-        print("offset \(currentOffset)")
-        if currentOffset <= -35
+        //print("offset \(currentOffset)")
+        if currentOffset == 0
         {
-            print("меньше нуля")
             tableView.isScrollEnabled = false
         }
+    
     }
     
     func hideTable()

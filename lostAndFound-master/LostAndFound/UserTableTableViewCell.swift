@@ -1,5 +1,5 @@
 //
-//  UserButtonsTableViewCell.swift
+//  UserTableTableViewCell.swift
 //  LostAndFound
 //
 //  Created by Иван on 03.05.17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserButtonsTableViewCell: UITableViewCell {
+class UserTableTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
