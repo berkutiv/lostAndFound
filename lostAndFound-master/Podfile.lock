@@ -10,19 +10,22 @@ PODS:
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SwiftyJSON (3.1.4)
+  - UITextView+Placeholder (1.2.0)
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - SDWebImage (~> 3.8)
   - SwiftyJSON
+  - UITextView+Placeholder (~> 1.2)
 
 SPEC CHECKSUMS:
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
 
-PODFILE CHECKSUM: 10a96727b2986013edb46d705229145260b7de52
+PODFILE CHECKSUM: dc528e0526aa2558903fc541e28992cec6270dd4
 
 COCOAPODS: 1.1.1

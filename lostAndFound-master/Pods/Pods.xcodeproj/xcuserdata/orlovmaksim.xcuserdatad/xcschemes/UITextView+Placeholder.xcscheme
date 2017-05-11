@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "852E30EFF9251214228440C3C2D5DCAC"
-               BuildableName = "Pods_LostAndFound.framework"
-               BlueprintName = "Pods-LostAndFound"
+               BlueprintIdentifier = "785CF3C576DA766D6FDEE440E8083B94"
+               BuildableName = "UITextView_Placeholder.framework"
+               BlueprintName = "UITextView+Placeholder"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "852E30EFF9251214228440C3C2D5DCAC"
-            BuildableName = "Pods_LostAndFound.framework"
-            BlueprintName = "Pods-LostAndFound"
+            BlueprintIdentifier = "785CF3C576DA766D6FDEE440E8083B94"
+            BuildableName = "UITextView_Placeholder.framework"
+            BlueprintName = "UITextView+Placeholder"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
