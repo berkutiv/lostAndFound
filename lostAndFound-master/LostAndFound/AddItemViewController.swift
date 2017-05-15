@@ -266,10 +266,7 @@ extension AddItemViewController
     {
         print(" Мои координаты 2 - \(location)")
         myLocation = location
-        if myLocation != CLLocation()
-        {
-            mapButton.titleLabel?.text = String(myLocation.coordinate.latitude) + " " + String(myLocation.coordinate.longitude)
-        }
+        mapButton.setTitle(String(myLocation.coordinate.latitude) + " " + String(myLocation.coordinate.longitude), for: .normal)
     }
     
 }

@@ -13,6 +13,14 @@
 		0D2211A21EAF74110037E8F7 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2211A01EAF74110037E8F7 /* ItemTableViewCell.swift */; };
 		0D2211A31EAF74110037E8F7 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2211A11EAF74110037E8F7 /* ItemTableViewCell.xib */; };
 		0D2211A51EAF77130037E8F7 /* ModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2211A41EAF77130037E8F7 /* ModelsFactory.swift */; };
+		0D7528591EB9DDED002919DD /* UserHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7528571EB9DDED002919DD /* UserHeaderTableViewCell.swift */; };
+		0D75285A1EB9DDED002919DD /* UserHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7528581EB9DDED002919DD /* UserHeaderTableViewCell.xib */; };
+		0D75285D1EB9DDF8002919DD /* UserTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D75285B1EB9DDF8002919DD /* UserTableTableViewCell.swift */; };
+		0D75285E1EB9DDF8002919DD /* UserTableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D75285C1EB9DDF8002919DD /* UserTableTableViewCell.xib */; };
+		0D7528611EB9DE08002919DD /* UserButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D75285F1EB9DE08002919DD /* UserButtonsTableViewCell.swift */; };
+		0D7528621EB9DE08002919DD /* UserButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7528601EB9DE08002919DD /* UserButtonsTableViewCell.xib */; };
+		0D7528641EB9E013002919DD /* UsersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7528631EB9E013002919DD /* UsersFactory.swift */; };
+		0D7528661EC5A792002919DD /* OperationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7528651EC5A792002919DD /* OperationsManager.swift */; };
 		0DD1175D1E9D66FD0010AD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1175C1E9D66FD0010AD72 /* AppDelegate.swift */; };
 		0DD1175F1E9D66FD0010AD72 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */; };
 		0DD117621E9D66FD0010AD72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD117601E9D66FD0010AD72 /* Main.storyboard */; };
@@ -26,12 +34,6 @@
 		0DD117831E9E78980010AD72 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD117821E9E78980010AD72 /* Item.swift */; };
 		0DD117851E9E79A20010AD72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD117841E9E79A20010AD72 /* User.swift */; };
 		0DD8EF671EA0C36800CF5774 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD8EF661EA0C36800CF5774 /* UserPageViewController.swift */; };
-		0DD8EF6B1EA0C46800CF5774 /* UserHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD8EF691EA0C46800CF5774 /* UserHeaderTableViewCell.swift */; };
-		0DD8EF6C1EA0C46800CF5774 /* UserHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD8EF6A1EA0C46800CF5774 /* UserHeaderTableViewCell.xib */; };
-		0DD8EF6F1EA0C47900CF5774 /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD8EF6D1EA0C47900CF5774 /* UserListTableViewCell.swift */; };
-		0DD8EF701EA0C47900CF5774 /* UserListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD8EF6E1EA0C47900CF5774 /* UserListTableViewCell.xib */; };
-		0DD8EF731EA0C4A100CF5774 /* UserButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD8EF711EA0C4A100CF5774 /* UserButtonsTableViewCell.swift */; };
-		0DD8EF741EA0C4A100CF5774 /* UserButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD8EF721EA0C4A100CF5774 /* UserButtonsTableViewCell.xib */; };
 		0DE6264A1EB115B800FECDF4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626491EB115B800FECDF4 /* ChatViewController.swift */; };
 		0DE6264C1EB115CD00FECDF4 /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6264B1EB115CD00FECDF4 /* ChatPresenter.swift */; };
 		0DE6264E1EB115D800FECDF4 /* ChatOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6264D1EB115D800FECDF4 /* ChatOperation.swift */; };
@@ -46,16 +48,13 @@
 		0DE626601EB1162F00FECDF4 /* UserOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6265F1EB1162F00FECDF4 /* UserOperation.swift */; };
 		0DE626621EB1163600FECDF4 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626611EB1163600FECDF4 /* ChatManager.swift */; };
 		0DE626661EB12B2500FECDF4 /* API_WRAPPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626651EB12B2500FECDF4 /* API_WRAPPER.swift */; };
+		0DE626681EB133A900FECDF4 /* tableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DE626671EB133A900FECDF4 /* tableViewHeader.xib */; };
+		0DE6266A1EB1366800FECDF4 /* tableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626691EB1366800FECDF4 /* tableViewHeader.swift */; };
 		0DFB00C31EA772480040B2A9 /* MapTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DFB00C21EA772480040B2A9 /* MapTableView.xib */; };
 		0DFB00C51EA7728B0040B2A9 /* MapTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */; };
 		3D1CC3E01EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3DE1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift */; };
-		3D1CC3E11EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3DF1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.xib */; };
-		3D1CC3E51EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E31EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib */; };
 		3D1CC3E81EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E61EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift */; };
-		3D1CC3E91EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E71EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib */; };
 		3D1CC3EC1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EA1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift */; };
-		3D1CC3ED1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EB1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib */; };
-		3D1CC3F01EC4A59100EDD9B5 /* ItemFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EE1EC4A59100EDD9B5 /* ItemFooterTableViewCell.swift */; };
 		3D1CC3F11EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EF1EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib */; };
 		3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */; };
 		3DAA3D821EAE870E00824AAB /* SetLocationMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */; };
@@ -71,6 +70,14 @@
 		0D2211A01EAF74110037E8F7 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		0D2211A11EAF74110037E8F7 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		0D2211A41EAF77130037E8F7 /* ModelsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsFactory.swift; sourceTree = "<group>"; };
+		0D7528571EB9DDED002919DD /* UserHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		0D7528581EB9DDED002919DD /* UserHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		0D75285B1EB9DDF8002919DD /* UserTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableTableViewCell.swift; sourceTree = "<group>"; };
+		0D75285C1EB9DDF8002919DD /* UserTableTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableTableViewCell.xib; sourceTree = "<group>"; };
+		0D75285F1EB9DE08002919DD /* UserButtonsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserButtonsTableViewCell.swift; sourceTree = "<group>"; };
+		0D7528601EB9DE08002919DD /* UserButtonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserButtonsTableViewCell.xib; sourceTree = "<group>"; };
+		0D7528631EB9E013002919DD /* UsersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersFactory.swift; sourceTree = "<group>"; };
+		0D7528651EC5A792002919DD /* OperationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsManager.swift; sourceTree = "<group>"; };
 		0DD117591E9D66FD0010AD72 /* LostAndFound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LostAndFound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD1175C1E9D66FD0010AD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -86,12 +93,6 @@
 		0DD117821E9E78980010AD72 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0DD117841E9E79A20010AD72 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0DD8EF661EA0C36800CF5774 /* UserPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
-		0DD8EF691EA0C46800CF5774 /* UserHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		0DD8EF6A1EA0C46800CF5774 /* UserHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserHeaderTableViewCell.xib; sourceTree = "<group>"; };
-		0DD8EF6D1EA0C47900CF5774 /* UserListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
-		0DD8EF6E1EA0C47900CF5774 /* UserListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserListTableViewCell.xib; sourceTree = "<group>"; };
-		0DD8EF711EA0C4A100CF5774 /* UserButtonsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserButtonsTableViewCell.swift; sourceTree = "<group>"; };
-		0DD8EF721EA0C4A100CF5774 /* UserButtonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserButtonsTableViewCell.xib; sourceTree = "<group>"; };
 		0DE626491EB115B800FECDF4 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		0DE6264B1EB115CD00FECDF4 /* ChatPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
 		0DE6264D1EB115D800FECDF4 /* ChatOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatOperation.swift; sourceTree = "<group>"; };
@@ -106,6 +107,8 @@
 		0DE6265F1EB1162F00FECDF4 /* UserOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserOperation.swift; sourceTree = "<group>"; };
 		0DE626611EB1163600FECDF4 /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		0DE626651EB12B2500FECDF4 /* API_WRAPPER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_WRAPPER.swift; sourceTree = "<group>"; };
+		0DE626671EB133A900FECDF4 /* tableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tableViewHeader.xib; sourceTree = "<group>"; };
+		0DE626691EB1366800FECDF4 /* tableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewHeader.swift; sourceTree = "<group>"; };
 		0DFB00C21EA772480040B2A9 /* MapTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapTableView.xib; sourceTree = "<group>"; };
 		0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableView.swift; sourceTree = "<group>"; };
 		3D1CC3DE1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPhotoCollectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 			children = (
 				0D2211991EAB65E70037E8F7 /* Presenter.swift */,
 				0D22119B1EAB65EC0037E8F7 /* View.swift */,
+				0D7528651EC5A792002919DD /* OperationsManager.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -152,8 +156,23 @@
 			children = (
 				0D2211A01EAF74110037E8F7 /* ItemTableViewCell.swift */,
 				0D2211A11EAF74110037E8F7 /* ItemTableViewCell.xib */,
+				0DE626691EB1366800FECDF4 /* tableViewHeader.swift */,
+				0DE626671EB133A900FECDF4 /* tableViewHeader.xib */,
 			);
 			name = "Map tableView Cells";
+			sourceTree = "<group>";
+		};
+		0D75281D1EB48254002919DD /* Сustom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0D7528571EB9DDED002919DD /* UserHeaderTableViewCell.swift */,
+				0D7528581EB9DDED002919DD /* UserHeaderTableViewCell.xib */,
+				0D75285B1EB9DDF8002919DD /* UserTableTableViewCell.swift */,
+				0D75285C1EB9DDF8002919DD /* UserTableTableViewCell.xib */,
+				0D75285F1EB9DE08002919DD /* UserButtonsTableViewCell.swift */,
+				0D7528601EB9DE08002919DD /* UserButtonsTableViewCell.xib */,
+			);
+			name = "Сustom Cells";
 			sourceTree = "<group>";
 		};
 		0DD117501E9D66FD0010AD72 = {
@@ -215,36 +234,23 @@
 			isa = PBXGroup;
 			children = (
 				0D2211A41EAF77130037E8F7 /* ModelsFactory.swift */,
+				0D7528631EB9E013002919DD /* UsersFactory.swift */,
 				0DD117821E9E78980010AD72 /* Item.swift */,
 				0DD117841E9E79A20010AD72 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
 		};
-		0DD8EF681EA0C43F00CF5774 /* Custom Cells */ = {
-			isa = PBXGroup;
-			children = (
-				0DD8EF691EA0C46800CF5774 /* UserHeaderTableViewCell.swift */,
-				0DD8EF6A1EA0C46800CF5774 /* UserHeaderTableViewCell.xib */,
-				0DD8EF6D1EA0C47900CF5774 /* UserListTableViewCell.swift */,
-				0DD8EF6E1EA0C47900CF5774 /* UserListTableViewCell.xib */,
-				0DD8EF711EA0C4A100CF5774 /* UserButtonsTableViewCell.swift */,
-				0DD8EF721EA0C4A100CF5774 /* UserButtonsTableViewCell.xib */,
-			);
-			name = "Custom Cells";
-			sourceTree = "<group>";
-		};
 		0DE626451EB1153F00FECDF4 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */,
+				0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */,
 				0DD117731E9E72680010AD72 /* Map.storyboard */,
 				0DE6264F1EB115EC00FECDF4 /* MapPresenter.swift */,
 				0DE626511EB115F400FECDF4 /* MapManager.swift */,
 				0DE626531EB115FB00FECDF4 /* MapOperation.swift */,
-				0DD8EF681EA0C43F00CF5774 /* Custom Cells */,
 				0DFB00C21EA772480040B2A9 /* MapTableView.xib */,
-				0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */,
 				0D22119F1EAF73ED0037E8F7 /* Map tableView Cells */,
 			);
 			name = Map;
@@ -274,6 +280,7 @@
 				0DE6265B1EB1162200FECDF4 /* UserManager.swift */,
 				0DE6265D1EB1162800FECDF4 /* UserPresenter.swift */,
 				0DE6265F1EB1162F00FECDF4 /* UserOperation.swift */,
+				0D75281D1EB48254002919DD /* Сustom Cells */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -374,8 +381,7 @@
 				TargetAttributes = {
 					0DD117581E9D66FD0010AD72 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WP92F9M5L5;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -405,20 +411,17 @@
 				3D1CC3F11EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib in Resources */,
 				0DD1177C1E9E77000010AD72 /* Chat.storyboard in Resources */,
 				0DFB00C31EA772480040B2A9 /* MapTableView.xib in Resources */,
+				0D75285A1EB9DDED002919DD /* UserHeaderTableViewCell.xib in Resources */,
 				0DD1176A1E9D66FD0010AD72 /* LaunchScreen.storyboard in Resources */,
 				0DD117671E9D66FD0010AD72 /* Assets.xcassets in Resources */,
-				3D1CC3E51EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib in Resources */,
+				0D75285E1EB9DDF8002919DD /* UserTableTableViewCell.xib in Resources */,
+				0D7528621EB9DE08002919DD /* UserButtonsTableViewCell.xib in Resources */,
 				0D2211A31EAF74110037E8F7 /* ItemTableViewCell.xib in Resources */,
 				0DD117781E9E75CF0010AD72 /* Add.storyboard in Resources */,
-				0DD8EF741EA0C4A100CF5774 /* UserButtonsTableViewCell.xib in Resources */,
-				3D1CC3E11EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.xib in Resources */,
-				3D1CC3ED1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib in Resources */,
+				0DE626681EB133A900FECDF4 /* tableViewHeader.xib in Resources */,
 				0DD1177A1E9E76C50010AD72 /* Profile.storyboard in Resources */,
-				0DD8EF701EA0C47900CF5774 /* UserListTableViewCell.xib in Resources */,
-				3D1CC3E91EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib in Resources */,
 				0DD117621E9D66FD0010AD72 /* Main.storyboard in Resources */,
 				0DD117741E9E72680010AD72 /* Map.storyboard in Resources */,
-				0DD8EF6C1EA0C46800CF5774 /* UserHeaderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,8 +484,8 @@
 				3D1CC3E01EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift in Sources */,
 				0DFB00C51EA7728B0040B2A9 /* MapTableView.swift in Sources */,
 				0D22119A1EAB65E70037E8F7 /* Presenter.swift in Sources */,
+				0D7528641EB9E013002919DD /* UsersFactory.swift in Sources */,
 				0DE626581EB1160F00FECDF4 /* AddOperation.swift in Sources */,
-				0DD8EF731EA0C4A100CF5774 /* UserButtonsTableViewCell.swift in Sources */,
 				0DD8EF671EA0C36800CF5774 /* UserPageViewController.swift in Sources */,
 				0DD117831E9E78980010AD72 /* Item.swift in Sources */,
 				3D1CC3E81EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift in Sources */,
@@ -490,6 +493,7 @@
 				0DE626561EB1160800FECDF4 /* AddPresenter.swift in Sources */,
 				0DE6264C1EB115CD00FECDF4 /* ChatPresenter.swift in Sources */,
 				3DAA3D821EAE870E00824AAB /* SetLocationMapController.swift in Sources */,
+				0D7528611EB9DE08002919DD /* UserButtonsTableViewCell.swift in Sources */,
 				0DE626501EB115EC00FECDF4 /* MapPresenter.swift in Sources */,
 				0DD117651E9D66FD0010AD72 /* LostAndFound.xcdatamodeld in Sources */,
 				0D2211A51EAF77130037E8F7 /* ModelsFactory.swift in Sources */,
@@ -499,8 +503,8 @@
 				0DE626621EB1163600FECDF4 /* ChatManager.swift in Sources */,
 				0DE6264E1EB115D800FECDF4 /* ChatOperation.swift in Sources */,
 				3D1CC3EC1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift in Sources */,
-				0DD8EF6F1EA0C47900CF5774 /* UserListTableViewCell.swift in Sources */,
 				0DE6265E1EB1162800FECDF4 /* UserPresenter.swift in Sources */,
+				0D7528661EC5A792002919DD /* OperationsManager.swift in Sources */,
 				0D22119C1EAB65EC0037E8F7 /* View.swift in Sources */,
 				0DE6265C1EB1162200FECDF4 /* UserManager.swift in Sources */,
 				0D22119E1EAB65F90037E8F7 /* DependencyInjector.swift in Sources */,
@@ -509,9 +513,10 @@
 				0DE626601EB1162F00FECDF4 /* UserOperation.swift in Sources */,
 				0DE626521EB115F400FECDF4 /* MapManager.swift in Sources */,
 				0DD117851E9E79A20010AD72 /* User.swift in Sources */,
-				0DD8EF6B1EA0C46800CF5774 /* UserHeaderTableViewCell.swift in Sources */,
+				0DE6266A1EB1366800FECDF4 /* tableViewHeader.swift in Sources */,
 				0D2211A21EAF74110037E8F7 /* ItemTableViewCell.swift in Sources */,
-				3D1CC3F01EC4A59100EDD9B5 /* ItemFooterTableViewCell.swift in Sources */,
+				0D75285D1EB9DDF8002919DD /* UserTableTableViewCell.swift in Sources */,
+				0D7528591EB9DDED002919DD /* UserHeaderTableViewCell.swift in Sources */,
 				0DE6264A1EB115B800FECDF4 /* ChatViewController.swift in Sources */,
 				0DD1175D1E9D66FD0010AD72 /* AppDelegate.swift in Sources */,
 			);
@@ -636,9 +641,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WP92F9M5L5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LostAndFound/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = berkutiv.LostAndFound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -652,9 +657,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WP92F9M5L5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LostAndFound/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = berkutiv.LostAndFound;
 				PRODUCT_NAME = "$(TARGET_NAME)";

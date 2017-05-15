@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="I0k-FR-v7O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="I0k-FR-v7O">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,19 +20,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-ym-RZk">
-                                <rect key="frame" x="119" y="176" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-ym-RZk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="0.44707402019999998" blue="0.21549591800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OVH-ym-RZk" secondAttribute="trailing" id="4WV-Se-3Nb"/>
+                            <constraint firstItem="8xv-TD-fgJ" firstAttribute="top" secondItem="OVH-ym-RZk" secondAttribute="bottom" id="MSJ-RA-3aM"/>
+                            <constraint firstItem="OVH-ym-RZk" firstAttribute="leading" secondItem="BKs-Pl-huu" secondAttribute="leading" id="tOY-eh-D5g"/>
+                            <constraint firstItem="OVH-ym-RZk" firstAttribute="top" secondItem="BKs-Pl-huu" secondAttribute="top" id="uUd-JT-NZK"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="карта" id="WKj-Z1-176"/>
+                    <connections>
+                        <outlet property="blackView" destination="OVH-ym-RZk" id="j6Q-Tm-zp1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCB-eH-KPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="572" y="-926"/>
+            <point key="canvasLocation" x="572" y="-926.08695652173924"/>
         </scene>
     </scenes>
 </document>

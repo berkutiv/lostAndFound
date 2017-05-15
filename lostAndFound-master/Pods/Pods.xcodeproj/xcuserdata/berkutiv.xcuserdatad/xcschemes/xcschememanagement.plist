@@ -8,26 +8,57 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>UITextView+Placeholder.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>114A350C39C16CED6DF7EEBA97433E5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>153BF41BF9728DC373402AD775CE0860</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>5331D90E7095635953546B924D52CB0A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>785CF3C576DA766D6FDEE440E8083B94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>852E30EFF9251214228440C3C2D5DCAC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A8989032B0B864CE721961991B361C40</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -26,6 +26,8 @@ class ItemTableViewCell: UITableViewCell
     {
         self.picture.sd_setImage(with: URL(string: "https://pp.userapi.com/c543103/v543103306/1f74c/q6hK2NFOUqo.jpg"))
         self.titleLabel.text = model.title
+        picture.layer.cornerRadius = self.picture.frame.width/2.0
+        picture.layer.masksToBounds = true
     }
    
 }

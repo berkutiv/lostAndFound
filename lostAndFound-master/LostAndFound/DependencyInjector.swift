@@ -14,11 +14,10 @@ class DependencyInjector
     {
         var presenter : Presenter?
         
-        if view is MapViewController
+        if view is UserPageViewController
         {
-            //presenter = FriendsPresenter()
+            presenter = UserPresenter()
         }
-        
         
         if presenter != nil
         {
