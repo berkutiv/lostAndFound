@@ -28,7 +28,7 @@ protocol Presenter: class
     /**
      получение моделей
      */
-    func getModel(atIndexPath indexPath: IndexPath) -> Any
+    func getModel(by id: String) -> Any
     
     /**
      дополнительные данные

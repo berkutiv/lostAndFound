@@ -24,7 +24,7 @@ class UserPageViewController: UIViewController
     let kUserButtonsReuseIdentifier = "kUserButtonsReuseIdentifier"
     
     var presenter: Presenter?
-    var user = User(id: "", name: "", phone: "", email: "", photo: "")
+    var user = User(id: "", name: "ту", phone: "", email: "", photo: "")
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -33,6 +33,7 @@ class UserPageViewController: UIViewController
             DependencyInjector.obtainPresenter(view: self)
         }
         super.viewWillAppear(animated)
+        user = presenter!.getModel(by: "1") as! User
     }
     
     override func viewDidLoad()
@@ -43,7 +44,7 @@ class UserPageViewController: UIViewController
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedSectionHeaderHeight = 50
         tableView.sectionHeaderHeight = UITableViewAutomaticDimension
-        user = presenter!.getModel(atIndexPath: IndexPath(item: 0, section: 0)) as! User
+        tableView.register(kUserHeaderNIB, forCellReuseIdentifier: kUserHeaderReuseIdentifier)
     }
 }
 
@@ -90,6 +91,9 @@ extension UserPageViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: kUserHeaderReuseIdentifier, for: indexPath) as! UserHeaderTableViewCell
+        cell.configureSelf(withDataModel: user)
+        print("name \(user.name)")
+        return cell
     }
 }
