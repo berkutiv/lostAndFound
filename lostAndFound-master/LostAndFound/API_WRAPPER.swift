@@ -11,6 +11,33 @@ import SwiftyJSON
 
 class API_WRAPPER
 {
+    class func getUsers (id: String, success : @escaping (User) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
+    {
+//        let urlString = "https://api.vk.com/method/newsfeed.get?count=10&start_from=\(next_from)&access_token=\(VKAuthManager.sharedInstance.getAccessToken()!)&filter=posts&v=5.63"
+//        
+//        let url = URL(string: urlString)!
+//        // url - user readable link
+//        let request = URLRequest(url: url)
+//        
+//        let task = URLSession.shared.dataTask(with: request, completionHandler:
+//            {data , response, error in
+//                
+//                self.genericCompletionCallback(data: data, response: response, error: error, success: success, failure: failure)
+//                
+//        })
+        
+        let array = UsersFactory.generateData()
+        let user = UsersFactory.getUser(id: id)
+        success(user)
+        
+        task.resume()
+        return task
+    }
+    
+}
+//меняю возвращаемое значение саксесс блока на МАССИВ!
+extension API_WRAPPER
+{
     class func genericCompletionCallback (
         data : Data? ,
         response : URLResponse? ,
@@ -40,6 +67,8 @@ class API_WRAPPER
                 return
             }
         }
+        
+        
         failure(-1)
     }
    
