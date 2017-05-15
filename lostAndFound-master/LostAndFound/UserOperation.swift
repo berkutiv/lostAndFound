@@ -42,6 +42,8 @@ class UserOperation: Operation
                 self.success(User(id: "", name: "нет юзера", phone: "", email: "", photo: ""))
             }
             
+            semaphore.signal()
+            
         }, failure: { (code) in
             semaphore.signal()
             self.failure(code)

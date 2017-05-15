@@ -10,7 +10,7 @@ import Foundation
 
 class UserPresenter: Presenter
 {
-    var user = User(id: "", name: "", phone: "", email: "", photo: "")
+    var user = User(id: "", name: "от", phone: "", email: "", photo: "")
     weak var view: View?
     
     func viewLoaded(view: View) -> Void
@@ -30,8 +30,9 @@ class UserPresenter: Presenter
         return 1
     }
     
-    func getModel(atIndexPath indexPath: IndexPath) -> Any
+    func getModel(by id: String) -> Any
     {
+        getData(id: id)
         return user
     }
     
