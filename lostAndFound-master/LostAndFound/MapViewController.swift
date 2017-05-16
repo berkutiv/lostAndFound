@@ -17,6 +17,7 @@ class MapViewController: UIViewController
     @IBOutlet weak var blackView: UIView!
     var tableView : MapTableView?
     var map : GMSMapView?
+    var tableViewCell : ItemTableViewCell?
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
@@ -98,6 +99,16 @@ class MapViewController: UIViewController
                 self?.blackView.alpha = 1 - alpha
                 print("alpha \(self?.blackView.alpha)")
             }
+            tableView?.pushBlock = {[weak self] (model) in
+                let storyBoard = UIStoryboard(name: "Add", bundle: nil)
+                let itemViewController = storyBoard.instantiateViewController(withIdentifier: "itemViewController") as! ItemViewController
+                
+                itemViewController.id = "\(model.id)"
+                self?.present(itemViewController, animated: true, completion: nil)
+            }
+
+           
+            
             view.addSubview(tableView!)
         }
         super.viewWillAppear(animated)
