@@ -14,6 +14,7 @@ class MapTableView: UIView, UIGestureRecognizerDelegate
     var dataSource = NSMutableArray()
     var blockWithCoordinates: ((String, String) -> Void)!
     var blockWithAlpha: ((CGFloat) -> Void)!
+    var pushBlock: ((Item) -> Void)!
     var headerView: UIView?
     
     @IBOutlet weak var tableView: UITableView!
@@ -92,18 +93,22 @@ extension MapTableView: UITableViewDelegate, UITableViewDataSource
         let model = dataSource[indexPath.row] as! Item
         let cell = tableView.dequeueReusableCell(withIdentifier: kItemTableViewCellReuseIdentifier, for: indexPath) as! ItemTableViewCell
         cell.configureSelf(model: model)
-        
+        cell.coordinatesBlock = {[weak self] (longtitude, latitude) in
+            print("в блоке")
+            self?.blockWithCoordinates(model.longitude, model.latitude)
+            self?.hideTable()
+            tableView.isScrollEnabled = false
+            var indexPath = IndexPath(item: 0, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+        }
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
     {
         let model = dataSource[indexPath.row] as! Item
-        blockWithCoordinates(model.longitude, model.latitude)
-        hideTable()
-        tableView.isScrollEnabled = false
-        var indexPath = IndexPath(item: 0, section: 0)
-        tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+        pushBlock(model)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?

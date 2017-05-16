@@ -21,6 +21,7 @@
 		0D7528621EB9DE08002919DD /* UserButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7528601EB9DE08002919DD /* UserButtonsTableViewCell.xib */; };
 		0D7528641EB9E013002919DD /* UsersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7528631EB9E013002919DD /* UsersFactory.swift */; };
 		0D7528661EC5A792002919DD /* OperationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7528651EC5A792002919DD /* OperationsManager.swift */; };
+		0D7528731ECB0FC4002919DD /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7528721ECB0FC4002919DD /* ItemViewController.swift */; };
 		0DD1175D1E9D66FD0010AD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1175C1E9D66FD0010AD72 /* AppDelegate.swift */; };
 		0DD1175F1E9D66FD0010AD72 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */; };
 		0DD117621E9D66FD0010AD72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD117601E9D66FD0010AD72 /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		0D7528601EB9DE08002919DD /* UserButtonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserButtonsTableViewCell.xib; sourceTree = "<group>"; };
 		0D7528631EB9E013002919DD /* UsersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersFactory.swift; sourceTree = "<group>"; };
 		0D7528651EC5A792002919DD /* OperationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsManager.swift; sourceTree = "<group>"; };
+		0D7528721ECB0FC4002919DD /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		0DD117591E9D66FD0010AD72 /* LostAndFound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LostAndFound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD1175C1E9D66FD0010AD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,14 @@
 			name = "Сustom Cells";
 			sourceTree = "<group>";
 		};
+		0D7528711ECB0F9A002919DD /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				0D7528721ECB0FC4002919DD /* ItemViewController.swift */,
+			);
+			name = Item;
+			sourceTree = "<group>";
+		};
 		0DD117501E9D66FD0010AD72 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +208,7 @@
 			children = (
 				0DE626641EB12B0500FECDF4 /* ApiWrapper */,
 				0DE626481EB115A200FECDF4 /* Chat */,
+				0D7528711ECB0F9A002919DD /* Item */,
 				0DE626471EB1158900FECDF4 /* User */,
 				0DE626461EB1156C00FECDF4 /* Add */,
 				0DE626451EB1153F00FECDF4 /* Map */,
@@ -497,6 +508,7 @@
 				0DE626501EB115EC00FECDF4 /* MapPresenter.swift in Sources */,
 				0DD117651E9D66FD0010AD72 /* LostAndFound.xcdatamodeld in Sources */,
 				0D2211A51EAF77130037E8F7 /* ModelsFactory.swift in Sources */,
+				0D7528731ECB0FC4002919DD /* ItemViewController.swift in Sources */,
 				3DF13BCA1EBBE8D100EF5EE7 /* API_GeoCoder.swift in Sources */,
 				0DE626541EB115FB00FECDF4 /* MapOperation.swift in Sources */,
 				3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */,
