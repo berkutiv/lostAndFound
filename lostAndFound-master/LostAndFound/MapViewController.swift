@@ -105,6 +105,7 @@ class MapViewController: UIViewController
                 
                 itemViewController.id = "\(model.id)"
                 self?.present(itemViewController, animated: true, completion: nil)
+                self?.pu
             }
 
            
