@@ -56,4 +56,11 @@ class UserPresenter: Presenter
     {
     
     }
+    
+     func model (at indexPath : IndexPath) ->Any
+     {
+        return self
+    }
+    
+    
 }
