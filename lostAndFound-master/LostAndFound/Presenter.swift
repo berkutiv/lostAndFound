@@ -31,6 +31,11 @@ protocol Presenter: class
     func getModel(by id: String) -> Any
     
     /**
+   
+    */
+    func model (at indexPath : IndexPath) ->Any
+    
+    /**
      дополнительные данные
      */
     func provide (data : NSDictionary)

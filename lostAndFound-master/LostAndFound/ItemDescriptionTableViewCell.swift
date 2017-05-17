@@ -12,4 +12,10 @@ class ItemDescriptionTableViewCell: UITableViewCell
 {
     @IBOutlet weak var itemDescription: UILabel!
     @IBOutlet weak var itemName: UILabel!
+    
+    func configureSelf (withDataModel model : ItemDescriptionModel)
+    {
+        itemDescription.text = model.itemDescription
+        itemName.text = model.itemName
+    }
 }

@@ -19,6 +19,11 @@ class DependencyInjector
             presenter = UserPresenter()
         }
         
+        if view is ItemViewController
+        {
+            presenter = ItemPresenter()
+        }
+        
         if presenter != nil
         {
             view.assignPresenter(presenter: presenter!)
