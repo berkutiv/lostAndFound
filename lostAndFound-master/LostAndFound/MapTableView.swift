@@ -14,6 +14,7 @@ class MapTableView: UIView, UIGestureRecognizerDelegate
     var dataSource = NSMutableArray()
     var blockWithCoordinates: ((String, String) -> Void)!
     var blockWithAlpha: ((CGFloat) -> Void)!
+    var blockAlphaZero: (() -> Void)!
     var pushBlock: ((Item) -> Void)!
     var headerView: UIView?
     
@@ -50,7 +51,13 @@ class MapTableView: UIView, UIGestureRecognizerDelegate
         if rec.state == .changed
         {
             let translation = rec.translation(in: self)
+            if self.frame.origin.y + translation.y >= self.frame.size.height - 144
+            {
+                return
+            }
+            
             self.frame.origin.y += translation.y
+            
             print("translation \(translation)")
             
             rec.setTranslation(CGPoint.zero, in: self)
@@ -101,7 +108,7 @@ extension MapTableView: UITableViewDelegate, UITableViewDataSource
             var indexPath = IndexPath(item: 0, section: 0)
             tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
         }
-
+        
         return cell
     }
     
@@ -139,7 +146,7 @@ extension MapTableView
         {
             tableView.isScrollEnabled = false
         }
-    
+        
     }
     
     func hideTable()
@@ -148,6 +155,7 @@ extension MapTableView
         {
             self.frame = CGRect(x: CGFloat(0), y: self.frame.size.height - 144, width: self.frame.size.width, height: self.frame.size.height)
         }
+        blockAlphaZero()
     }
     
     func showTable()
