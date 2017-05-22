@@ -100,12 +100,12 @@ class MapViewController: UIViewController
                 print("alpha \(self?.blackView.alpha)")
             }
             tableView?.pushBlock = {[weak self] (model) in
-                let storyBoard = UIStoryboard(name: "Add", bundle: nil)
-                let itemViewController = storyBoard.instantiateViewController(withIdentifier: "itemViewController") as! ItemViewController
+                let storyBoard = UIStoryboard(name: "Item", bundle: nil)
+                let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
                 
                 itemViewController.id = "\(model.id)"
                 self?.present(itemViewController, animated: true, completion: nil)
-                self?.pu
+              
             }
 
            

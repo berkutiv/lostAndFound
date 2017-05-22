@@ -24,6 +24,11 @@ class DependencyInjector
             presenter = ItemPresenter()
         }
         
+        if view is ChatViewController
+        {
+            presenter = ChatPresenter()
+        }
+        
         if presenter != nil
         {
             view.assignPresenter(presenter: presenter!)

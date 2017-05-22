@@ -25,9 +25,14 @@ extension ItemPresenter : Presenter
     {
         let itemPhotos = ItemPhotoCollectionModel()
         dataSource.add(itemPhotos)
+        let itemHeader = ItemHeaderModel()
+        dataSource.add(itemHeader)
+        let itemMapCoordinates = ItemMapModel()
+        dataSource.add(itemMapCoordinates)
         let itemDescription = ItemDescriptionModel()
         dataSource.add(itemDescription)
-        
+        let itemContacts = ItemContactsModel()
+        dataSource.add(itemContacts)
         
         view.reloadData()
     }
@@ -72,5 +77,4 @@ extension ItemPresenter : Presenter
             self.itemId = itemID
         }
     }
-
 }

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,20 +18,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="192.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hI3-37-HVR">
-                        <rect key="frame" x="40" y="23" width="240" height="146.5"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hI3-37-HVR" customClass="GMSMapView">
+                        <rect key="frame" x="8" y="8" width="304" height="176.5"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="176.5" id="yK6-gw-cQ9"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="hI3-37-HVR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="32" id="GC2-UP-j3B"/>
-                    <constraint firstItem="hI3-37-HVR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="bb2-Fl-eSR"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="hI3-37-HVR" secondAttribute="trailing" constant="32" id="iVC-uT-0r6"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="hI3-37-HVR" secondAttribute="bottom" constant="15" id="tLL-jC-dti"/>
+                    <constraint firstItem="hI3-37-HVR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="HE0-IR-hwE"/>
+                    <constraint firstItem="hI3-37-HVR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Kl3-7Z-vqN"/>
+                    <constraint firstAttribute="trailing" secondItem="hI3-37-HVR" secondAttribute="trailing" constant="8" id="dPL-mp-dyO"/>
+                    <constraint firstAttribute="bottom" secondItem="hI3-37-HVR" secondAttribute="bottom" constant="8" id="vaV-uN-eKQ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="itemMap" destination="hI3-37-HVR" id="dUx-qC-RdR"/>
+                <outlet property="itemMapView" destination="hI3-37-HVR" id="s0R-Ca-wvd"/>
             </connections>
             <point key="canvasLocation" x="34" y="128.5"/>
         </tableViewCell>
