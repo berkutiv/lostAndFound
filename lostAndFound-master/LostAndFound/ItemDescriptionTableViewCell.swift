@@ -11,11 +11,12 @@ import UIKit
 class ItemDescriptionTableViewCell: UITableViewCell
 {
     @IBOutlet weak var itemDescription: UILabel!
-    @IBOutlet weak var itemName: UILabel!
     
     func configureSelf (withDataModel model : ItemDescriptionModel)
     {
         itemDescription.text = model.itemDescription
-        itemName.text = model.itemName
+        itemDescription.lineBreakMode = NSLineBreakMode.byWordWrapping
+        itemDescription.numberOfLines = 0
+        
     }
 }

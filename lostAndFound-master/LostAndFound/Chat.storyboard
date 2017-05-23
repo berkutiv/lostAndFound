@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jKa-dz-XZ5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hZp-J3-dmh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Сообщения-->
         <scene sceneID="KTn-QO-stj">
             <objects>
-                <viewController storyboardIdentifier="chatId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jKa-dz-XZ5" sceneMemberID="viewController">
+                <viewController title="Сообщения" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jKa-dz-XZ5" customClass="ChatViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tAo-DL-4OX"/>
                         <viewControllerLayoutGuide type="bottom" id="yNS-Tj-zGA"/>
@@ -20,19 +21,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z7a-2d-kSR">
-                                <rect key="frame" x="42" y="229" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.052793315770000002" blue="0.058315499989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YUi-8g-sW1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YUi-8g-sW1" secondAttribute="trailing" id="7QE-uO-ki2"/>
+                            <constraint firstItem="YUi-8g-sW1" firstAttribute="leading" secondItem="1tz-wx-Sua" secondAttribute="leading" id="8ZS-az-Zo7"/>
+                            <constraint firstItem="yNS-Tj-zGA" firstAttribute="top" secondItem="YUi-8g-sW1" secondAttribute="bottom" id="TeS-TN-NdI"/>
+                            <constraint firstItem="YUi-8g-sW1" firstAttribute="top" secondItem="1tz-wx-Sua" secondAttribute="top" id="UCa-Js-6aF"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Сообщения" id="JaK-fh-dh2"/>
+                    <navigationItem key="navigationItem" title="Сообщения" id="Yyt-Tj-Fly"/>
+                    <connections>
+                        <outlet property="tableView" destination="YUi-8g-sW1" id="k8Q-9j-HEd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJ8-nK-PW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="-215"/>
+            <point key="canvasLocation" x="2879.1999999999998" y="-215.44227886056973"/>
+        </scene>
+        <!--Dialog View Controller-->
+        <scene sceneID="jAF-5s-PXF">
+            <objects>
+                <viewController storyboardIdentifier="DialogViewController" id="3BZ-sd-gi7" customClass="DialogViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nmm-ZH-gCp"/>
+                        <viewControllerLayoutGuide type="bottom" id="VYQ-78-d9B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y7V-TT-jFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1S-K7-bz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3830" y="-215"/>
+        </scene>
+        <!--Сообщения-->
+        <scene sceneID="GdA-OS-wTK">
+            <objects>
+                <navigationController storyboardIdentifier="chatId" title="Сообщения" automaticallyAdjustsScrollViewInsets="NO" id="hZp-J3-dmh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Aux-jv-msP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jKa-dz-XZ5" kind="relationship" relationship="rootViewController" id="oRb-8q-ifv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ULB-4f-f9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1940" y="-215.44227886056973"/>
         </scene>
     </scenes>
 </document>

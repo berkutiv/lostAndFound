@@ -15,7 +15,7 @@
             <objects>
                 <navigationController storyboardIdentifier="addId" id="6qQ-Qb-rB7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Добавить" id="dUl-Ig-Tqm"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4RH-wq-VMH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4RH-wq-VMH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHZ-kr-65s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="-26"/>
+            <point key="canvasLocation" x="1076" y="-28"/>
         </scene>
         <!--AddItemViewController -->
         <scene sceneID="VmA-w3-xkw">
@@ -169,40 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98Y-qu-Ffb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1684" y="-26.53673163418291"/>
-        </scene>
-        <!--Item View Controller-->
-        <scene sceneID="YXJ-Up-4fV">
-            <objects>
-                <viewController storyboardIdentifier="itemViewController" id="gKa-hW-wzt" customClass="ItemViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="blm-sv-sKG"/>
-                        <viewControllerLayoutGuide type="bottom" id="GB2-nV-5Jb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JV0-6t-vum">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tew-1p-woc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="tew-1p-woc" secondAttribute="trailing" id="0yX-Sx-ojD"/>
-                            <constraint firstItem="tew-1p-woc" firstAttribute="top" secondItem="JV0-6t-vum" secondAttribute="top" id="LSA-nq-a55"/>
-                            <constraint firstItem="GB2-nV-5Jb" firstAttribute="top" secondItem="tew-1p-woc" secondAttribute="bottom" id="Rdk-pF-hDj"/>
-                            <constraint firstItem="tew-1p-woc" firstAttribute="leading" secondItem="JV0-6t-vum" secondAttribute="leading" id="j9R-1v-OuB"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="tew-1p-woc" id="hTJ-gl-YXF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ght-DE-KDI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2396" y="-382"/>
+            <point key="canvasLocation" x="2020" y="-28"/>
         </scene>
         <!--SetLocationViewController-->
         <scene sceneID="vRE-gA-oZk">
@@ -236,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZnW-CX-02v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1684" y="696"/>
+            <point key="canvasLocation" x="2020" y="667"/>
         </scene>
     </scenes>
     <resources>
