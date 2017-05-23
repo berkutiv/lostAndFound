@@ -28,7 +28,7 @@ class MapViewController: UIViewController
     var likelyPlaces: [GMSPlace] = []
     var selectedPlace: GMSPlace?
     let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -74,13 +74,13 @@ class MapViewController: UIViewController
             }
             
             map!.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 144 )
-
+            
             view.addSubview(map!)
             blackView.backgroundColor = UIColor.black
             blackView.alpha = 0
             
             view.addSubview(blackView)
-        
+            
             listLikelyPlaces()
         }
         
@@ -94,7 +94,7 @@ class MapViewController: UIViewController
                 self?.blackView.alpha = 0
             }
             tableView?.blockWithAlpha = {[weak self] (float) in
-                //print("высота \(self?.view.frame.height)")
+                print("высота \(self?.view.frame.height)")
                 let alpha = float/(self?.view.frame.height)!*0.8
                 self?.blackView.alpha = 1 - alpha
                 print("alpha \(self?.blackView.alpha)")
@@ -105,16 +105,18 @@ class MapViewController: UIViewController
                 
                 itemViewController.id = "\(model.id)"
                 self?.present(itemViewController, animated: true, completion: nil)
-              
             }
-
-           
+            tableView?.blockAlphaZero = {[weak self] in
+                self?.blackView.alpha = 0
+            }
+            
+            
             
             view.addSubview(tableView!)
         }
         super.viewWillAppear(animated)
     }
-
+    
     @IBAction func unwindToMain(segue: UIStoryboardSegue)
     {
         // Clear the map.
@@ -152,19 +154,19 @@ class MapViewController: UIViewController
         })
     }
     
-//    // Prepare the segue.
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == &quot;segueToSelect&quot; {
-//            if let nextViewController = segue.destination as? PlacesViewController {
-//                nextViewController.likelyPlaces = likelyPlaces
-//            }
-//        }
-//    }
+    //    // Prepare the segue.
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if segue.identifier == &quot;segueToSelect&quot; {
+    //            if let nextViewController = segue.destination as? PlacesViewController {
+    //                nextViewController.likelyPlaces = likelyPlaces
+    //            }
+    //        }
+    //    }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
     
-     //Handle incoming location events.
+    //Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
         print("Location: \(location)")
@@ -223,7 +225,7 @@ extension MapViewController
         } else {
             mapView.animate(to: camera)
         }
-
+        
     }
 }
 
