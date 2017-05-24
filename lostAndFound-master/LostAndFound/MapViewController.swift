@@ -29,6 +29,7 @@ class MapViewController: UIViewController
     var selectedPlace: GMSPlace?
     let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
     
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -44,6 +45,8 @@ class MapViewController: UIViewController
     
     override func viewWillAppear(_ animated: Bool)
     {
+        navigationController?.isNavigationBarHidden = true
+        
         if map == nil
         {
             let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
@@ -104,7 +107,7 @@ class MapViewController: UIViewController
                 let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
                 
                 itemViewController.id = "\(model.id)"
-                self?.present(itemViewController, animated: true, completion: nil)
+                self?.navigationController?.pushViewController(itemViewController, animated: false)
             }
             tableView?.blockAlphaZero = {[weak self] in
                 self?.blackView.alpha = 0

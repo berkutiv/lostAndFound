@@ -31,10 +31,14 @@ class ItemViewController: UIViewController, UINavigationControllerDelegate
     let kItemContactsTableViewCellNib = UINib(nibName: "ItemContactsTableViewCell", bundle: nil)
     let kItemContactsTableViewCellReuseIdentifier = "kItemContactsTableViewCellReuseIdentifier"
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLoad()
     {
         DependencyInjector.obtainPresenter(view: self)
-        
         
         super.viewDidLoad()
     
