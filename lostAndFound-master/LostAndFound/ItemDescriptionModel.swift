@@ -9,6 +9,5 @@
 import Foundation
 class ItemDescriptionModel
 {
-    var itemName = "ключи"
-    var itemDescription = "Ключи от сейфа где деньги лежат"
+    var itemDescription = "Связка ключей. Ключи пиздатые, много разных - но все какие то уродливые. Можно открыть дверь, а можно пивасик."
 }

@@ -21,7 +21,6 @@
 		0D7528621EB9DE08002919DD /* UserButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7528601EB9DE08002919DD /* UserButtonsTableViewCell.xib */; };
 		0D7528641EB9E013002919DD /* UsersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7528631EB9E013002919DD /* UsersFactory.swift */; };
 		0D7528661EC5A792002919DD /* OperationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7528651EC5A792002919DD /* OperationsManager.swift */; };
-		0D7528731ECB0FC4002919DD /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7528721ECB0FC4002919DD /* ItemViewController.swift */; };
 		0DD1175D1E9D66FD0010AD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1175C1E9D66FD0010AD72 /* AppDelegate.swift */; };
 		0DD1175F1E9D66FD0010AD72 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */; };
 		0DD117621E9D66FD0010AD72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD117601E9D66FD0010AD72 /* Main.storyboard */; };
@@ -56,15 +55,32 @@
 		3D1CC3E01EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3DE1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift */; };
 		3D1CC3E81EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E61EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift */; };
 		3D1CC3EC1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EA1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift */; };
-		3D1CC3F11EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EF1EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib */; };
 		3D1CC4101ECB894F00EDD9B5 /* ItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC40F1ECB894F00EDD9B5 /* ItemPresenter.swift */; };
 		3D1CC4151ECB944600EDD9B5 /* ItemPhotoCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4141ECB944600EDD9B5 /* ItemPhotoCollectionModel.swift */; };
 		3D1CC4191ECB968800EDD9B5 /* ItemDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4181ECB968700EDD9B5 /* ItemDescriptionModel.swift */; };
 		3D1CC41A1ECCA5A700EDD9B5 /* ItemDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E71EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib */; };
+		3D1CC41B1ECCDD1700EDD9B5 /* ItemPhotoCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3DF1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.xib */; };
+		3D1CC41C1ECCDD1A00EDD9B5 /* ItemPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E31EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib */; };
+		3D1CC41E1ECCFA3700EDD9B5 /* ItemMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC41D1ECCFA3700EDD9B5 /* ItemMapModel.swift */; };
+		3D1CC41F1ECCFE4C00EDD9B5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7528721ECB0FC4002919DD /* ItemViewController.swift */; };
+		3D1CC4201ECCFE5600EDD9B5 /* ItemMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EB1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib */; };
+		3D1CC4221ECE344E00EDD9B5 /* ItemHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4211ECE344E00EDD9B5 /* ItemHeaderModel.swift */; };
+		3D1CC4241ECE371700EDD9B5 /* ItemContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4231ECE371700EDD9B5 /* ItemContactsModel.swift */; };
+		3D1CC4271ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4251ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.swift */; };
+		3D1CC4281ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC4261ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.xib */; };
+		3D1CC42B1ECE402500EDD9B5 /* ItemContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4291ECE402500EDD9B5 /* ItemContactsTableViewCell.swift */; };
+		3D1CC42C1ECE402500EDD9B5 /* ItemContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC42A1ECE402500EDD9B5 /* ItemContactsTableViewCell.xib */; };
+		3D1CC4301ECE509500EDD9B5 /* API_GEOCODER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC42F1ECE509500EDD9B5 /* API_GEOCODER.swift */; };
+		3D1CC4331ECE523100EDD9B5 /* SetLocationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4321ECE523100EDD9B5 /* SetLocationOperation.swift */; };
+		3D1CC4351ECE5CD300EDD9B5 /* Item.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC4341ECE5CD300EDD9B5 /* Item.storyboard */; };
+		3D1CC4391ECF084400EDD9B5 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4371ECF084400EDD9B5 /* ChatTableViewCell.swift */; };
+		3D1CC43A1ECF084400EDD9B5 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC4381ECF084400EDD9B5 /* ChatTableViewCell.xib */; };
+		3D1CC43D1ECF0D9E00EDD9B5 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC43C1ECF0D9E00EDD9B5 /* ChatModel.swift */; };
+		3D1CC43F1ECF8BF400EDD9B5 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */; };
 		3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */; };
 		3DAA3D821EAE870E00824AAB /* SetLocationMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */; };
-		3DF13BCA1EBBE8D100EF5EE7 /* API_GeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF13BC91EBBE8D100EF5EE7 /* API_GeoCoder.swift */; };
-		3DF13BCC1EBBEA1B00EF5EE7 /* AdressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF13BCB1EBBEA1B00EF5EE7 /* AdressManager.swift */; };
+		3DF13BCC1EBBEA1B00EF5EE7 /* SetLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF13BCB1EBBEA1B00EF5EE7 /* SetLocationManager.swift */; };
+		3DF1FF631ED34B9E0014AEAF /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1FF621ED34B9E0014AEAF /* DialogViewController.swift */; };
 		7D60BA26695041C3FBD5E1E9 /* Pods_LostAndFound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F9D53CD94FCFF233308190 /* Pods_LostAndFound.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,15 +140,27 @@
 		3D1CC3E71EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		3D1CC3EA1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMapTableViewCell.swift; sourceTree = "<group>"; };
 		3D1CC3EB1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemMapTableViewCell.xib; sourceTree = "<group>"; };
-		3D1CC3EE1EC4A59100EDD9B5 /* ItemFooterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemFooterTableViewCell.swift; sourceTree = "<group>"; };
-		3D1CC3EF1EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemFooterTableViewCell.xib; sourceTree = "<group>"; };
 		3D1CC40F1ECB894F00EDD9B5 /* ItemPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPresenter.swift; sourceTree = "<group>"; };
 		3D1CC4141ECB944600EDD9B5 /* ItemPhotoCollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPhotoCollectionModel.swift; sourceTree = "<group>"; };
 		3D1CC4181ECB968700EDD9B5 /* ItemDescriptionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDescriptionModel.swift; sourceTree = "<group>"; };
+		3D1CC41D1ECCFA3700EDD9B5 /* ItemMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMapModel.swift; sourceTree = "<group>"; };
+		3D1CC4211ECE344E00EDD9B5 /* ItemHeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemHeaderModel.swift; sourceTree = "<group>"; };
+		3D1CC4231ECE371700EDD9B5 /* ItemContactsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemContactsModel.swift; sourceTree = "<group>"; };
+		3D1CC4251ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		3D1CC4261ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		3D1CC4291ECE402500EDD9B5 /* ItemContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemContactsTableViewCell.swift; sourceTree = "<group>"; };
+		3D1CC42A1ECE402500EDD9B5 /* ItemContactsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemContactsTableViewCell.xib; sourceTree = "<group>"; };
+		3D1CC42F1ECE509500EDD9B5 /* API_GEOCODER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_GEOCODER.swift; sourceTree = "<group>"; };
+		3D1CC4321ECE523100EDD9B5 /* SetLocationOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationOperation.swift; sourceTree = "<group>"; };
+		3D1CC4341ECE5CD300EDD9B5 /* Item.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Item.storyboard; sourceTree = "<group>"; };
+		3D1CC4371ECF084400EDD9B5 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		3D1CC4381ECF084400EDD9B5 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		3D1CC43C1ECF0D9E00EDD9B5 /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationMapController.swift; sourceTree = "<group>"; };
-		3DF13BC91EBBE8D100EF5EE7 /* API_GeoCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_GeoCoder.swift; sourceTree = "<group>"; };
-		3DF13BCB1EBBEA1B00EF5EE7 /* AdressManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdressManager.swift; sourceTree = "<group>"; };
+		3DF13BCB1EBBEA1B00EF5EE7 /* SetLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationManager.swift; sourceTree = "<group>"; };
+		3DF1FF621ED34B9E0014AEAF /* DialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		437909965923B821F6FCCE68 /* Pods-LostAndFound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAndFound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LostAndFound/Pods-LostAndFound.debug.xcconfig"; sourceTree = "<group>"; };
 		59F9D53CD94FCFF233308190 /* Pods_LostAndFound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LostAndFound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9623B7E562E5B1BBDA43167 /* Pods-LostAndFound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAndFound.release.xcconfig"; path = "Pods/Target Support Files/Pods-LostAndFound/Pods-LostAndFound.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +215,7 @@
 			children = (
 				0D7528721ECB0FC4002919DD /* ItemViewController.swift */,
 				3D1CC40F1ECB894F00EDD9B5 /* ItemPresenter.swift */,
+				3D1CC4341ECE5CD300EDD9B5 /* Item.storyboard */,
 				3D1CC3D91EC4A0A900EDD9B5 /* Item Cells */,
 			);
 			name = Item;
@@ -255,6 +284,7 @@
 				0D7528631EB9E013002919DD /* UsersFactory.swift */,
 				0DD117821E9E78980010AD72 /* Item.swift */,
 				0DD117841E9E79A20010AD72 /* User.swift */,
+				3D1CC43B1ECF0D7900EDD9B5 /* ChatModels */,
 				3D1CC4131ECB940500EDD9B5 /* ItemModels */,
 			);
 			name = Models;
@@ -283,8 +313,7 @@
 				0DE626571EB1160F00FECDF4 /* AddOperation.swift */,
 				0DE626591EB1161500FECDF4 /* AddManager.swift */,
 				3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */,
-				3DF13BC91EBBE8D100EF5EE7 /* API_GeoCoder.swift */,
-				3DF13BCB1EBBEA1B00EF5EE7 /* AdressManager.swift */,
+				3D1CC4311ECE51C800EDD9B5 /* Internet */,
 				0DD117771E9E75CF0010AD72 /* Add.storyboard */,
 			);
 			name = Add;
@@ -306,11 +335,13 @@
 		0DE626481EB115A200FECDF4 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				3DF1FF611ED34B840014AEAF /* Dialog */,
 				0DE626491EB115B800FECDF4 /* ChatViewController.swift */,
 				0DE6264B1EB115CD00FECDF4 /* ChatPresenter.swift */,
 				0DE6264D1EB115D800FECDF4 /* ChatOperation.swift */,
 				0DE626611EB1163600FECDF4 /* ChatManager.swift */,
 				0DD1177B1E9E77000010AD72 /* Chat.storyboard */,
+				3D1CC4361ECF050D00EDD9B5 /* Chat Cells */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -327,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				0DE626651EB12B2500FECDF4 /* API_WRAPPER.swift */,
+				3D1CC42F1ECE509500EDD9B5 /* API_GEOCODER.swift */,
 			);
 			name = ApiWrapper;
 			sourceTree = "<group>";
@@ -347,12 +379,14 @@
 				3D1CC3DE1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift */,
 				3D1CC3DF1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.xib */,
 				3D1CC3E31EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib */,
-				3D1CC3E61EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift */,
-				3D1CC3E71EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib */,
+				3D1CC4251ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.swift */,
+				3D1CC4261ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.xib */,
 				3D1CC3EA1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift */,
 				3D1CC3EB1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib */,
-				3D1CC3EE1EC4A59100EDD9B5 /* ItemFooterTableViewCell.swift */,
-				3D1CC3EF1EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib */,
+				3D1CC3E61EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift */,
+				3D1CC3E71EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib */,
+				3D1CC4291ECE402500EDD9B5 /* ItemContactsTableViewCell.swift */,
+				3D1CC42A1ECE402500EDD9B5 /* ItemContactsTableViewCell.xib */,
 			);
 			name = "Item Cells";
 			sourceTree = "<group>";
@@ -361,9 +395,47 @@
 			isa = PBXGroup;
 			children = (
 				3D1CC4141ECB944600EDD9B5 /* ItemPhotoCollectionModel.swift */,
+				3D1CC4211ECE344E00EDD9B5 /* ItemHeaderModel.swift */,
 				3D1CC4181ECB968700EDD9B5 /* ItemDescriptionModel.swift */,
+				3D1CC41D1ECCFA3700EDD9B5 /* ItemMapModel.swift */,
+				3D1CC4231ECE371700EDD9B5 /* ItemContactsModel.swift */,
 			);
 			name = ItemModels;
+			sourceTree = "<group>";
+		};
+		3D1CC4311ECE51C800EDD9B5 /* Internet */ = {
+			isa = PBXGroup;
+			children = (
+				3DF13BCB1EBBEA1B00EF5EE7 /* SetLocationManager.swift */,
+				3D1CC4321ECE523100EDD9B5 /* SetLocationOperation.swift */,
+			);
+			name = Internet;
+			sourceTree = "<group>";
+		};
+		3D1CC4361ECF050D00EDD9B5 /* Chat Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D1CC4371ECF084400EDD9B5 /* ChatTableViewCell.swift */,
+				3D1CC4381ECF084400EDD9B5 /* ChatTableViewCell.xib */,
+			);
+			name = "Chat Cells";
+			sourceTree = "<group>";
+		};
+		3D1CC43B1ECF0D7900EDD9B5 /* ChatModels */ = {
+			isa = PBXGroup;
+			children = (
+				3D1CC43C1ECF0D9E00EDD9B5 /* ChatModel.swift */,
+				3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */,
+			);
+			name = ChatModels;
+			sourceTree = "<group>";
+		};
+		3DF1FF611ED34B840014AEAF /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				3DF1FF621ED34B9E0014AEAF /* DialogViewController.swift */,
+			);
+			name = Dialog;
 			sourceTree = "<group>";
 		};
 		B1CC9D39BC0FBA1ED3B13407 /* Frameworks */ = {
@@ -445,11 +517,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D1CC3F11EC4A59100EDD9B5 /* ItemFooterTableViewCell.xib in Resources */,
 				0DD1177C1E9E77000010AD72 /* Chat.storyboard in Resources */,
 				0DFB00C31EA772480040B2A9 /* MapTableView.xib in Resources */,
 				0D75285A1EB9DDED002919DD /* UserHeaderTableViewCell.xib in Resources */,
 				0DD1176A1E9D66FD0010AD72 /* LaunchScreen.storyboard in Resources */,
+				3D1CC4201ECCFE5600EDD9B5 /* ItemMapTableViewCell.xib in Resources */,
 				0DD117671E9D66FD0010AD72 /* Assets.xcassets in Resources */,
 				0D75285E1EB9DDF8002919DD /* UserTableTableViewCell.xib in Resources */,
 				0D7528621EB9DE08002919DD /* UserButtonsTableViewCell.xib in Resources */,
@@ -458,7 +530,13 @@
 				0DE626681EB133A900FECDF4 /* tableViewHeader.xib in Resources */,
 				3D1CC41A1ECCA5A700EDD9B5 /* ItemDescriptionTableViewCell.xib in Resources */,
 				0DD1177A1E9E76C50010AD72 /* Profile.storyboard in Resources */,
+				3D1CC4351ECE5CD300EDD9B5 /* Item.storyboard in Resources */,
+				3D1CC41C1ECCDD1A00EDD9B5 /* ItemPhotoCollectionViewCell.xib in Resources */,
+				3D1CC41B1ECCDD1700EDD9B5 /* ItemPhotoCollectionTableViewCell.xib in Resources */,
 				0DD117621E9D66FD0010AD72 /* Main.storyboard in Resources */,
+				3D1CC4281ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.xib in Resources */,
+				3D1CC42C1ECE402500EDD9B5 /* ItemContactsTableViewCell.xib in Resources */,
+				3D1CC43A1ECF084400EDD9B5 /* ChatTableViewCell.xib in Resources */,
 				0DD117741E9E72680010AD72 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,42 +603,52 @@
 				0D7528641EB9E013002919DD /* UsersFactory.swift in Sources */,
 				0DE626581EB1160F00FECDF4 /* AddOperation.swift in Sources */,
 				0DD8EF671EA0C36800CF5774 /* UserPageViewController.swift in Sources */,
+				3D1CC4391ECF084400EDD9B5 /* ChatTableViewCell.swift in Sources */,
 				0DD117831E9E78980010AD72 /* Item.swift in Sources */,
 				3D1CC3E81EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift in Sources */,
 				0DD1175F1E9D66FD0010AD72 /* MapViewController.swift in Sources */,
 				0DE626561EB1160800FECDF4 /* AddPresenter.swift in Sources */,
+				3D1CC41E1ECCFA3700EDD9B5 /* ItemMapModel.swift in Sources */,
+				3D1CC43F1ECF8BF400EDD9B5 /* Chat.swift in Sources */,
 				0DE6264C1EB115CD00FECDF4 /* ChatPresenter.swift in Sources */,
+				3D1CC4241ECE371700EDD9B5 /* ItemContactsModel.swift in Sources */,
+				3D1CC4301ECE509500EDD9B5 /* API_GEOCODER.swift in Sources */,
 				3DAA3D821EAE870E00824AAB /* SetLocationMapController.swift in Sources */,
 				0D7528611EB9DE08002919DD /* UserButtonsTableViewCell.swift in Sources */,
 				0DE626501EB115EC00FECDF4 /* MapPresenter.swift in Sources */,
 				3D1CC4191ECB968800EDD9B5 /* ItemDescriptionModel.swift in Sources */,
 				3D1CC4101ECB894F00EDD9B5 /* ItemPresenter.swift in Sources */,
 				0DD117651E9D66FD0010AD72 /* LostAndFound.xcdatamodeld in Sources */,
+				3DF1FF631ED34B9E0014AEAF /* DialogViewController.swift in Sources */,
+				3D1CC4221ECE344E00EDD9B5 /* ItemHeaderModel.swift in Sources */,
 				0D2211A51EAF77130037E8F7 /* ModelsFactory.swift in Sources */,
-				0D7528731ECB0FC4002919DD /* ItemViewController.swift in Sources */,
-				3DF13BCA1EBBE8D100EF5EE7 /* API_GeoCoder.swift in Sources */,
 				0DE626541EB115FB00FECDF4 /* MapOperation.swift in Sources */,
 				3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */,
 				0DE626621EB1163600FECDF4 /* ChatManager.swift in Sources */,
 				3D1CC4151ECB944600EDD9B5 /* ItemPhotoCollectionModel.swift in Sources */,
 				0DE6264E1EB115D800FECDF4 /* ChatOperation.swift in Sources */,
 				3D1CC3EC1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift in Sources */,
+				3D1CC43D1ECF0D9E00EDD9B5 /* ChatModel.swift in Sources */,
 				0DE6265E1EB1162800FECDF4 /* UserPresenter.swift in Sources */,
 				0D7528661EC5A792002919DD /* OperationsManager.swift in Sources */,
 				0D22119C1EAB65EC0037E8F7 /* View.swift in Sources */,
 				0DE6265C1EB1162200FECDF4 /* UserManager.swift in Sources */,
+				3D1CC4331ECE523100EDD9B5 /* SetLocationOperation.swift in Sources */,
 				0D22119E1EAB65F90037E8F7 /* DependencyInjector.swift in Sources */,
 				0DE6265A1EB1161500FECDF4 /* AddManager.swift in Sources */,
-				3DF13BCC1EBBEA1B00EF5EE7 /* AdressManager.swift in Sources */,
+				3D1CC41F1ECCFE4C00EDD9B5 /* ItemViewController.swift in Sources */,
+				3DF13BCC1EBBEA1B00EF5EE7 /* SetLocationManager.swift in Sources */,
 				0DE626601EB1162F00FECDF4 /* UserOperation.swift in Sources */,
 				0DE626521EB115F400FECDF4 /* MapManager.swift in Sources */,
 				0DD117851E9E79A20010AD72 /* User.swift in Sources */,
 				0DE6266A1EB1366800FECDF4 /* tableViewHeader.swift in Sources */,
 				0D2211A21EAF74110037E8F7 /* ItemTableViewCell.swift in Sources */,
 				0D75285D1EB9DDF8002919DD /* UserTableTableViewCell.swift in Sources */,
+				3D1CC42B1ECE402500EDD9B5 /* ItemContactsTableViewCell.swift in Sources */,
 				0D7528591EB9DDED002919DD /* UserHeaderTableViewCell.swift in Sources */,
 				0DE6264A1EB115B800FECDF4 /* ChatViewController.swift in Sources */,
 				0DD1175D1E9D66FD0010AD72 /* AppDelegate.swift in Sources */,
+				3D1CC4271ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

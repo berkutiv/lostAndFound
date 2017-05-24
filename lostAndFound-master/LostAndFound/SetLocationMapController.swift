@@ -12,8 +12,7 @@ import GoogleMaps
 
 protocol BackCoordinates
 {
-    func setLocation(location: CLLocation)
-    
+    func setLocation(adress : String)
 }
 
 class SetLocationViewController: UIViewController, CLLocationManagerDelegate
@@ -24,7 +23,7 @@ class SetLocationViewController: UIViewController, CLLocationManagerDelegate
     var camera = GMSCameraPosition()
     var myLocation = CLLocation()
     var delegate : BackCoordinates?
-    
+    var adress = String()
     
     @IBAction func backButton(_ sender: Any)
     {
@@ -39,6 +38,12 @@ class SetLocationViewController: UIViewController, CLLocationManagerDelegate
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
     }
    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
@@ -56,36 +61,24 @@ class SetLocationViewController: UIViewController, CLLocationManagerDelegate
         
         let marker = GMSMarker()
         myLocation = CLLocation(latitude: camera.target.latitude, longitude: camera.target.longitude)
-        delegate?.setLocation(location: myLocation)
+        
         print("Мои координаты 1 - \(myLocation)")
         marker.snippet = "Current location"
         marker.appearAnimation = kGMSMarkerAnimationPop
         marker.map = myView
         self.mapView.addSubview(myView)
         
-        
-        AdressManager.getAdress(latitude: myLocation.coordinate.latitude, longitude: myLocation.coordinate.longitude, success: {_ in
+        SetLocationManager.getAdress(latitude: myLocation.coordinate.latitude, longitude: myLocation.coordinate.longitude, success: {
+            [weak self] (currentadress) in
             
             
             DispatchQueue.main.async
                 {
-                    print("lffs ljikb")
+                    self?.adress = currentadress
+                    self?.delegate?.setLocation(adress: currentadress)
+                    
             }
-        }, failure:{errorCode in
+            }, failure:{errorCode in
         })
     }
-    
-////    func adressName ()
-////    {
-////        AdressManager.getAdress(latitude: myLocation.coordinate.latitude, longitude: myLocation.coordinate.longitude, success: {_ in
-////            self.adressName()
-////            
-////            DispatchQueue.main.async
-////                {
-////                    print("lffs ljikb")
-////                }
-////        }, failure:{errorCode in
-////    })
-//    }
-
 }

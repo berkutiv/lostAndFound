@@ -34,7 +34,6 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
         itemDescriptionTextView.setContentOffset(CGPoint.zero, animated: false)
         itemNameTextField.delegate = self
         itemRewardTextFiled.delegate = self
-        
 
         let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddItemViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -117,22 +116,22 @@ extension AddItemViewController
         buttonPressed = 1
         let actionSheet = UIAlertController(title: "New Photo", message: nil, preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Камера", style: .default, handler: {
             action in
             self.showCamera()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Album", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Мои фотографии", style: .default, handler: {
             action in
             self.showAlbum()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Delete", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .default, handler: {
             action in
             self.photoButton.setImage(UIImage(named: "w512h5121347464802Pictures"), for: .normal)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
 
@@ -144,22 +143,22 @@ extension AddItemViewController
 
         let actionSheet = UIAlertController(title: "New Photo", message: nil, preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Камера", style: .default, handler: {
             action in
             self.showCamera()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Album", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Мои фотографии", style: .default, handler: {
             action in
             self.showAlbum()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Delete", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .default, handler: {
             action in
             self.photoButton1.setImage(UIImage(named: "w512h5121347464802Pictures"), for: .normal)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
     }
@@ -170,22 +169,22 @@ extension AddItemViewController
         let actionSheet = UIAlertController(title: "New Photo", message: nil, preferredStyle: .actionSheet)
         
         
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Камера", style: .default, handler: {
             action in
             self.showCamera()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Album", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Мои фотографии", style: .default, handler: {
             action in
             self.showAlbum()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Delete", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .default, handler: {
             action in
             self.photoButton2.setImage(UIImage(named: "w512h5121347464802Pictures"), for: .normal)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
     }
@@ -195,22 +194,22 @@ extension AddItemViewController
         buttonPressed = 4
         let actionSheet = UIAlertController(title: "New Photo", message: nil, preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Камера", style: .default, handler: {
             action in
             self.showCamera()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Album", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Мои фотографии", style: .default, handler: {
             action in
             self.showAlbum()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Delete", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .default, handler: {
             action in
             self.photoButton3.setImage(UIImage(named: "w512h5121347464802Pictures"), for: .normal)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
     }
@@ -262,13 +261,11 @@ extension AddItemViewController
         dismiss(animated: true, completion: nil)
     }
     
-    func setLocation(location: CLLocation)
+    func setLocation(adress: String)
     {
-        print(" Мои координаты 2 - \(location)")
-        myLocation = location
-        mapButton.setTitle(String(myLocation.coordinate.latitude) + " " + String(myLocation.coordinate.longitude), for: .normal)
+        print("Мой адрес сегодня такой - \(adress)")
+        mapButton.setTitle(adress, for: .normal)
     }
-    
 }
 //MARK: Программный переход в SetLocationViewController
 extension AddItemViewController
@@ -281,8 +278,6 @@ extension AddItemViewController
         
         navigationController?.pushViewController(initViewController, animated: true)
     }
-    
-    
 }
 
 
