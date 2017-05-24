@@ -8,17 +8,19 @@
 
 import UIKit
 
-class UserButtonsTableViewCell: UITableViewCell {
+class UserButtonsTableViewCell: UITableViewCell
+{
+    @IBOutlet weak var messageButton: UIButton!
 
-    override func awakeFromNib() {
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
-        // Initialization code
+        messageButton.layer.cornerRadius = self.messageButton.frame.width/18.0
+        messageButton.layer.masksToBounds = true
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBAction func sendMessage(_ sender: Any)
+    {
+        
     }
-    
 }

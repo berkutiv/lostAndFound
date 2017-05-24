@@ -27,6 +27,7 @@ class UsersFactory
             let name = kNames[randIndex]
             
             let user = User(id: "\(i)", name: name, phone: "", email: "", photo: "\(randIndex)")
+            user.itemsCollection = ModelsFactory.getModelsForUser() as! NSMutableArray
             outArray.add(user)
         }
         return outArray
@@ -42,6 +43,6 @@ class UsersFactory
             }
         }
         
-        return User(id: "", name: "", phone: "", email: "", photo: "")
+        return User(id: "", name: "пустой юзер", phone: "", email: "", photo: "")
     }
 }

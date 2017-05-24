@@ -203,11 +203,9 @@
 			isa = PBXGroup;
 			children = (
 				0D7528571EB9DDED002919DD /* UserHeaderTableViewCell.swift */,
-				0D7528581EB9DDED002919DD /* UserHeaderTableViewCell.xib */,
 				0D75285B1EB9DDF8002919DD /* UserTableTableViewCell.swift */,
-				0D75285C1EB9DDF8002919DD /* UserTableTableViewCell.xib */,
 				0D75285F1EB9DE08002919DD /* UserButtonsTableViewCell.swift */,
-				0D7528601EB9DE08002919DD /* UserButtonsTableViewCell.xib */,
+				0DF694FA1ED427130083868F /* XIBs */,
 			);
 			name = "Сustom Cells";
 			sourceTree = "<group>";
@@ -363,6 +361,16 @@
 				3D1CC42F1ECE509500EDD9B5 /* API_GEOCODER.swift */,
 			);
 			name = ApiWrapper;
+			sourceTree = "<group>";
+		};
+		0DF694FA1ED427130083868F /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				0D7528581EB9DDED002919DD /* UserHeaderTableViewCell.xib */,
+				0D75285C1EB9DDF8002919DD /* UserTableTableViewCell.xib */,
+				0D7528601EB9DE08002919DD /* UserButtonsTableViewCell.xib */,
+			);
+			name = XIBs;
 			sourceTree = "<group>";
 		};
 		3D1CC3D91EC4A0A900EDD9B5 /* Item Cells */ = {
