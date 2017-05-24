@@ -27,4 +27,19 @@ class ModelsFactory
         }
         return dataSource
     }
+    
+    class func getModelsForUser() -> NSArray
+    {
+        var data = NSMutableArray()
+        var randCount = Int(arc4random_uniform(7))
+        for i in 0...randCount
+        {
+            var randomInt = Int(arc4random_uniform(13))
+            var randomLat = Int(arc4random_uniform(60))
+            var randomLon = Int(arc4random_uniform(60))
+            let model = Item(id: "\(i)", title: names[randomInt], description: "", photosURL: [], longitude: "\(randomLon)", latitude: "\(randomLat)", userId: "")
+            data.add(model)
+        }
+        return data
+    }
 }

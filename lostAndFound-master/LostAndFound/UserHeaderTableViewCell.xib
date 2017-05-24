@@ -19,24 +19,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="222"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-No-EpZ">
-                        <rect key="frame" x="8" y="38" width="304" height="168"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AIy-lj-fUa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="168" id="Vex-Bh-QXp"/>
+                            <constraint firstAttribute="height" constant="223" id="3J3-aF-KC2"/>
                         </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-No-EpZ">
+                        <rect key="frame" x="8" y="176" width="304" height="30"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="25"/>
-                        <color key="textColor" red="0.026173857868020289" green="0.026173857868020289" blue="0.026173857868020289" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="AIy-lj-fUa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1hc-V1-6NP"/>
                     <constraint firstItem="FUM-No-EpZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="4Nl-Nb-8ed"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="FUM-No-EpZ" secondAttribute="bottom" constant="9" id="Bks-0K-fnO"/>
+                    <constraint firstAttribute="bottom" secondItem="AIy-lj-fUa" secondAttribute="bottom" constant="-0.5" id="99b-H6-atj"/>
+                    <constraint firstItem="FUM-No-EpZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="168" id="Fg3-dw-0dC"/>
+                    <constraint firstItem="AIy-lj-fUa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Jo8-U6-2yK"/>
                     <constraint firstItem="FUM-No-EpZ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="XwD-mA-WVK"/>
-                    <constraint firstItem="FUM-No-EpZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="30" id="bBH-Bb-cql"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="FUM-No-EpZ" secondAttribute="bottom" constant="8" id="kB8-sO-W1f"/>
+                    <constraint firstAttribute="trailing" secondItem="AIy-lj-fUa" secondAttribute="trailing" id="vYn-LG-cxT"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="userAvatar" destination="AIy-lj-fUa" id="Lz9-W1-veU"/>
                 <outlet property="userNameLabel" destination="FUM-No-EpZ" id="Hqy-eK-kGu"/>
             </connections>
             <point key="canvasLocation" x="34" y="29.5"/>

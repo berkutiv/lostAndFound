@@ -10,14 +10,14 @@ import Foundation
 
 class UserPresenter: Presenter
 {
-    var user = User(id: "", name: "от", phone: "", email: "", photo: "")
+    var dataSource = NSMutableArray()
     weak var view: View?
     
     func viewLoaded(view: View) -> Void
     {
         self.view = view
         view.addLoader()
-        getData(id: "1")
+        getData(id: "")
     }
     
     func numberOfModels(inSection section: Int) -> Int
@@ -32,16 +32,26 @@ class UserPresenter: Presenter
     
     func getModel(by id: String) -> Any
     {
-        getData(id: id)
-        return user
+        for i in 0..<dataSource.count
+        {
+            if ((dataSource[i] as! User).id == id)
+            {
+                return dataSource[i] as! User
+            }
+        }
+        return 0
     }
     
     private func getData(id: String)
     {
-        UserManager.getUser(id: id, success: { (user) in
+        
+        //ДОЛГО ДОХОДЯТ ДАННЫЕ, НЕОБХОДИМ СИГНАЛЬНЫЙ БЛОК, ИЛИ ЧТО-ТО ВРОДЕ ЭТОГО
+        
+        UserManager.getUser(id: id, success: { (array) in
             DispatchQueue.main.async{
                 self.view?.removeLoader()
-                self.user = user
+                self.dataSource = array as! NSMutableArray
+                print("count \(self.dataSource.count)")
                 self.view?.reloadData()
             }
         }) { [weak self](code) in
@@ -57,8 +67,8 @@ class UserPresenter: Presenter
     
     }
     
-     func model (at indexPath : IndexPath) ->Any
-     {
+    func model (at indexPath : IndexPath) ->Any
+    {
         return self
     }
     

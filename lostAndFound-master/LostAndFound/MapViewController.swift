@@ -214,7 +214,7 @@ extension MapViewController
 {
     public func locateMarker(longitude: String, latitude: String)
     {
-        print("long \(longitude) lat \(latitude)")
+        //print("long \(longitude) lat \(latitude)")
         let camera = GMSCameraPosition.camera(withLatitude: Double(latitude)!,
                                               longitude: Double(longitude)!,
                                               zoom: 350.0)
