@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="I0k-FR-v7O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7Nm-Hm-NuC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--карта-->
+        <!--Map View Controller-->
         <scene sceneID="Tog-g5-ZdI">
             <objects>
-                <viewController storyboardIdentifier="mapId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I0k-FR-v7O" customClass="MapViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="I0k-FR-v7O" customClass="MapViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9IM-l6-UVU"/>
                         <viewControllerLayoutGuide type="bottom" id="8xv-TD-fgJ"/>
@@ -33,12 +34,31 @@
                             <constraint firstItem="OVH-ym-RZk" firstAttribute="top" secondItem="BKs-Pl-huu" secondAttribute="top" id="uUd-JT-NZK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="карта" id="WKj-Z1-176"/>
+                    <navigationItem key="navigationItem" id="W2Y-aw-Djr"/>
                     <connections>
                         <outlet property="blackView" destination="OVH-ym-RZk" id="j6Q-Tm-zp1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCB-eH-KPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1511.2" y="-926.08695652173924"/>
+        </scene>
+        <!--карта-->
+        <scene sceneID="yzD-ah-1Gi">
+            <objects>
+                <navigationController storyboardIdentifier="mapId" automaticallyAdjustsScrollViewInsets="NO" id="7Nm-Hm-NuC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="карта" id="WKj-Z1-176"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Rr4-am-FeD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="I0k-FR-v7O" kind="relationship" relationship="rootViewController" id="7eP-mk-oIM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brD-gf-rdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="572" y="-926.08695652173924"/>
         </scene>
