@@ -21,7 +21,8 @@ class ItemTableViewCell: UITableViewCell
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        // Initialization code
+        mapButton.layer.cornerRadius = self.mapButton.frame.width/18.0
+        mapButton.layer.masksToBounds = true
     }
 
     func configureSelf(model: Item)

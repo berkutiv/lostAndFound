@@ -111,8 +111,8 @@ extension UserPageViewController: UITableViewDelegate, UITableViewDataSource
             //print("count \(user.itemsCollection.count)")
             cell.configureSelf(withDataModel: presenter!.getModel(by: id) as! User)
             cell.pushBlock = {[weak self] (model) in
-                let storyBoard = UIStoryboard(name: "Add", bundle: nil)
-                let itemViewController = storyBoard.instantiateViewController(withIdentifier: "itemViewController") as! ItemViewController
+                let storyBoard = UIStoryboard(name: "Item", bundle: nil)
+                let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
                 
                 itemViewController.id = "\(model.id)"
                 self?.present(itemViewController, animated: true, completion: nil)
