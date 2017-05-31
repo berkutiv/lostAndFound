@@ -23,6 +23,9 @@ class UserPageViewController: UIViewController
     let kUserButtonsNIB = UINib(nibName: "UserButtonsTableViewCell", bundle: nil)
     let kUserButtonsReuseIdentifier = "kUserButtonsReuseIdentifier"
     
+    let kItemCellNIB = UINib(nibName: "ItemTableViewCell", bundle: nil)
+    let kItemCellReuseIdentifier = "kItemCellReuseIdentifier"
+    
     var presenter: Presenter?    
     var id = "1"
     var blockWithCoordinates: ((String, String) -> Void)!
@@ -46,6 +49,7 @@ class UserPageViewController: UIViewController
         tableView.register(kUserHeaderNIB, forCellReuseIdentifier: kUserHeaderReuseIdentifier)
         tableView.register(kUserTableNIB, forCellReuseIdentifier: kUserTableReuseIdentifier)
         tableView.register(kUserButtonsNIB, forCellReuseIdentifier: kUserButtonsReuseIdentifier)
+        tableView.register(kItemCellNIB, forCellReuseIdentifier: kItemCellReuseIdentifier)
     }
 }
 
@@ -56,8 +60,12 @@ extension UserPageViewController: View
         tableView.dataSource = self
         tableView.delegate = self
         self.presenter = presenter
-        presenter.viewLoaded(view: self)
         
+        let customData = NSMutableDictionary()
+        customData.setValue(id, forKey: "user_id")
+        presenter.provide(data: customData)
+        
+        presenter.viewLoaded(view: self)
         tableView.reloadData()
     }
     
@@ -89,46 +97,72 @@ extension UserPageViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 3
+        return (presenter!.getModel(by: id) as! User).modelsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if indexPath.row == 0
+        let model = (presenter!.getModel(by: id) as! User).modelsArray[indexPath.row]
+        print("model count \((presenter!.getModel(by: id) as! User).modelsArray.count)")
+        
+        if model is UserHeader
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: kUserHeaderReuseIdentifier, for: indexPath) as! UserHeaderTableViewCell
-            cell.configureSelf(withDataModel: presenter!.getModel(by: id) as! User)
+            cell.configureSelf(withDataModel: model as! UserHeader)
             return cell
         }
-        if indexPath.row == 1
+        if model is UserButtons
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: kUserButtonsReuseIdentifier, for: indexPath) as! UserButtonsTableViewCell
+            cell.configureSelf(withDataModel: model as! UserButtons)
             return cell
         }
-        if indexPath.row == 2
+        if model is UserItem
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: kUserTableReuseIdentifier, for: indexPath) as! UserTableTableViewCell
-            //print("count \(user.itemsCollection.count)")
-            cell.configureSelf(withDataModel: presenter!.getModel(by: id) as! User)
-            cell.pushBlock = {[weak self] (model) in
-                let storyBoard = UIStoryboard(name: "Item", bundle: nil)
-                let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
-                
-                itemViewController.id = "\(model.id)"
-                self?.present(itemViewController, animated: true, completion: nil)
+            let cell = tableView.dequeueReusableCell(withIdentifier: kItemCellReuseIdentifier, for: indexPath) as! ItemTableViewCell
+            
+            cell.configureSelf(model: (model as! UserItem).item)
+            cell.coordinatesBlock = {[weak self] (longtitude, latitude) in
+                print("в блоке")
+//                self?.blockWithCoordinates(model.longitude, model.latitude)
+//                self?.hideTable()
+//                tableView.isScrollEnabled = false
+//                var indexPath = IndexPath(item: 0, section: 0)
+//                tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
             }
-            cell.blockWithCoordinates = {[weak self] (longtitude, latitude) in
-                let storyBoard = UIStoryboard(name: "Map", bundle: nil)
-                let mapViewController = storyBoard.instantiateViewController(withIdentifier: "mapId") as! MapViewController
-                mapViewController.viewWillAppear(true)
-                mapViewController.locateMarker(longitude: longtitude, latitude: latitude)
-                self?.present(mapViewController, animated: true, completion: nil)
-            }
+
+//            cell.pushBlock = {[weak self] (model) in
+//                let storyBoard = UIStoryboard(name: "Item", bundle: nil)
+//                let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
+//                
+//                itemViewController.id = "\(model.id)"
+//                self?.present(itemViewController, animated: true, completion: nil)
+//            }
+//            cell.blockWithCoordinates = {[weak self] (longtitude, latitude) in
+//                let storyBoard = UIStoryboard(name: "Map", bundle: nil)
+//                let mapViewController = storyBoard.instantiateViewController(withIdentifier: "mapId") as! MapViewController
+//                mapViewController.viewWillAppear(true)
+//                mapViewController.locateMarker(longitude: longtitude, latitude: latitude)
+//                self?.present(mapViewController, animated: true, completion: nil)
+//            }
 
 
             return cell
         }
-        
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let model = (presenter!.getModel(by: id) as! User).modelsArray[indexPath.row]
+        
+        if model is UserItem
+        {
+            let storyBoard = UIStoryboard(name: "Item", bundle: nil)
+            let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
+            
+            itemViewController.id = "\((model as! UserItem).item.id)"
+            self.present(itemViewController, animated: true, completion: nil)
+        }
     }
 }

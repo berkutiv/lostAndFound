@@ -18,18 +18,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqv-8x-RrR">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="23"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tCn-Mu-n7R">
-                            <rect key="frame" x="8" y="17" width="359" height="2"/>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tCn-Mu-n7R">
+                            <rect key="frame" x="170" y="10" width="34" height="2"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="2" id="cd3-Wk-3MX"/>
+                                <constraint firstAttribute="height" constant="5" id="QJl-OE-yFc"/>
+                                <constraint firstAttribute="width" constant="34" id="g1b-1x-hxK"/>
                             </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.85872977969999997" green="0.85887759919999995" blue="0.85872042179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="tCn-Mu-n7R" firstAttribute="centerX" secondItem="uqv-8x-RrR" secondAttribute="centerX" id="HZR-Ai-iio"/>
-                        <constraint firstItem="tCn-Mu-n7R" firstAttribute="centerY" secondItem="uqv-8x-RrR" secondAttribute="centerY" id="pyB-4l-sch"/>
+                        <constraint firstItem="tCn-Mu-n7R" firstAttribute="top" secondItem="uqv-8x-RrR" secondAttribute="top" constant="7" id="8KJ-L5-6p3"/>
+                        <constraint firstItem="tCn-Mu-n7R" firstAttribute="centerX" secondItem="uqv-8x-RrR" secondAttribute="centerX" id="Xkf-hb-W5i"/>
                     </constraints>
                 </view>
             </subviews>
@@ -41,6 +42,9 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="smallDragger" destination="tCn-Mu-n7R" id="oYn-6J-hJz"/>
+            </connections>
             <point key="canvasLocation" x="33.5" y="-203.5"/>
         </view>
     </objects>

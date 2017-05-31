@@ -15,7 +15,11 @@ class UserButtonsTableViewCell: UITableViewCell
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        messageButton.layer.cornerRadius = self.messageButton.frame.width/18.0
+    }
+    
+    func configureSelf(withDataModel model: UserButtons)
+    {
+        messageButton.layer.cornerRadius = self.messageButton.frame.width/22.0
         messageButton.layer.masksToBounds = true
     }
 

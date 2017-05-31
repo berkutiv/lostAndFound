@@ -10,13 +10,13 @@ import Foundation
 
 class UserOperation: Operation
 {
-    var success: (NSArray) -> Void
+    var success: (User) -> Void
     var failure: (Int) -> Void
     var id: String
     
     var internetTask : URLSessionDataTask?
     
-    init(id: String, success: @escaping (NSArray) -> Void, failure: @escaping (Int) -> Void)
+    init(id: String, success: @escaping (User) -> Void, failure: @escaping (Int) -> Void)
     {
         self.id = id
         self.success = success
@@ -31,15 +31,15 @@ class UserOperation: Operation
     override func main()
     {
         let semaphore = DispatchSemaphore(value: 0)
-        internetTask = API_WRAPPER.getUsers(id: id, success: { (array) in
+        internetTask = API_WRAPPER.getUsers(id: id, success: { (user) in
             
             if self.isCancelled == false
             {
-                self.success(array)
+                self.success(user)
             }
             else
             {
-                self.success([])
+                self.success(User(id: "операция нет юзера"))
             }
             
             semaphore.signal()

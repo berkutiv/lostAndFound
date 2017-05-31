@@ -10,10 +10,10 @@ import Foundation
 
 class UserManager
 {
-    class func getUser(id: String, success : @escaping (NSArray) -> Void , failure : @escaping (Int) -> Void)
+    class func getUser(id: String, success : @escaping (User) -> Void , failure : @escaping (Int) -> Void)
     {
-        let userOperation = UserOperation(id: id, success: { (array) in
-            success(array)
+        let userOperation = UserOperation(id: id, success: { (user) in
+            success(user)
         }, failure: failure)
         OperationsManager.addOperation(op: userOperation, cancellingQueue: true)
     }

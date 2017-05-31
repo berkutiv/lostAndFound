@@ -1,70 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7Nm-Hm-NuC">
-
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fkK-Ym-MtN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
-        <scene sceneID="Tog-g5-ZdI">
+        <!--Карта-->
+        <scene sceneID="Ptz-Oj-Uf5">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="I0k-FR-v7O" customClass="MapViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="mapId" storyboardIdentifier="mapId" id="fkK-Ym-MtN" customClass="MapViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9IM-l6-UVU"/>
-                        <viewControllerLayoutGuide type="bottom" id="8xv-TD-fgJ"/>
+                        <viewControllerLayoutGuide type="top" id="pf9-kZ-Zln"/>
+                        <viewControllerLayoutGuide type="bottom" id="jYa-I1-p9E"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BKs-Pl-huu">
+                    <view key="view" contentMode="scaleToFill" id="Zxl-Sg-Tlu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-ym-RZk">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-Ka-U4b">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="0.44707402019999998" blue="0.21549591800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="OVH-ym-RZk" secondAttribute="trailing" id="4WV-Se-3Nb"/>
-                            <constraint firstItem="8xv-TD-fgJ" firstAttribute="top" secondItem="OVH-ym-RZk" secondAttribute="bottom" id="MSJ-RA-3aM"/>
-                            <constraint firstItem="OVH-ym-RZk" firstAttribute="leading" secondItem="BKs-Pl-huu" secondAttribute="leading" id="tOY-eh-D5g"/>
-                            <constraint firstItem="OVH-ym-RZk" firstAttribute="top" secondItem="BKs-Pl-huu" secondAttribute="top" id="uUd-JT-NZK"/>
+                            <constraint firstAttribute="trailing" secondItem="Xqj-Ka-U4b" secondAttribute="trailing" id="5hS-ep-gao"/>
+                            <constraint firstItem="Xqj-Ka-U4b" firstAttribute="top" secondItem="Zxl-Sg-Tlu" secondAttribute="top" id="Mtc-bZ-v4u"/>
+                            <constraint firstItem="Xqj-Ka-U4b" firstAttribute="leading" secondItem="Zxl-Sg-Tlu" secondAttribute="leading" id="UWi-KC-bUn"/>
+                            <constraint firstItem="jYa-I1-p9E" firstAttribute="top" secondItem="Xqj-Ka-U4b" secondAttribute="bottom" id="eCV-Yj-KQa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="W2Y-aw-Djr"/>
+                    <tabBarItem key="tabBarItem" title="Карта" image="map_icon" selectedImage="map_icon" id="ei7-vo-XMV" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="yOffSet">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="mTo-gn-kg6"/>
                     <connections>
-                        <outlet property="blackView" destination="OVH-ym-RZk" id="j6Q-Tm-zp1"/>
+                        <outlet property="blackView" destination="Xqj-Ka-U4b" id="NQK-vx-nY7"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jCB-eH-KPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18M-9X-kGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511.2" y="-926.08695652173924"/>
-        </scene>
-        <!--карта-->
-        <scene sceneID="yzD-ah-1Gi">
-            <objects>
-                <navigationController storyboardIdentifier="mapId" automaticallyAdjustsScrollViewInsets="NO" id="7Nm-Hm-NuC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="карта" id="WKj-Z1-176"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Rr4-am-FeD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="I0k-FR-v7O" kind="relationship" relationship="rootViewController" id="7eP-mk-oIM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="brD-gf-rdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="572" y="-926.08695652173924"/>
+            <point key="canvasLocation" x="1364" y="-143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map_icon" width="32" height="32"/>
+    </resources>
 </document>

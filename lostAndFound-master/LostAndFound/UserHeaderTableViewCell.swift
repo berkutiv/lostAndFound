@@ -13,7 +13,7 @@ class UserHeaderTableViewCell: UITableViewCell
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userAvatar: UIImageView!
     
-    func configureSelf(withDataModel model: User)
+    func configureSelf(withDataModel model: UserHeader)
     {
         userNameLabel.text = model.name
         userAvatar.image = UIImage(named: model.photo)

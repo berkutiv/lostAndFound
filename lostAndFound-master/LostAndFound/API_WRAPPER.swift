@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class API_WRAPPER
 {
-    class func getUsers (id: String, success : @escaping (NSArray) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
+    class func getUsers (id: String, success : @escaping (User) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
     {
         let urlString = "https://api.vk.com/method/newsfeed.get?count=10&start_from=&access_token=&filter=posts&v=5.63"
         
@@ -27,7 +27,14 @@ class API_WRAPPER
         })
         
         let array = UsersFactory.generateData()
-        success(array)
+        for i in 0..<array.count
+        {
+            if (array[i] as! User).id == id
+            {
+                success((array[i] as! User))
+            }
+        }
+        
         
         task.resume()
         return task

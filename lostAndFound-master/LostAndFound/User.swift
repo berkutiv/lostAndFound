@@ -11,18 +11,10 @@ import Foundation
 class User
 {
     var id: String
-    var name: String
-    var phone: String
-    var email: String
-    var photo: String
-    var itemsCollection = NSMutableArray()
+    var modelsArray = NSMutableArray()
     
-    init(id: String, name: String, phone: String, email: String, photo: String)
+    init(id: String)
     {
         self.id = id
-        self.name = name
-        self.phone = phone
-        self.email = email
-        self.photo = photo
     }
 }

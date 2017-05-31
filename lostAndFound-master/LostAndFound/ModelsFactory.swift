@@ -31,7 +31,7 @@ class ModelsFactory
     class func getModelsForUser() -> NSArray
     {
         var data = NSMutableArray()
-        var randCount = Int(arc4random_uniform(7))
+        var randCount = Int(arc4random_uniform(12)) + 3
         for i in 0...randCount
         {
             var randomInt = Int(arc4random_uniform(13))

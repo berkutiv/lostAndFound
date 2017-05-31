@@ -26,8 +26,21 @@ class UsersFactory
             let prof = kProfessions[randIndex]
             let name = kNames[randIndex]
             
-            let user = User(id: "\(i)", name: name, phone: "", email: "", photo: "\(randIndex)")
-            user.itemsCollection = ModelsFactory.getModelsForUser() as! NSMutableArray
+            let user = User(id: "\(i)")
+            let userHeader = UserHeader(id: "\(i)", name: name, phone: "", email: "", photo: "\(randIndex)")
+            user.modelsArray.add(userHeader)
+            
+            let userButtons = UserButtons(numberOfButtons: 1)
+            user.modelsArray.add(userButtons)
+            
+            let itemsCollection = ModelsFactory.getModelsForUser() as! NSMutableArray
+            
+            for i in 0..<itemsCollection.count
+            {
+                let userItem = UserItem(item: itemsCollection[i] as! Item)
+                user.modelsArray.add(userItem)
+            }
+           
             outArray.add(user)
         }
         return outArray
@@ -43,6 +56,6 @@ class UsersFactory
             }
         }
         
-        return User(id: "", name: "пустой юзер", phone: "", email: "", photo: "")
+        return User(id: "пустой юзер в фабрике")
     }
 }

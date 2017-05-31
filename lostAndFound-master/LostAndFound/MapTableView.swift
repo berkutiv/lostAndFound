@@ -101,7 +101,6 @@ extension MapTableView: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: kItemTableViewCellReuseIdentifier, for: indexPath) as! ItemTableViewCell
         cell.configureSelf(model: model)
         cell.coordinatesBlock = {[weak self] (longtitude, latitude) in
-            print("в блоке")
             self?.blockWithCoordinates(model.longitude, model.latitude)
             self?.hideTable()
             tableView.isScrollEnabled = false
@@ -115,7 +114,6 @@ extension MapTableView: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let model = dataSource[indexPath.row] as! Item
-        print("нажали")
         pushBlock(model)
     }
     

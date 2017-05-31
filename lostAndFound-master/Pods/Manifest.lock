@@ -6,6 +6,7 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.1.1):
     - GoogleMaps/Base (= 2.1.1)
+  - RAMAnimatedTabBarController (2.0.13)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -15,6 +16,7 @@ PODS:
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
+  - RAMAnimatedTabBarController (~> 2.0.13)
   - SDWebImage (~> 3.8)
   - SwiftyJSON
   - UITextView+Placeholder (~> 1.2)
@@ -22,10 +24,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
+  RAMAnimatedTabBarController: 2510f3b66954c3f77ea1042a35d34df8f5f3b604
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
 
-PODFILE CHECKSUM: dc528e0526aa2558903fc541e28992cec6270dd4
+PODFILE CHECKSUM: 04075f216bfdc7f6d347e0d1f2d9add57b57314f
 
 COCOAPODS: 1.1.1

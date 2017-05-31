@@ -20,61 +20,70 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcE-bq-jJK">
-                        <rect key="frame" x="102" y="9" width="210" height="25"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="21"/>
+                        <rect key="frame" x="102" y="8.5" width="210" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDI-bX-j2n">
-                        <rect key="frame" x="102" y="36" width="210" height="19"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                        <rect key="frame" x="102" y="34.5" width="210" height="18"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xBZ-3w-FaC">
-                        <rect key="frame" x="8" y="9" width="78" height="78.5"/>
+                        <rect key="frame" x="8" y="8.5" width="78" height="78"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="78" id="N5f-6K-lFI"/>
                             <constraint firstAttribute="height" constant="78" id="qoX-aP-NcI"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vz-rp-jG1">
-                        <rect key="frame" x="102" y="63" width="137" height="24"/>
-                        <color key="backgroundColor" red="0.85872977969999997" green="0.85887759919999995" blue="0.85872042179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="C0m-C5-tnI">
+                        <rect key="frame" x="265" y="41" width="47" height="47"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="123" id="DNN-ca-jRe"/>
+                            <constraint firstAttribute="height" constant="47" id="dAn-3c-Viw"/>
+                            <constraint firstAttribute="width" constant="47" id="vYv-sc-JXg"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
-                        <state key="normal" title="Показать на карте">
-                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edN-DF-G9F">
+                        <rect key="frame" x="265" y="41" width="47" height="47"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="47" id="EIx-A3-rwp"/>
+                            <constraint firstAttribute="height" constant="47" id="zLc-Hg-STj"/>
+                        </constraints>
                         <connections>
-                            <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HXY-86-hXi"/>
+                            <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7e5-pK-8hL"/>
                         </connections>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="XDI-bX-j2n" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="4hX-dg-RUL"/>
+                    <constraint firstItem="C0m-C5-tnI" firstAttribute="top" secondItem="BcE-bq-jJK" secondAttribute="bottom" constant="8.5" id="5ko-IJ-U0O"/>
                     <constraint firstItem="BcE-bq-jJK" firstAttribute="leading" secondItem="xBZ-3w-FaC" secondAttribute="trailing" constant="16" id="6SJ-OX-7lC"/>
-                    <constraint firstItem="8Vz-rp-jG1" firstAttribute="leading" secondItem="xBZ-3w-FaC" secondAttribute="trailing" constant="16" id="8rr-1h-unI"/>
+                    <constraint firstAttribute="bottom" secondItem="edN-DF-G9F" secondAttribute="bottom" constant="5" id="98w-75-dtm"/>
+                    <constraint firstItem="edN-DF-G9F" firstAttribute="top" secondItem="BcE-bq-jJK" secondAttribute="bottom" constant="8.5" id="AAU-46-2RB"/>
+                    <constraint firstAttribute="bottom" secondItem="C0m-C5-tnI" secondAttribute="bottom" constant="5" id="DQd-VY-xKw"/>
                     <constraint firstItem="xBZ-3w-FaC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="PV4-4Q-3tm"/>
                     <constraint firstItem="XDI-bX-j2n" firstAttribute="top" secondItem="BcE-bq-jJK" secondAttribute="bottom" constant="2" id="cQs-Ps-hLH"/>
                     <constraint firstItem="BcE-bq-jJK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="jqs-xC-MSD"/>
-                    <constraint firstItem="8Vz-rp-jG1" firstAttribute="top" secondItem="XDI-bX-j2n" secondAttribute="bottom" constant="8" id="kNC-jT-cq5"/>
-                    <constraint firstAttribute="bottom" secondItem="xBZ-3w-FaC" secondAttribute="bottom" id="pGD-rE-Wz2"/>
+                    <constraint firstAttribute="trailing" secondItem="C0m-C5-tnI" secondAttribute="trailing" constant="8" id="mUS-xN-U9f"/>
+                    <constraint firstAttribute="bottom" secondItem="xBZ-3w-FaC" secondAttribute="bottom" constant="5" id="pGD-rE-Wz2"/>
                     <constraint firstItem="xBZ-3w-FaC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="r4R-sO-rUJ"/>
                     <constraint firstItem="BcE-bq-jJK" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="vTS-f1-HPb"/>
                     <constraint firstItem="XDI-bX-j2n" firstAttribute="leading" secondItem="xBZ-3w-FaC" secondAttribute="trailing" constant="16" id="xTC-gi-v8n"/>
-                    <constraint firstAttribute="bottom" secondItem="8Vz-rp-jG1" secondAttribute="bottom" constant="8" id="yqd-h5-mrO"/>
+                    <constraint firstAttribute="trailing" secondItem="edN-DF-G9F" secondAttribute="trailing" constant="8" id="zcv-Ar-NqB"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="buttonPin" destination="edN-DF-G9F" id="xe4-uS-VnV"/>
                 <outlet property="descriptionLabel" destination="XDI-bX-j2n" id="loX-3K-1KA"/>
-                <outlet property="mapButton" destination="8Vz-rp-jG1" id="ob4-D9-t6L"/>
                 <outlet property="picture" destination="xBZ-3w-FaC" id="qGg-zr-PHg"/>
                 <outlet property="titleLabel" destination="BcE-bq-jJK" id="Pb8-tS-xQI"/>
             </connections>
             <point key="canvasLocation" x="40" y="47"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="pin" width="64" height="64"/>
+    </resources>
 </document>
