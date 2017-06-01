@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hZp-J3-dmh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jKa-dz-XZ5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Сообщения-->
         <scene sceneID="KTn-QO-stj">
             <objects>
-                <viewController title="Сообщения" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jKa-dz-XZ5" customClass="ChatViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatId" title="Сообщения" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jKa-dz-XZ5" customClass="ChatViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tAo-DL-4OX"/>
                         <viewControllerLayoutGuide type="bottom" id="yNS-Tj-zGA"/>
@@ -60,24 +60,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1S-K7-bz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3830" y="-215"/>
-        </scene>
-        <!--Сообщения-->
-        <scene sceneID="GdA-OS-wTK">
-            <objects>
-                <navigationController storyboardIdentifier="chatId" title="Сообщения" automaticallyAdjustsScrollViewInsets="NO" id="hZp-J3-dmh" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Aux-jv-msP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jKa-dz-XZ5" kind="relationship" relationship="rootViewController" id="oRb-8q-ifv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ULB-4f-f9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1940" y="-215.44227886056973"/>
         </scene>
     </scenes>
 </document>

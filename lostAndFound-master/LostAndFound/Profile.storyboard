@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mJU-jI-Emf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9YF-I1-WEL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,49 +9,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Профиль-->
-        <scene sceneID="QqU-p5-PYt">
+        <!--User Page View Controller-->
+        <scene sceneID="Yxa-cJ-pvH">
             <objects>
-                <viewController storyboardIdentifier="profileId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mJU-jI-Emf" customClass="UserPageViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profileId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9YF-I1-WEL" customClass="UserPageViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hJL-h2-yRw"/>
-                        <viewControllerLayoutGuide type="bottom" id="M0Y-Tg-8VT"/>
+                        <viewControllerLayoutGuide type="top" id="h4f-LI-lRQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="0jF-KL-1W1"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="u7z-d6-jOV">
+                    <view key="view" contentMode="scaleToFill" id="PTG-E9-Wtq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GZ1-bW-OAc">
-                                <rect key="frame" x="0.0" y="20" width="375" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="gML-0k-Dtq"/>
-                                </constraints>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="8T0-Vj-5Gj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sA2-LH-jhB">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GZ1-bW-OAc" firstAttribute="leading" secondItem="u7z-d6-jOV" secondAttribute="leading" id="BdZ-Yr-4xW"/>
-                            <constraint firstItem="8T0-Vj-5Gj" firstAttribute="leading" secondItem="u7z-d6-jOV" secondAttribute="leading" id="Gzv-Qy-LeW"/>
-                            <constraint firstItem="GZ1-bW-OAc" firstAttribute="top" secondItem="hJL-h2-yRw" secondAttribute="bottom" id="Iko-J7-Xap"/>
-                            <constraint firstItem="8T0-Vj-5Gj" firstAttribute="top" secondItem="u7z-d6-jOV" secondAttribute="top" id="aa1-xj-4ka"/>
-                            <constraint firstAttribute="trailing" secondItem="GZ1-bW-OAc" secondAttribute="trailing" id="dhi-ws-2NB"/>
-                            <constraint firstItem="M0Y-Tg-8VT" firstAttribute="top" secondItem="8T0-Vj-5Gj" secondAttribute="bottom" id="gH7-GL-fEt"/>
-                            <constraint firstAttribute="trailing" secondItem="8T0-Vj-5Gj" secondAttribute="trailing" id="wrH-0N-1VF"/>
+                            <constraint firstAttribute="trailing" secondItem="sA2-LH-jhB" secondAttribute="trailing" id="4yn-LZ-fdZ"/>
+                            <constraint firstItem="sA2-LH-jhB" firstAttribute="leading" secondItem="PTG-E9-Wtq" secondAttribute="leading" id="HB4-cB-Xs8"/>
+                            <constraint firstItem="0jF-KL-1W1" firstAttribute="top" secondItem="sA2-LH-jhB" secondAttribute="bottom" id="itu-YR-EMw"/>
+                            <constraint firstItem="sA2-LH-jhB" firstAttribute="top" secondItem="PTG-E9-Wtq" secondAttribute="top" id="voF-gV-6eu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Профиль" id="3kQ-St-KgL"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile" id="Vdc-dl-Rcd"/>
+                    <navigationItem key="navigationItem" id="qmA-0X-O3F"/>
                     <connections>
-                        <outlet property="tableView" destination="8T0-Vj-5Gj" id="oMY-xJ-cPh"/>
-                        <outlet property="userAvatar" destination="GZ1-bW-OAc" id="NsC-Jp-Zni"/>
+                        <outlet property="tableView" destination="sA2-LH-jhB" id="cF6-cT-kb4"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lDJ-kd-O1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zs5-tF-b5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="-103"/>
+            <point key="canvasLocation" x="1334" y="-25"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="profile" width="32" height="32"/>
+    </resources>
 </document>
