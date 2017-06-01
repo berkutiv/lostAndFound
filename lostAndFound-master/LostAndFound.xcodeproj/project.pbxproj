@@ -59,7 +59,6 @@
 		0DFB00C51EA7728B0040B2A9 /* MapTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */; };
 		3D1CC3E01EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3DE1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift */; };
 		3D1CC3E81EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E61EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift */; };
-		3D1CC3EC1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EA1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift */; };
 		3D1CC4101ECB894F00EDD9B5 /* ItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC40F1ECB894F00EDD9B5 /* ItemPresenter.swift */; };
 		3D1CC4151ECB944600EDD9B5 /* ItemPhotoCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4141ECB944600EDD9B5 /* ItemPhotoCollectionModel.swift */; };
 		3D1CC4191ECB968800EDD9B5 /* ItemDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4181ECB968700EDD9B5 /* ItemDescriptionModel.swift */; };
@@ -68,7 +67,6 @@
 		3D1CC41C1ECCDD1A00EDD9B5 /* ItemPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E31EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib */; };
 		3D1CC41E1ECCFA3700EDD9B5 /* ItemMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC41D1ECCFA3700EDD9B5 /* ItemMapModel.swift */; };
 		3D1CC41F1ECCFE4C00EDD9B5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7528721ECB0FC4002919DD /* ItemViewController.swift */; };
-		3D1CC4201ECCFE5600EDD9B5 /* ItemMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC3EB1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib */; };
 		3D1CC4221ECE344E00EDD9B5 /* ItemHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4211ECE344E00EDD9B5 /* ItemHeaderModel.swift */; };
 		3D1CC4241ECE371700EDD9B5 /* ItemContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4231ECE371700EDD9B5 /* ItemContactsModel.swift */; };
 		3D1CC4271ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC4251ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.swift */; };
@@ -82,6 +80,10 @@
 		3D1CC43A1ECF084400EDD9B5 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC4381ECF084400EDD9B5 /* ChatTableViewCell.xib */; };
 		3D1CC43D1ECF0D9E00EDD9B5 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC43C1ECF0D9E00EDD9B5 /* ChatModel.swift */; };
 		3D1CC43F1ECF8BF400EDD9B5 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */; };
+		3D7D848C1EE09C12006EDBB2 /* ItemMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7D848A1EE09C12006EDBB2 /* ItemMapTableViewCell.swift */; };
+		3D7D848E1EE09C1D006EDBB2 /* ItemMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D7D848B1EE09C12006EDBB2 /* ItemMapTableViewCell.xib */; };
+		3D7D84901EE0A6AB006EDBB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D7D848F1EE0A6AB006EDBB2 /* GoogleService-Info.plist */; };
+		3D7D84941EE0AD9D006EDBB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7D84931EE0AD9C006EDBB2 /* LoginViewController.swift */; };
 		3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */; };
 		3DAA3D821EAE870E00824AAB /* SetLocationMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */; };
 		3DF13BCC1EBBEA1B00EF5EE7 /* SetLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF13BCB1EBBEA1B00EF5EE7 /* SetLocationManager.swift */; };
@@ -148,8 +150,6 @@
 		3D1CC3E31EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		3D1CC3E61EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		3D1CC3E71EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDescriptionTableViewCell.xib; sourceTree = "<group>"; };
-		3D1CC3EA1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMapTableViewCell.swift; sourceTree = "<group>"; };
-		3D1CC3EB1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemMapTableViewCell.xib; sourceTree = "<group>"; };
 		3D1CC40F1ECB894F00EDD9B5 /* ItemPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPresenter.swift; sourceTree = "<group>"; };
 		3D1CC4141ECB944600EDD9B5 /* ItemPhotoCollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPhotoCollectionModel.swift; sourceTree = "<group>"; };
 		3D1CC4181ECB968700EDD9B5 /* ItemDescriptionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDescriptionModel.swift; sourceTree = "<group>"; };
@@ -167,6 +167,11 @@
 		3D1CC4381ECF084400EDD9B5 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		3D1CC43C1ECF0D9E00EDD9B5 /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		3D7D848A1EE09C12006EDBB2 /* ItemMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMapTableViewCell.swift; sourceTree = "<group>"; };
+		3D7D848B1EE09C12006EDBB2 /* ItemMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemMapTableViewCell.xib; sourceTree = "<group>"; };
+		3D7D848F1EE0A6AB006EDBB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3D7D84911EE0ACE2006EDBB2 /* LostAndFound.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LostAndFound.entitlements; sourceTree = "<group>"; };
+		3D7D84931EE0AD9C006EDBB2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationMapController.swift; sourceTree = "<group>"; };
 		3DF13BCB1EBBEA1B00EF5EE7 /* SetLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationManager.swift; sourceTree = "<group>"; };
@@ -272,6 +277,8 @@
 		0DD1175B1E9D66FD0010AD72 /* LostAndFound */ = {
 			isa = PBXGroup;
 			children = (
+				3D7D84911EE0ACE2006EDBB2 /* LostAndFound.entitlements */,
+				3D7D84921EE0AD7A006EDBB2 /* Login */,
 				0DE626641EB12B0500FECDF4 /* ApiWrapper */,
 				0DE626481EB115A200FECDF4 /* Chat */,
 				0D7528711ECB0F9A002919DD /* Item */,
@@ -304,6 +311,7 @@
 				0DD117661E9D66FD0010AD72 /* Assets.xcassets */,
 				0DD117681E9D66FD0010AD72 /* LaunchScreen.storyboard */,
 				0DD1176B1E9D66FD0010AD72 /* Info.plist */,
+				3D7D848F1EE0A6AB006EDBB2 /* GoogleService-Info.plist */,
 			);
 			name = System;
 			sourceTree = "<group>";
@@ -412,8 +420,8 @@
 				3D1CC3E31EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib */,
 				3D1CC4251ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.swift */,
 				3D1CC4261ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.xib */,
-				3D1CC3EA1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift */,
-				3D1CC3EB1EC4A51300EDD9B5 /* ItemMapTableViewCell.xib */,
+				3D7D848A1EE09C12006EDBB2 /* ItemMapTableViewCell.swift */,
+				3D7D848B1EE09C12006EDBB2 /* ItemMapTableViewCell.xib */,
 				3D1CC3E61EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift */,
 				3D1CC3E71EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.xib */,
 				3D1CC4291ECE402500EDD9B5 /* ItemContactsTableViewCell.swift */,
@@ -459,6 +467,14 @@
 				3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */,
 			);
 			name = ChatModels;
+			sourceTree = "<group>";
+		};
+		3D7D84921EE0AD7A006EDBB2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3D7D84931EE0AD9C006EDBB2 /* LoginViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		3DF1FF611ED34B840014AEAF /* Dialog */ = {
@@ -521,8 +537,13 @@
 				TargetAttributes = {
 					0DD117581E9D66FD0010AD72 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8NZVXRT6W9;
+						DevelopmentTeam = WP92F9M5L5;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -553,7 +574,6 @@
 				0DFB00C31EA772480040B2A9 /* MapTableView.xib in Resources */,
 				0D75285A1EB9DDED002919DD /* UserHeaderTableViewCell.xib in Resources */,
 				0DD1176A1E9D66FD0010AD72 /* LaunchScreen.storyboard in Resources */,
-				3D1CC4201ECCFE5600EDD9B5 /* ItemMapTableViewCell.xib in Resources */,
 				0DD117671E9D66FD0010AD72 /* Assets.xcassets in Resources */,
 				0D7528621EB9DE08002919DD /* UserButtonsTableViewCell.xib in Resources */,
 				0D2211A31EAF74110037E8F7 /* ItemTableViewCell.xib in Resources */,
@@ -563,12 +583,14 @@
 				0DD1177A1E9E76C50010AD72 /* Profile.storyboard in Resources */,
 				3D1CC4351ECE5CD300EDD9B5 /* Item.storyboard in Resources */,
 				3D1CC41C1ECCDD1A00EDD9B5 /* ItemPhotoCollectionViewCell.xib in Resources */,
+				3D7D848E1EE09C1D006EDBB2 /* ItemMapTableViewCell.xib in Resources */,
 				3D1CC41B1ECCDD1700EDD9B5 /* ItemPhotoCollectionTableViewCell.xib in Resources */,
 				0DD117621E9D66FD0010AD72 /* Main.storyboard in Resources */,
 				3D1CC4281ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.xib in Resources */,
 				3D1CC42C1ECE402500EDD9B5 /* ItemContactsTableViewCell.xib in Resources */,
 				3D1CC43A1ECF084400EDD9B5 /* ChatTableViewCell.xib in Resources */,
 				0DD117741E9E72680010AD72 /* Map.storyboard in Resources */,
+				3D7D84901EE0A6AB006EDBB2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +654,7 @@
 				0DFB00C51EA7728B0040B2A9 /* MapTableView.swift in Sources */,
 				0D22119A1EAB65E70037E8F7 /* Presenter.swift in Sources */,
 				0D7528641EB9E013002919DD /* UsersFactory.swift in Sources */,
+				3D7D848C1EE09C12006EDBB2 /* ItemMapTableViewCell.swift in Sources */,
 				0DE626581EB1160F00FECDF4 /* AddOperation.swift in Sources */,
 				0DD8EF671EA0C36800CF5774 /* UserPageViewController.swift in Sources */,
 				3D1CC4391ECF084400EDD9B5 /* ChatTableViewCell.swift in Sources */,
@@ -661,7 +684,6 @@
 				0D9BE7381EDDD69B00A12D41 /* UserHeader.swift in Sources */,
 				3D1CC4151ECB944600EDD9B5 /* ItemPhotoCollectionModel.swift in Sources */,
 				0DE6264E1EB115D800FECDF4 /* ChatOperation.swift in Sources */,
-				3D1CC3EC1EC4A51300EDD9B5 /* ItemMapTableViewCell.swift in Sources */,
 				3D1CC43D1ECF0D9E00EDD9B5 /* ChatModel.swift in Sources */,
 				0DE6265E1EB1162800FECDF4 /* UserPresenter.swift in Sources */,
 				0D7528661EC5A792002919DD /* OperationsManager.swift in Sources */,
@@ -675,6 +697,7 @@
 				3DF13BCC1EBBEA1B00EF5EE7 /* SetLocationManager.swift in Sources */,
 				0DE626601EB1162F00FECDF4 /* UserOperation.swift in Sources */,
 				0DE626521EB115F400FECDF4 /* MapManager.swift in Sources */,
+				3D7D84941EE0AD9D006EDBB2 /* LoginViewController.swift in Sources */,
 				0DD117851E9E79A20010AD72 /* User.swift in Sources */,
 				0DE6266A1EB1366800FECDF4 /* tableViewHeader.swift in Sources */,
 				0D2211A21EAF74110037E8F7 /* ItemTableViewCell.swift in Sources */,
@@ -808,8 +831,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LostAndFound/LostAndFound.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8NZVXRT6W9;
+				DEVELOPMENT_TEAM = WP92F9M5L5;
 				INFOPLIST_FILE = LostAndFound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -825,8 +849,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LostAndFound/LostAndFound.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8NZVXRT6W9;
+				DEVELOPMENT_TEAM = WP92F9M5L5;
 				INFOPLIST_FILE = LostAndFound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

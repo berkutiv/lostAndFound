@@ -177,9 +177,11 @@ extension ItemViewController : UITableViewDelegate, UITableViewDataSource
     
     @IBAction func backButton(_ sender: Any)
     {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-        let initViewController: UIViewController = storyBoard.instantiateViewController(withIdentifier: "mapId") as! MapViewController
-        self.present(initViewController,animated: false, completion: nil)
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+//        let initViewController: UIViewController = storyBoard.instantiateViewController(withIdentifier: "mapId") as! MapViewController
+//        self.present(initViewController,animated: false, completion: nil)
+        
+        navigationController?.popViewController(animated: true)
     }
 }
 

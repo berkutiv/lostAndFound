@@ -13,4 +13,5 @@ class ItemMapModel
 {
     var latitude : CLLocationDegrees = 55.688713
     var longitude : CLLocationDegrees = 37.901073
+    var itemAdress = "г Москва, Дмитровское шоссе, дом 13"
 }

@@ -10,6 +10,6 @@ import Foundation
 
 class ItemHeaderModel
 {
-    var itemName = "Ключи"
-    var itemReward = "Отдам за печеньки"
+    var itemName = "CD-плеер"
+    var itemReward = "Отдам за коллекцию пластинок Лозы"
 }

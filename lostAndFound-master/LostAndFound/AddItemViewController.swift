@@ -31,6 +31,11 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
     {
         super.viewDidLoad()
         
+        photoButton.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
+        photoButton1.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
+        photoButton2.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
+        photoButton3.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
+        
         itemDescriptionTextView.setContentOffset(CGPoint.zero, animated: false)
         itemNameTextField.delegate = self
         itemRewardTextFiled.delegate = self
@@ -42,6 +47,19 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
         NotificationCenter.default.addObserver(self, selector: #selector(AddItemViewController.keyboardWillHide(sender:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        //Настройки навигационника
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.topItem?.title = "Создать объявление"
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        let backButton = UIBarButtonItem(title: "Назад", style:.plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
+        //
+        
+        super.viewWillAppear(animated)
+    }
     
     override func viewWillDisappear(_ animated: Bool)
     {
@@ -66,7 +84,6 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
         borderBottom2.borderWidth = borderWidth2
         itemRewardTextFiled.layer.addSublayer(borderBottom2)
         itemRewardTextFiled.layer.masksToBounds = true
-        
     }
     
 }
@@ -114,7 +131,8 @@ extension AddItemViewController
     @IBAction func photoButton(_ sender: Any)
     {
         buttonPressed = 1
-        let actionSheet = UIAlertController(title: "New Photo", message: nil, preferredStyle: .actionSheet)
+        
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Камера", style: .default, handler: {
             action in
@@ -126,9 +144,9 @@ extension AddItemViewController
             self.showAlbum()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: {
             action in
-            self.photoButton.setImage(UIImage(named: "w512h5121347464802Pictures"), for: .normal)
+            self.photoButton.setImage(UIImage(named: "cameraIcon"), for: .normal)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
@@ -141,7 +159,7 @@ extension AddItemViewController
     {
         buttonPressed = 2
 
-        let actionSheet = UIAlertController(title: "New Photo", message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Камера", style: .default, handler: {
             action in
@@ -153,9 +171,9 @@ extension AddItemViewController
             self.showAlbum()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: {
             action in
-            self.photoButton1.setImage(UIImage(named: "w512h5121347464802Pictures"), for: .normal)
+            self.photoButton1.setImage(UIImage(named: "cameraIcon"), for: .normal)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
@@ -166,7 +184,7 @@ extension AddItemViewController
     @IBAction func photoButton2(_ sender: Any)
     {
         buttonPressed = 3
-        let actionSheet = UIAlertController(title: "New Photo", message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         
         actionSheet.addAction(UIAlertAction(title: "Камера", style: .default, handler: {
@@ -179,9 +197,9 @@ extension AddItemViewController
             self.showAlbum()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: {
             action in
-            self.photoButton2.setImage(UIImage(named: "w512h5121347464802Pictures"), for: .normal)
+            self.photoButton2.setImage(UIImage(named: "cameraIcon"), for: .normal)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
@@ -192,7 +210,7 @@ extension AddItemViewController
     @IBAction func photoButton3(_ sender: Any)
     {
         buttonPressed = 4
-        let actionSheet = UIAlertController(title: "New Photo", message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Камера", style: .default, handler: {
             action in
@@ -204,9 +222,9 @@ extension AddItemViewController
             self.showAlbum()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: {
             action in
-            self.photoButton3.setImage(UIImage(named: "w512h5121347464802Pictures"), for: .normal)
+            self.photoButton3.setImage(UIImage(named: "cameraIcon"), for: .normal)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))

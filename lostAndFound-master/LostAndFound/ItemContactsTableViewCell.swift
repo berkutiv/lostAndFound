@@ -22,7 +22,7 @@ class ItemContactsTableViewCell: UITableViewCell
         itemUserContactNumber.text = model.itemUserContactNumber
         itemUserEmail.text = model.itemUserEmail
         
-        itemUserPhoto.layer.cornerRadius = itemUserPhoto.frame.size.width / 2
-        itemUserPhoto.clipsToBounds = true
+        itemUserPhoto.layer.cornerRadius = self.itemUserPhoto.frame.width/6.4
+        itemUserPhoto.layer.masksToBounds = true
     }
 }
