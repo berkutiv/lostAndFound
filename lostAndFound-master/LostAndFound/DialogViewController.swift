@@ -13,9 +13,15 @@ class DialogViewController : UIViewController
     var userChatID = "no id"
     var userChatName = "no name"
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+        
+    }
+    
     override func viewDidLoad()
     {
-        //self.tabBarController?.tabBar.isHidden = true
         navigationItem.title = userChatName
         
         super.viewDidLoad()
@@ -23,8 +29,6 @@ class DialogViewController : UIViewController
     
     @IBAction func backButton(_ sender: Any)
     {
-        
-        
         let storyBoard : UIStoryboard = UIStoryboard(name: "Chat", bundle: nil)
         let initViewController: UIViewController = storyBoard.instantiateViewController(withIdentifier: "chatId") as! ChatViewController
         

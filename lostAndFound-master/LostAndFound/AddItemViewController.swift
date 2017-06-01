@@ -21,11 +21,9 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var photoButton2: UIButton!
     @IBOutlet weak var photoButton3: UIButton!
     
-    
     var myLocation = CLLocation()
     var id = 1
     var buttonPressed = Int()
-    
     
     override func viewDidLoad()
     {
@@ -42,11 +40,18 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
         NotificationCenter.default.addObserver(self, selector: #selector(AddItemViewController.keyboardWillHide(sender:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    
-    override func viewWillDisappear(_ animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
-        super.viewWillDisappear(animated)
+        //Настройки навигационника
         self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.topItem?.title = "Добавить"
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        let backButton = UIBarButtonItem(title: "Назад", style:.plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
+        //
+        
+        super.viewWillAppear(animated)
     }
     
     override func viewDidLayoutSubviews()
@@ -66,9 +71,7 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
         borderBottom2.borderWidth = borderWidth2
         itemRewardTextFiled.layer.addSublayer(borderBottom2)
         itemRewardTextFiled.layer.masksToBounds = true
-        
     }
-    
 }
 //MARK: Клавиатура и текстфилд
 extension AddItemViewController
@@ -134,7 +137,6 @@ extension AddItemViewController
         actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
-
     }
     
     @IBAction func photoButton1(_ sender: Any)

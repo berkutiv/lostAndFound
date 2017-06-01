@@ -39,7 +39,6 @@
 		0DD117831E9E78980010AD72 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD117821E9E78980010AD72 /* Item.swift */; };
 		0DD117851E9E79A20010AD72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD117841E9E79A20010AD72 /* User.swift */; };
 		0DD8EF671EA0C36800CF5774 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD8EF661EA0C36800CF5774 /* UserPageViewController.swift */; };
-		0DE6264A1EB115B800FECDF4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE626491EB115B800FECDF4 /* ChatViewController.swift */; };
 		0DE6264C1EB115CD00FECDF4 /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6264B1EB115CD00FECDF4 /* ChatPresenter.swift */; };
 		0DE6264E1EB115D800FECDF4 /* ChatOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6264D1EB115D800FECDF4 /* ChatOperation.swift */; };
 		0DE626501EB115EC00FECDF4 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6264F1EB115EC00FECDF4 /* MapPresenter.swift */; };
@@ -84,6 +83,8 @@
 		3D1CC43F1ECF8BF400EDD9B5 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */; };
 		3DAA3D801EABBB0800824AAB /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */; };
 		3DAA3D821EAE870E00824AAB /* SetLocationMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */; };
+		3DD6FFF61EDF527800D631F3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6FFF51EDF527800D631F3 /* ChatViewController.swift */; };
+		3DD6FFF81EDF718200D631F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DD6FFF71EDF718200D631F3 /* GoogleService-Info.plist */; };
 		3DF13BCC1EBBEA1B00EF5EE7 /* SetLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF13BCB1EBBEA1B00EF5EE7 /* SetLocationManager.swift */; };
 		3DF1FF631ED34B9E0014AEAF /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1FF621ED34B9E0014AEAF /* DialogViewController.swift */; };
 		7D60BA26695041C3FBD5E1E9 /* Pods_LostAndFound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F9D53CD94FCFF233308190 /* Pods_LostAndFound.framework */; };
@@ -125,7 +126,6 @@
 		0DD117821E9E78980010AD72 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0DD117841E9E79A20010AD72 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0DD8EF661EA0C36800CF5774 /* UserPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
-		0DE626491EB115B800FECDF4 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		0DE6264B1EB115CD00FECDF4 /* ChatPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
 		0DE6264D1EB115D800FECDF4 /* ChatOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatOperation.swift; sourceTree = "<group>"; };
 		0DE6264F1EB115EC00FECDF4 /* MapPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
@@ -169,6 +169,8 @@
 		3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		3DAA3D7F1EABBB0800824AAB /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		3DAA3D811EAE870E00824AAB /* SetLocationMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationMapController.swift; sourceTree = "<group>"; };
+		3DD6FFF51EDF527800D631F3 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		3DD6FFF71EDF718200D631F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3DF13BCB1EBBEA1B00EF5EE7 /* SetLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationManager.swift; sourceTree = "<group>"; };
 		3DF1FF621ED34B9E0014AEAF /* DialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		437909965923B821F6FCCE68 /* Pods-LostAndFound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAndFound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LostAndFound/Pods-LostAndFound.debug.xcconfig"; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 		0DD1177E1E9E77950010AD72 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				3DD6FFF71EDF718200D631F3 /* GoogleService-Info.plist */,
 				0DD1175C1E9D66FD0010AD72 /* AppDelegate.swift */,
 				0DD117661E9D66FD0010AD72 /* Assets.xcassets */,
 				0DD117681E9D66FD0010AD72 /* LaunchScreen.storyboard */,
@@ -368,7 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				3DF1FF611ED34B840014AEAF /* Dialog */,
-				0DE626491EB115B800FECDF4 /* ChatViewController.swift */,
+				3DD6FFF51EDF527800D631F3 /* ChatViewController.swift */,
 				0DE6264B1EB115CD00FECDF4 /* ChatPresenter.swift */,
 				0DE6264D1EB115D800FECDF4 /* ChatOperation.swift */,
 				0DE626611EB1163600FECDF4 /* ChatManager.swift */,
@@ -521,7 +524,7 @@
 				TargetAttributes = {
 					0DD117581E9D66FD0010AD72 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8NZVXRT6W9;
+						DevelopmentTeam = WP92F9M5L5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -569,6 +572,7 @@
 				3D1CC42C1ECE402500EDD9B5 /* ItemContactsTableViewCell.xib in Resources */,
 				3D1CC43A1ECF084400EDD9B5 /* ChatTableViewCell.xib in Resources */,
 				0DD117741E9E72680010AD72 /* Map.storyboard in Resources */,
+				3DD6FFF81EDF718200D631F3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +646,7 @@
 				3D1CC41E1ECCFA3700EDD9B5 /* ItemMapModel.swift in Sources */,
 				3D1CC43F1ECF8BF400EDD9B5 /* Chat.swift in Sources */,
 				0D9BE73A1EDDD6AF00A12D41 /* UserButtons.swift in Sources */,
+				3DD6FFF61EDF527800D631F3 /* ChatViewController.swift in Sources */,
 				0D35F2F71EDF118B007FA968 /* CustomTabBarItem.swift in Sources */,
 				0DE6264C1EB115CD00FECDF4 /* ChatPresenter.swift in Sources */,
 				3D1CC4241ECE371700EDD9B5 /* ItemContactsModel.swift in Sources */,
@@ -683,7 +688,6 @@
 				0D9BE73C1EDDD6BC00A12D41 /* UserItem.swift in Sources */,
 				0D7528591EB9DDED002919DD /* UserHeaderTableViewCell.swift in Sources */,
 				0D35F2F91EDF1194007FA968 /* CustomTabAnimatedTransitioning.swift in Sources */,
-				0DE6264A1EB115B800FECDF4 /* ChatViewController.swift in Sources */,
 				0DD1175D1E9D66FD0010AD72 /* AppDelegate.swift in Sources */,
 				3D1CC4271ECE3DD600EDD9B5 /* ItemHeaderTableViewCell.swift in Sources */,
 			);
@@ -809,9 +813,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8NZVXRT6W9;
+				DEVELOPMENT_TEAM = WP92F9M5L5;
 				INFOPLIST_FILE = LostAndFound/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = berkutiv.LostAndFound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -826,9 +830,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8NZVXRT6W9;
+				DEVELOPMENT_TEAM = WP92F9M5L5;
 				INFOPLIST_FILE = LostAndFound/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = berkutiv.LostAndFound;
 				PRODUCT_NAME = "$(TARGET_NAME)";

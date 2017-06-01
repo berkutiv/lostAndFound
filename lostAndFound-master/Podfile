@@ -12,6 +12,6 @@ pod 'SDWebImage', '~>3.8'
 pod 'SwiftyJSON'
 pod 'UITextView+Placeholder', '~> 1.2'
 pod 'RAMAnimatedTabBarController', "~> 2.0.13"
-
+pod 'Firebase/Auth'
 
 end

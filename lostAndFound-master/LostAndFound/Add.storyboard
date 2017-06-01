@@ -1,36 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6qQ-Qb-rB7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YJ1-6J-EqR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Добавить-->
-        <scene sceneID="bad-oF-ojY">
-            <objects>
-                <navigationController storyboardIdentifier="addId" id="6qQ-Qb-rB7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Добавить" id="dUl-Ig-Tqm"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4RH-wq-VMH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="YJ1-6J-EqR" kind="relationship" relationship="rootViewController" id="fgW-sB-XhJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WHZ-kr-65s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1076" y="-28"/>
-        </scene>
         <!--AddItemViewController -->
         <scene sceneID="VmA-w3-xkw">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="YJ1-6J-EqR" userLabel="AddItemViewController " customClass="AddItemViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="addId" storyboardIdentifier="addId" id="YJ1-6J-EqR" userLabel="AddItemViewController " customClass="AddItemViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hEU-gB-mU9"/>
                         <viewControllerLayoutGuide type="bottom" id="8Wt-7R-kuM"/>
@@ -40,28 +23,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR5-7d-sht">
-                                <rect key="frame" x="8" y="72" width="80" height="80"/>
+                                <rect key="frame" x="8" y="28" width="80" height="80"/>
                                 <state key="normal" title="Button" image="w512h5121347464802Pictures"/>
                                 <connections>
                                     <action selector="photoButton:" destination="YJ1-6J-EqR" eventType="touchUpInside" id="iNf-o0-lLL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykT-Fg-R4d">
-                                <rect key="frame" x="101" y="72" width="80" height="80"/>
+                                <rect key="frame" x="101" y="28" width="80" height="80"/>
                                 <state key="normal" title="Button" image="w512h5121347464802Pictures"/>
                                 <connections>
                                     <action selector="photoButton1:" destination="YJ1-6J-EqR" eventType="touchUpInside" id="x0p-ls-PCj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLL-g2-eKl">
-                                <rect key="frame" x="194" y="72" width="80" height="80"/>
+                                <rect key="frame" x="194" y="28" width="80" height="80"/>
                                 <state key="normal" image="w512h5121347464802Pictures"/>
                                 <connections>
                                     <action selector="photoButton2:" destination="YJ1-6J-EqR" eventType="touchUpInside" id="GGz-8Y-Xj3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wI4-Xn-RTt">
-                                <rect key="frame" x="287" y="72" width="80" height="80"/>
+                                <rect key="frame" x="287" y="28" width="80" height="80"/>
                                 <state key="normal" image="w512h5121347464802Pictures"/>
                                 <connections>
                                     <action selector="photoButton3:" destination="YJ1-6J-EqR" eventType="touchUpInside" id="jrO-gz-Px5"/>
@@ -203,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZnW-CX-02v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="667"/>
+            <point key="canvasLocation" x="2884" y="-28"/>
         </scene>
     </scenes>
     <resources>

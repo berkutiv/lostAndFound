@@ -67,7 +67,7 @@ class CustomTabBar: UIView {
     func createTabBarItemSelectionOverlay(_ containers: [CGRect]) {
         
 
-        let overlay = ["placeholder2", "add2", "profile2", "speech22"]
+        let overlay = ["placeholder2", "profile2", "speech22", "add2"]
         
         for index in 0..<tabBarItems.count {
             let container = containers[index]
