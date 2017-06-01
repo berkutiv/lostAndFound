@@ -24,10 +24,14 @@ class ItemTableViewCell: UITableViewCell
     func configureSelf(model: Item)
     {
         self.model = model
-        self.picture.sd_setImage(with: URL(string: "https://pp.userapi.com/c543103/v543103306/1f74c/q6hK2NFOUqo.jpg"))
+        print("photo \(model.photosURL[0])")
+        self.picture.image = UIImage(named: "\(model.photosURL[0])")
         self.titleLabel.text = model.title
         picture.layer.cornerRadius = self.picture.frame.width/6.4
         picture.layer.masksToBounds = true
+        buttonPin.layer.borderWidth = 1
+        buttonPin.layer.cornerRadius = self.buttonPin.frame.width/18
+        buttonPin.layer.masksToBounds = true
     }
     
     @IBAction func buttonPressed(_ sender: Any)

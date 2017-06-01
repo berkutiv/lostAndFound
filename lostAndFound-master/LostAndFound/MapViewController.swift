@@ -27,7 +27,7 @@ class MapViewController: UIViewController
     
     var likelyPlaces: [GMSPlace] = []
     var selectedPlace: GMSPlace?
-    let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
+    let defaultLocation = CLLocation(latitude: 35, longitude: 35)
     
     
     override func viewDidLoad()
@@ -56,11 +56,12 @@ class MapViewController: UIViewController
             mapView.settings.myLocationButton = true
             mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             mapView.isMyLocationEnabled = true
+            mapView.delegate = self
             map = mapView
             
             // Creates a marker in the center of the map.
             let marker = GMSMarker()
-            marker.position = CLLocationCoordinate2D(latitude: 55.45, longitude: 37.36)
+            marker.position = CLLocationCoordinate2D(latitude: 35, longitude: 37.36)
             marker.title = "moscow"
             marker.snippet = "Russia"
             marker.map = mapView
@@ -72,8 +73,20 @@ class MapViewController: UIViewController
                 let item = dataSource[i] as! Item
                 let position = CLLocationCoordinate2D(latitude: Double(item.latitude)!, longitude: Double(item.longitude)!)
                 let marker = GMSMarker(position: position)
-                marker.title = "\(item.title)"
+                
+                let pinImage = UIImage(named: "placeholder3")
+                let markerView = UIImageView(image: pinImage)
+                let pinPhoto = UIImageView(frame: CGRect(x: 6.5, y: 3, width: 27, height: 27))
+                pinPhoto.image = UIImage(named: "\((dataSource[i] as! Item).photosURL[0])")
+                pinPhoto.layer.cornerRadius = pinPhoto.frame.width/2
+                pinPhoto.layer.masksToBounds = true
+                markerView.addSubview(pinPhoto)
+                marker.iconView = markerView
+                marker.title = "\(item.id)"
+                
+                
                 marker.map = mapView
+            
             }
             
             map!.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 144 )
@@ -229,6 +242,24 @@ extension MapViewController
             mapView.animate(to: camera)
         }
         
+    }
+}
+
+extension MapViewController: GMSMapViewDelegate
+{
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool
+    {
+        let storyBoard = UIStoryboard(name: "Item", bundle: nil)
+        let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
+        
+        itemViewController.id = "\(marker.title)"
+        self.navigationController?.pushViewController(itemViewController, animated: false)
+        return true
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker)
+    {
+        print("нажали на окно")
     }
 }
 

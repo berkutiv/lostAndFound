@@ -27,7 +27,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.85872977969999997" green="0.85887759919999995" blue="0.85872042179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="tCn-Mu-n7R" firstAttribute="top" secondItem="uqv-8x-RrR" secondAttribute="top" constant="7" id="8KJ-L5-6p3"/>
                         <constraint firstItem="tCn-Mu-n7R" firstAttribute="centerX" secondItem="uqv-8x-RrR" secondAttribute="centerX" id="Xkf-hb-W5i"/>

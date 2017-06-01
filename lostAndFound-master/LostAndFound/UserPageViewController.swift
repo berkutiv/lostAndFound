@@ -36,6 +36,7 @@ class UserPageViewController: UIViewController
         {
             DependencyInjector.obtainPresenter(view: self)
         }
+        self.navigationController?.navigationBar.isHidden = true
         super.viewWillAppear(animated)
     }
     
