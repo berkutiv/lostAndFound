@@ -35,7 +35,6 @@ class CustomTabBarItem: UIView {
         iconView = UIImageView(frame: CGRect(x: (self.frame.width-image.size.width)/2, y: (self.frame.height-image.size
             .height)/2, width: self.frame.width, height: self.frame.height))
         
-        print("size \(image.size.width, image.size.height)")
         iconView.image = image
         iconView.sizeToFit()
         iconView.tintColor = UIColor.gray

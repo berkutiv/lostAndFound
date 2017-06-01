@@ -57,9 +57,6 @@ class MapTableView: UIView, UIGestureRecognizerDelegate
             }
             
             self.frame.origin.y += translation.y
-            
-            print("translation \(translation)")
-            
             rec.setTranslation(CGPoint.zero, in: self)
             blockWithAlpha(self.frame.origin.y)
         }

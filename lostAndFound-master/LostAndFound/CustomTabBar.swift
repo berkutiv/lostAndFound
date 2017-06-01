@@ -87,7 +87,6 @@ class CustomTabBar: UIView {
                 imageView = UIImageView(frame: CGRect(x: (self.frame.width)/11.5, y: (self.frame.height-32)/2, width: self.frame.width, height: self.frame.height))
             }
             
-            print("\(self.frame.width)")
             imageView.image = UIImage(named: "\(overlay[index])")
             imageView.sizeToFit()
             imageView.tintColor = UIColor.black
@@ -137,7 +136,7 @@ class CustomTabBar: UIView {
             index += 1
         }
         
-        self.customTabBarItems[initialTabBarItemIndex].iconView.tintColor = UIColor.black
+        self.customTabBarItems[initialTabBarItemIndex].iconView.tintColor = UIColor.clear
     }
     
     func createTabBarItemContainers() -> [CGRect] {
