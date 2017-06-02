@@ -31,6 +31,21 @@ class ChatViewController: UIViewController, UINavigationControllerDelegate
         tableView.register(kChatTableViewCell, forCellReuseIdentifier: kChatTableViewReuseIdentifier)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        //Настройки навигационника
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.topItem?.title = "Сообщения"
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        let backButton = UIBarButtonItem(title: "Назад", style:.plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
+        //
+        
+        super.viewWillAppear(animated)
+    }
 }
 
 extension ChatViewController : View

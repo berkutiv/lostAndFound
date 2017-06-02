@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,24 +11,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="177" id="KGk-i7-Jjw" customClass="ItemDescriptionTableViewCell" customModule="LostAndFound" customModuleProvider="target">
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="177" id="KGk-i7-Jjw" customClass="ItemDescriptionTableViewCell" customModule="LostAndFound" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="177"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="176.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvt-ZQ-w7q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="176.5"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwA-n0-AUy">
-                        <rect key="frame" x="8" y="8" width="304" height="160.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="0.0" y="8" width="320" height="160.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="zwA-n0-AUy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="1ob-aW-Ich"/>
-                    <constraint firstItem="zwA-n0-AUy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="8GS-FE-YGN"/>
-                    <constraint firstAttribute="trailing" secondItem="zwA-n0-AUy" secondAttribute="trailing" constant="8" id="BpW-UY-rWT"/>
+                    <constraint firstItem="zwA-n0-AUy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8GS-FE-YGN"/>
+                    <constraint firstAttribute="trailing" secondItem="tvt-ZQ-w7q" secondAttribute="trailing" id="A4S-k7-jSa"/>
+                    <constraint firstAttribute="trailing" secondItem="zwA-n0-AUy" secondAttribute="trailing" id="BpW-UY-rWT"/>
+                    <constraint firstItem="tvt-ZQ-w7q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PpU-U5-dM8"/>
+                    <constraint firstItem="tvt-ZQ-w7q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WHj-IF-Ysw"/>
+                    <constraint firstAttribute="bottom" secondItem="tvt-ZQ-w7q" secondAttribute="bottom" id="h1G-Xi-pzV"/>
                     <constraint firstAttribute="bottom" secondItem="zwA-n0-AUy" secondAttribute="bottom" constant="8" id="l6q-lo-SMk"/>
                 </constraints>
             </tableViewCellContentView>

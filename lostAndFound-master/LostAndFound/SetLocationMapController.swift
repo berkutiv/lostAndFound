@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import GoogleMaps
+import GooglePlaces
 
 protocol BackCoordinates
 {
@@ -24,6 +25,9 @@ class SetLocationViewController: UIViewController, CLLocationManagerDelegate
     var myLocation = CLLocation()
     var delegate : BackCoordinates?
     var adress = String()
+    var resultsViewController : GMSAutocompleteResultsViewController?
+    var searchController : UISearchController?
+    var resultsView : UITextView?
     
     @IBAction func backButton(_ sender: Any)
     {
@@ -32,8 +36,27 @@ class SetLocationViewController: UIViewController, CLLocationManagerDelegate
         self.present(initViewController,animated: false, completion: nil)
     }
     
-    override func viewDidLoad()
+    override func viewWillAppear(_ animated: Bool)
     {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewDidLoad()
+        
+    {
+        resultsViewController = GMSAutocompleteResultsViewController()
+        resultsViewController?.delegate = self
+        
+        searchController = UISearchController(searchResultsController: resultsViewController)
+        searchController?.searchResultsUpdater = resultsViewController
+        
+        searchController?.searchBar.sizeToFit()
+        navigationItem.titleView = searchController?.searchBar
+        
+        definesPresentationContext = true
+        
+        searchController?.hidesNavigationBarDuringPresentation = false
+        
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         self.locationManager.requestWhenInUseAuthorization()
@@ -81,4 +104,38 @@ class SetLocationViewController: UIViewController, CLLocationManagerDelegate
             }, failure:{errorCode in
         })
     }
+    
 }
+
+extension SetLocationViewController : GMSAutocompleteResultsViewControllerDelegate
+{
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didAutocompleteWith place: GMSPlace)
+    {
+        searchController?.isActive = false
+        // Do something with the selected place.
+        print("Place name: \(place.name)")
+        print("Place address: \(place.formattedAddress)")
+        print("Place attributions: \(place.attributions)")
+        
+        
+    }
+    
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didFailAutocompleteWithError error: Error){
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController)
+    {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController)
+    {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+}
+

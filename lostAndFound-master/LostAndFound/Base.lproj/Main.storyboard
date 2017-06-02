@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JGA-bZ-Th2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wka-19-wha">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -142,6 +143,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dP1-ib-yRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1081" y="-833"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Dwh-oG-yvT">
+            <objects>
+                <viewController id="Wka-19-wha" customClass="LoginViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eHP-Fu-XxC"/>
+                        <viewControllerLayoutGuide type="bottom" id="f7S-RX-NCI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Vi-Vi-BAc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost&amp;Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgS-Fr-q7M">
+                                <rect key="frame" x="38" y="72" width="300" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="3a6-DS-8bH"/>
+                                    <constraint firstAttribute="height" constant="59" id="pVc-aN-T5J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="49"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите свое имя" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSJ-HO-GBx">
+                                <rect key="frame" x="70" y="285" width="235" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="j8V-Ru-BPg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Wka-19-wha" id="xHB-RX-d7E"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0G-Zp-xXz">
+                                <rect key="frame" x="70" y="335" width="235" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Re6-aN-eGJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Вход">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButton:" destination="Wka-19-wha" eventType="touchUpInside" id="cIB-RQ-VM7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="SSJ-HO-GBx" firstAttribute="leading" secondItem="4Vi-Vi-BAc" secondAttribute="leadingMargin" constant="54" id="3JW-98-hnp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SSJ-HO-GBx" secondAttribute="trailing" constant="54" id="GE2-Rk-Kj9"/>
+                            <constraint firstItem="f7S-RX-NCI" firstAttribute="top" secondItem="j0G-Zp-xXz" secondAttribute="bottom" constant="294" id="HKJ-fh-yy7"/>
+                            <constraint firstAttribute="centerX" secondItem="pgS-Fr-q7M" secondAttribute="centerX" id="Kzv-KF-SRR"/>
+                            <constraint firstItem="j0G-Zp-xXz" firstAttribute="leading" secondItem="4Vi-Vi-BAc" secondAttribute="leadingMargin" constant="54" id="OV1-Y6-cLB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j0G-Zp-xXz" secondAttribute="trailing" constant="54" id="gTq-OG-UY4"/>
+                            <constraint firstItem="j0G-Zp-xXz" firstAttribute="top" secondItem="SSJ-HO-GBx" secondAttribute="bottom" constant="20" id="hZ8-mo-XiV"/>
+                            <constraint firstItem="pgS-Fr-q7M" firstAttribute="top" secondItem="eHP-Fu-XxC" secondAttribute="bottom" constant="52" id="kKE-w3-zZw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="j0G-Zp-xXz" id="QiQ-IQ-Me6"/>
+                        <outlet property="userName" destination="SSJ-HO-GBx" id="MGQ-ce-2sZ"/>
+                        <segue destination="JGA-bZ-Th2" kind="show" identifier="loginSegue" id="rNo-Jg-YKX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdt-mo-66g" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1161" y="-421"/>
         </scene>
     </scenes>
     <resources>

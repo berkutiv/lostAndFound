@@ -45,7 +45,15 @@ class MapViewController: UIViewController
     
     override func viewWillAppear(_ animated: Bool)
     {
+        //Настройки навигационника
+        
         navigationController?.isNavigationBarHidden = true
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        let backButton = UIBarButtonItem(title: "Назад", style:.plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
+        
+        //
         
         if map == nil
         {

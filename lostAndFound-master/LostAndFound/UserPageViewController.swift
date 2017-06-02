@@ -32,11 +32,19 @@ class UserPageViewController: UIViewController
     
     override func viewWillAppear(_ animated: Bool)
     {
+            //Настройки навигационника
+            self.navigationController?.isNavigationBarHidden = true
+//            self.navigationController?.navigationBar.topItem?.title = "Создать объявление"
+//            self.navigationController?.navigationBar.barTintColor = UIColor.white
+            self.navigationController?.navigationBar.tintColor = UIColor.black
+            let backButton = UIBarButtonItem(title: "Назад", style:.plain, target: nil, action: nil)
+            self.navigationItem.backBarButtonItem = backButton
+            //
+        
         if presenter == nil
         {
             DependencyInjector.obtainPresenter(view: self)
         }
-        self.navigationController?.navigationBar.isHidden = true
         super.viewWillAppear(animated)
     }
     
@@ -163,7 +171,8 @@ extension UserPageViewController: UITableViewDelegate, UITableViewDataSource
             let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
             
             itemViewController.id = "\((model as! UserItem).item.id)"
-            self.present(itemViewController, animated: true, completion: nil)
+            
+            navigationController?.pushViewController(itemViewController, animated: true)
         }
     }
 }
