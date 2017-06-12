@@ -9,6 +9,9 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
+import Firebase
+import FirebaseAuth
+
 
 class AddItemViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, BackCoordinates
 {
@@ -25,11 +28,14 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
     var myLocation = CLLocation()
     var id = 1
     var buttonPressed = Int()
+   
     
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+    
         
         photoButton.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
         photoButton1.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)

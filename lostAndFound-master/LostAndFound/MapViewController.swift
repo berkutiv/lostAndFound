@@ -13,6 +13,8 @@ import GooglePlaces
 class MapViewController: UIViewController
 {
     var dataSource = NSMutableArray()
+    var userToken : String = ""
+    var userId : String = ""
     
     @IBOutlet weak var blackView: UIView!
     var tableView : MapTableView?
@@ -33,6 +35,10 @@ class MapViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        print("Токен пользователя - \(userToken)")
+        print("Айди пользователя - \(userId)")
+        
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
