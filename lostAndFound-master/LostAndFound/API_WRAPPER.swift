@@ -38,10 +38,139 @@ class API_WRAPPER
         
         task.resume()
         return task
+        //меняю возвращаемое значение саксесс блока на МАССИВ!
     }
     
+//МЕТОДЫ API
+    
+    // Создает пользователя по Элпочте и паролю
+    class func createUserWithEmail ( email : String, nameUser : String, password : String, passwordRepeat : String, success : @escaping (JSON) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
+    {
+        
+        let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/createUserWithEmail?email=\(email)&password=\(password)&passwordrepeat=\(passwordRepeat)&nameuser=\(nameUser)"
+        
+        let url = URL(string: urlString)!
+        // url - user readable link
+        let request = URLRequest(url: url)
+        
+        print("zapros skontruirovan")
+        print(url)
+        let task = URLSession.shared.dataTask(with: request, completionHandler: {data , response, error in
+            
+            
+            self.genericCompletionCallback(data: data, response: response, error: error, success: success, failure: failure)
+            
+        })
+        
+        task.resume()
+        print("zapros ushel")
+        
+        return task
+    }
+    //Авторизует пользователя по электронной почте и паролю
+    
+    class func AuthUserWithEmail ( email : String, password : String, success : @escaping (JSON) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
+    {
+        
+        let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/authUserWithEmail?email=\(email)&password=\(password)"
+        
+        let url = URL(string: urlString)!
+        // url - user readable link
+        let request = URLRequest(url: url)
+        
+        print("zapros skontruirovan")
+        print(url)
+        let task = URLSession.shared.dataTask(with: request, completionHandler: {data , response, error in
+            
+            
+            self.genericCompletionCallback(data: data, response: response, error: error, success: success, failure: failure)
+            
+        })
+        
+        task.resume()
+        print("zapros ushel")
+        
+        return task
+    }
+    
+    //Получить информацию по пользователю по айди (имя, эл почта, фото (будет позже))
+    
+    class func getUser ( userId : String, success : @escaping (JSON) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
+    {
+        
+        let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/getUser?id=\(userId)"
+        
+        let url = URL(string: urlString)!
+        // url - user readable link
+        let request = URLRequest(url: url)
+        
+        print("zapros skontruirovan")
+        print(url)
+        let task = URLSession.shared.dataTask(with: request, completionHandler: {data , response, error in
+            
+            
+            self.genericCompletionCallback(data: data, response: response, error: error, success: success, failure: failure)
+            
+        })
+        
+        task.resume()
+        print("zapros ushel")
+        
+        return task
+    }
+    
+    //Добавляет пост со следующими полями (поля токен и айди обязательные)
+    class func addPost (token : String,userId : String, itemName : String, itemPrice : String, itemDescription : String, itemCoordinates : String, itemReward : String, success : @escaping (JSON) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
+    {
+        
+        let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/addPost?token=\(token)&iduser=\(userId)&itemname=\(itemName)&itemprice=\(itemPrice)&itemdescription=\(itemDescription)&itemcoordinates=\(itemCoordinates)&itemreward=\(itemReward)"
+        
+        let url = URL(string: urlString)!
+        // url - user readable link
+        let request = URLRequest(url: url)
+        
+        print("zapros skontruirovan")
+        print(url)
+        let task = URLSession.shared.dataTask(with: request, completionHandler: {data , response, error in
+            
+            
+            self.genericCompletionCallback(data: data, response: response, error: error, success: success, failure: failure)
+            
+        })
+        
+        task.resume()
+        print("zapros ushel")
+        
+        return task
+    }
+    
+    //Возвращает последние ДЕСЯТЬ постов 
+    
+    class func getPosts (success : @escaping (JSON) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
+    {
+        
+        let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/getWallPosts"
+        
+        let url = URL(string: urlString)!
+        // url - user readable link
+        let request = URLRequest(url: url)
+        
+        print("zapros skontruirovan")
+        print(url)
+        let task = URLSession.shared.dataTask(with: request, completionHandler: {data , response, error in
+            
+            
+            self.genericCompletionCallback(data: data, response: response, error: error, success: success, failure: failure)
+            
+        })
+        
+        task.resume()
+        print("zapros ushel")
+        
+        return task
+    }
 }
-//меняю возвращаемое значение саксесс блока на МАССИВ!
+
 extension API_WRAPPER
 {
     class func genericCompletionCallback (
