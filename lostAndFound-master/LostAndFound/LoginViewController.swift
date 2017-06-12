@@ -11,12 +11,23 @@ import Firebase
 
 class LoginViewController: UIViewController
 {
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     
     var token = ""
     var userId = ""
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(true)
+        navigationController?.isNavigationBarHidden = true
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        let backButton = UIBarButtonItem(title: "Назад", style:.plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
+    }
+    
     @IBAction func loginButton(_ sender: Any)
     {
         if (email.text != "") && (password.text != "")
@@ -59,13 +70,16 @@ class LoginViewController: UIViewController
     {
         if segue.identifier == "loginSegue"
         {
-        //print("ТОКЕН в ЛОГИН - \(token)")
             let barViewControllers = segue.destination as! UITabBarController
             let nav = barViewControllers.viewControllers![0] as! UINavigationController
             let destinationViewController = nav.viewControllers[0] as! MapViewController
             destinationViewController.userToken = token
             destinationViewController.userId = userId
-            
         }
+    }
+    
+    @IBAction func register(_ sender: Any)
+    {
+        self.performSegue(withIdentifier: "registerSegue", sender: nil)
     }
 }

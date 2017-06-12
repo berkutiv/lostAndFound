@@ -33,7 +33,11 @@ class ItemViewController: UIViewController, UINavigationControllerDelegate
     
     override func viewWillAppear(_ animated: Bool)
     {
+        super.viewWillAppear(true)
         navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     override func viewDidLoad()
@@ -177,10 +181,6 @@ extension ItemViewController : UITableViewDelegate, UITableViewDataSource
     
     @IBAction func backButton(_ sender: Any)
     {
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-//        let initViewController: UIViewController = storyBoard.instantiateViewController(withIdentifier: "mapId") as! MapViewController
-//        self.present(initViewController,animated: false, completion: nil)
-        
         navigationController?.popViewController(animated: true)
     }
 }
