@@ -30,12 +30,12 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
     var buttonPressed = Int()
    
     
+    @IBOutlet weak var latitudeTextField: UITextField!
+    @IBOutlet weak var longitudeTextField: UITextField!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-    
         
         photoButton.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
         photoButton1.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
@@ -301,6 +301,54 @@ extension AddItemViewController
         initViewController.delegate = self
         
         navigationController?.pushViewController(initViewController, animated: true)
+    }
+    
+    @IBAction func addItemAction(_ sender: Any)
+    {
+        if (itemDescriptionTextView.text != "") && (itemNameTextField.text != "") && (itemNameTextField.text != "") && (latitudeTextField.text != "") && (longitudeTextField.text != "")
+        {
+            
+            let userId : String = UserDefaults.standard.value(forKey: "uid") as! String
+            let userToken : String = UserDefaults.standard.value(forKey: "utoken") as! String
+
+            AddManager.addItem(token: userToken, userId: userId, itemName: itemNameTextField.text!, itemDescription: itemDescriptionTextView.text!, itemLatitude: latitudeTextField.text!, itemLongitude: longitudeTextField.text!, itemReward: itemRewardTextFiled.text!, success: { [weak self] (response) in
+                
+                DispatchQueue.main.async
+                    {
+                        let addSuccess = response
+                        
+                        if (addSuccess == "true")
+                        {
+                            let alert = UIAlertController(title: "Объявление создано", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+                            
+                            
+                            let confirmAction = UIAlertAction(title: "Продолжить", style: UIAlertActionStyle.default) { (action) in
+                                
+                                
+                                self?.itemNameTextField.text = ""
+                                self?.itemDescriptionTextView.text = ""
+                                self?.latitudeTextField.text = ""
+                                self?.longitudeTextField.text = ""
+                                self?.itemRewardTextFiled.text = ""
+                                
+                                self?.tabBarController?.selectedIndex = 0
+                            }
+                            
+                            alert.addAction(confirmAction)
+                            self?.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                
+                }, failure: {(errorCode) in
+                
+                })
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Ошибка", message: "Заполните все поля", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Назад", style: UIAlertActionStyle.cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 

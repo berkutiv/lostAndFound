@@ -13,8 +13,9 @@ import GooglePlaces
 class MapViewController: UIViewController
 {
     var dataSource = NSMutableArray()
-    var userToken : String = ""
-    var userId : String = ""
+    
+    //UserDefaults.standard.value(forKey: "uid") as! String - получение Айди. См ниже
+    //UserDefaults.standard.value(forKey: "utoken") as! String - получение Токена. См ниже
     
     @IBOutlet weak var blackView: UIView!
     var tableView : MapTableView?
@@ -32,12 +33,16 @@ class MapViewController: UIViewController
     let defaultLocation = CLLocation(latitude: 35, longitude: 35)
     
     
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        print("Токен пользователя - \(userToken)")
-        print("Айди пользователя - \(userId)")
+        let userId : String = UserDefaults.standard.value(forKey: "uid") as! String // - АЙДИ
+        let userToken : String = UserDefaults.standard.value(forKey: "utoken") as! String // - ТОКЕН
+        
+        print(userId)
+        print(userToken)
         
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -52,7 +57,6 @@ class MapViewController: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         //Настройки навигационника
-        
         navigationController?.isNavigationBarHidden = true
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.tintColor = UIColor.black
@@ -98,7 +102,6 @@ class MapViewController: UIViewController
                 marker.iconView = markerView
                 marker.title = "\(item.id)"
                 
-                
                 marker.map = mapView
             
             }
@@ -113,7 +116,6 @@ class MapViewController: UIViewController
             
             listLikelyPlaces()
         }
-        
         
         if tableView == nil
         {
@@ -139,9 +141,6 @@ class MapViewController: UIViewController
             tableView?.blockAlphaZero = {[weak self] in
                 self?.blackView.alpha = 0
             }
-            
-            
-            
             view.addSubview(tableView!)
         }
         super.viewWillAppear(animated)

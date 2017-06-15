@@ -19,7 +19,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3M-sk-s08" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663" y="-833"/>
+            <point key="canvasLocation" x="2672" y="-790"/>
         </scene>
         <!--addId-->
         <scene sceneID="jGL-rg-b5E">
@@ -57,7 +57,7 @@
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="XfK-Qt-Ozc">
             <objects>
-                <tabBarController id="JGA-bZ-Th2" customClass="CustomTabBarViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="JGA-bZ-Th2" customClass="CustomTabBarViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="g8I-p5-OQB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -77,7 +77,7 @@
         <!--Navigation Controller-->
         <scene sceneID="NeV-Kx-dX0">
             <objects>
-                <navigationController id="8cG-Jc-zIf" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" id="8cG-Jc-zIf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="add" id="5Qm-2L-wve"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YIF-1g-5TQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -94,7 +94,7 @@
         <!--Navigation Controller-->
         <scene sceneID="eSm-cf-xtO">
             <objects>
-                <navigationController id="6zQ-17-oqZ" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" id="6zQ-17-oqZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="profile" id="d2A-iz-Zzf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lB8-q0-ixf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -111,7 +111,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Ab7-6P-47K">
             <objects>
-                <navigationController id="Iuz-Ht-neR" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" id="Iuz-Ht-neR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="speech" id="JuG-fY-dSD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Cvr-Hw-lwU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -128,7 +128,7 @@
         <!--Navigation Controller-->
         <scene sceneID="wo4-8J-cQv">
             <objects>
-                <navigationController storyboardIdentifier="mapId" automaticallyAdjustsScrollViewInsets="NO" id="pVc-fO-H8z" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mapId" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="pVc-fO-H8z" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="placeholder" id="deh-fg-BW2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cLu-U5-t3x">
@@ -336,13 +336,17 @@
         <!--Navigation Controller-->
         <scene sceneID="sFN-G8-ggb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wlU-aB-VDJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="wlU-aB-VDJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Hxu-xb-c3E">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hxu-xb-c3E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gWW-se-yLF">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Wka-19-wha" kind="relationship" relationship="rootViewController" id="LNX-rw-3bN"/>
                     </connections>
