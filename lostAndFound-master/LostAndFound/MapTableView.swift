@@ -25,7 +25,6 @@ class MapTableView: UIView, UIGestureRecognizerDelegate
     
     override func awakeFromNib()
     {
-        tableView.isScrollEnabled = false
         tableView.dataSource = self
         tableView.delegate = self
         tableView.estimatedRowHeight = 50
@@ -36,51 +35,51 @@ class MapTableView: UIView, UIGestureRecognizerDelegate
         
         dataSource = ModelsFactory.generateModels() as! NSMutableArray
         
-        let panRec = UIPanGestureRecognizer(target: self, action: #selector(MapTableView.handlePan(rec:)))
-        panRec.delegate = self
-        self.addGestureRecognizer(panRec)
+//        let panRec = UIPanGestureRecognizer(target: self, action: #selector(MapTableView.handlePan(rec:)))
+//        panRec.delegate = self
+//        self.addGestureRecognizer(panRec)
         super.awakeFromNib()
     }
     
-    func handlePan ( rec : UIPanGestureRecognizer )
-    {
-        if rec.state == .began
-        {
-            
-        }
-        if rec.state == .changed
-        {
-            let translation = rec.translation(in: self)
-            if self.frame.origin.y + translation.y >= self.frame.size.height - 144
-            {
-                return
-            }
-            
-            self.frame.origin.y += translation.y
-            rec.setTranslation(CGPoint.zero, in: self)
-            blockWithAlpha(self.frame.origin.y)
-        }
-        
-        if rec.state == .ended
-        {
-            if self.frame.origin.y > self.frame.height / 2
-            {
-                //вниз
-                hideTable()
-            }
-            
-            if self.frame.origin.y < self.frame.height / 2
-            {
-                //вверх
-                showTable()
-            }
-            
-            if self.frame.origin.y == 0 || self.frame.origin.y <= 5
-            {
-                tableView.isScrollEnabled = true
-            }
-        }
-    }
+//    func handlePan ( rec : UIPanGestureRecognizer )
+//    {
+//        if rec.state == .began
+//        {
+//            
+//        }
+//        if rec.state == .changed
+//        {
+//            let translation = rec.translation(in: self)
+//            if self.frame.origin.y + translation.y >= self.frame.size.height - 144
+//            {
+//                return
+//            }
+//            
+//            self.frame.origin.y += translation.y
+//            rec.setTranslation(CGPoint.zero, in: self)
+//            blockWithAlpha(self.frame.origin.y)
+//        }
+//        
+//        if rec.state == .ended
+//        {
+//            if self.frame.origin.y > self.frame.height / 2
+//            {
+//                //вниз
+//                hideTable()
+//            }
+//            
+//            if self.frame.origin.y < self.frame.height / 2
+//            {
+//                //вверх
+//                showTable()
+//            }
+//            
+//            if self.frame.origin.y == 0 || self.frame.origin.y <= 5
+//            {
+//                tableView.isScrollEnabled = true
+//            }
+//        }
+//    }
     
     
 }
@@ -136,17 +135,38 @@ extension MapTableView
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
         let currentOffset = scrollView.contentOffset.y
-        //print("offset \(currentOffset)")
-        if currentOffset == 0
+        var flag = false
+        if currentOffset < -10
         {
-            tableView.isScrollEnabled = false
+            flag = true
         }
+        
+        
+        print("offset \(currentOffset) frame \(self.frame.origin.y)")
+        if self.frame.origin.y > 0 && !flag
+        {
+            print("вверх")
+            if currentOffset > 0
+            {
+                self.frame.size.height -= currentOffset
+                
+                //tableView.isScrollEnabled = false
+            }
+            
+        }
+       
+            print("вниз")
+            if currentOffset < 0
+            {
+                hideTable()
+            }
+        
         
     }
     
     func hideTable()
     {
-        UIView.animate(withDuration: 0.5)
+        UIView.animate(withDuration: 1)
         {
             self.frame = CGRect(x: CGFloat(0), y: self.frame.size.height - 144, width: self.frame.size.width, height: self.frame.size.height)
         }

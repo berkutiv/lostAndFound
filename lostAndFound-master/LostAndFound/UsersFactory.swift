@@ -30,9 +30,7 @@ class UsersFactory
             let userHeader = UserHeader(id: "\(i)", name: name, phone: "", email: "", photo: "\(randIndex)")
             user.modelsArray.add(userHeader)
             
-            let userButtons = UserButtons(numberOfButtons: 1)
-            user.modelsArray.add(userButtons)
-            
+        
             let itemsCollection = ModelsFactory.getModelsForUser() as! NSMutableArray
             
             for i in 0..<itemsCollection.count
@@ -57,5 +55,16 @@ class UsersFactory
         }
         
         return User(id: "пустой юзер в фабрике")
+    }
+    
+    class func setUser(user: UserHeader)
+    {
+        for i in 0..<outArray.count
+        {
+            if (outArray[i] as! User).id == user.id
+            {
+                (outArray[i] as! User).modelsArray[0] = user
+            }
+        }
     }
 }
