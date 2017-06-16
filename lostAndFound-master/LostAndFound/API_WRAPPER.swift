@@ -49,9 +49,13 @@ class API_WRAPPER
         
         let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/createUserWithEmail?email=\(email)&password=\(password)&passwordrepeat=\(passwordRepeat)&nameuser=\(nameUser)"
         
-        let url = URL(string: urlString)!
+        //URL ENCODE
+        let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)
+        
+        //URL DECODE - НУЖНО ПРИХУЯЧИТЬ ПРИ ОБРАНОМ ВЫЗОВЕ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         // url - user readable link
-        let request = URLRequest(url: url)
+        let request = URLRequest(url: url!)
+        
         
         print("zapros skontruirovan")
         print(url)
@@ -74,9 +78,12 @@ class API_WRAPPER
         
         let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/authUserWithEmail?email=\(email)&password=\(password)"
         
-        let url = URL(string: urlString)!
-        // url - user readable link
-        let request = URLRequest(url: url)
+       
+        //URL ENCODE
+        let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)
+        
+        //URL DECODE - НУЖНО ПРИХУЯЧИТЬ ПРИ ОБРАНОМ ВЫЗОВЕ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        let request = URLRequest(url: url!)
         
         print("zapros skontruirovan")
         print(url)
@@ -120,14 +127,23 @@ class API_WRAPPER
     }
     
     //Добавляет пост со следующими полями (поля токен и айди обязательные)
-    class func addPost (token : String,userId : String, itemName : String, itemPrice : String, itemDescription : String, itemCoordinates : String, itemReward : String, success : @escaping (JSON) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
+    class func addPost (token : String,userId : String, itemName : String, itemDescription : String, itemLatitude : String, itemLongitude : String, itemReward : String, success : @escaping (JSON) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
     {
         
-        let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/addPost?token=\(token)&iduser=\(userId)&itemname=\(itemName)&itemprice=\(itemPrice)&itemdescription=\(itemDescription)&itemcoordinates=\(itemCoordinates)&itemreward=\(itemReward)"
+       // let url = NSURL(string : s.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
         
-        let url = URL(string: urlString)!
+        let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/addPost?token=\(token)&iduser=\(userId)&itemname=\(itemName)&itemdescription=\(itemDescription)&itemlatitude=\(itemLatitude)&itemLongitude=\(itemLongitude)&itemreward=\(itemReward)"
+        
+        //URL ENCODE
+        let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)
+        
+        //URL DECODE - НУЖНО ПРИХУЯЧИТЬ ПРИ ОБРАНОМ ВЫЗОВЕ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        //let url = URL(string: urlString.stringByRemovingPercentEncoding)
+        
+        
         // url - user readable link
-        let request = URLRequest(url: url)
+        let request = URLRequest(url: url!)
         
         print("zapros skontruirovan")
         print(url)
@@ -202,7 +218,6 @@ extension API_WRAPPER
                 return
             }
         }
-        
         
         failure(-1)
     }

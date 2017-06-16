@@ -18,6 +18,19 @@ class LoginViewController: UIViewController
     
     var token = ""
     var userId = ""
+    let defaults = UserDefaults.standard
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        // If we have the uid stored, the user is already logger in - no need to sign in again!
+        
+        if UserDefaults.standard.value(forKey: "uid") != nil
+        {
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -45,7 +58,14 @@ class LoginViewController: UIViewController
                             
                             if status == "true"
                             {
-                                self?.performSegue(withIdentifier: "loginSegue", sender: nil) // 4
+                                self?.defaults.set(self!.userId, forKey: "uid")
+                                self?.defaults.set(self!.token, forKey: "utoken")
+                                
+//                                MapViewController.userId = self!.userId
+//                                MapViewController.userToken = self!.token
+                                
+                                
+                                self?.performSegue(withIdentifier: "loginSegue", sender: nil)
                             }
                                 
                             else
@@ -70,11 +90,11 @@ class LoginViewController: UIViewController
     {
         if segue.identifier == "loginSegue"
         {
-            let barViewControllers = segue.destination as! UITabBarController
-            let nav = barViewControllers.viewControllers![0] as! UINavigationController
-            let destinationViewController = nav.viewControllers[0] as! MapViewController
-            destinationViewController.userToken = token
-            destinationViewController.userId = userId
+//            let barViewControllers = segue.destination as! UITabBarController
+//            let nav = barViewControllers.viewControllers![0] as! UINavigationController
+//            let destinationViewController = nav.viewControllers[0] as! MapViewController
+//            destinationViewController.userToken = token
+//            destinationViewController.userId = userId
         }
     }
     
@@ -83,3 +103,8 @@ class LoginViewController: UIViewController
         self.performSegue(withIdentifier: "registerSegue", sender: nil)
     }
 }
+
+
+//let appDomain = Bundle.main.bundleIdentifier!
+//UserDefaults.standard.removePersistentDomain(forName: appDomain)
+//print(UserDefaults.standard.dictionaryRepresentation().keys.count)

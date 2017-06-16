@@ -84,11 +84,11 @@ exports.addPost = functions.https.onRequest((req, res) => {
      //get text
      const itemname = req.query.itemname || "";
      //get price
-     const itemprice = parseFloat(req.query.itemprice) || 0;
-     //get itemdescription
      const itemdescription = req.query.itemdescription || "";
-     //get itemcoordinates
-     const itemcoordinates = req.query.itemcoordinates || "";
+     //get itemlatitude
+     const itemlatitude = req.query.itemcoordinates || "";
+     //get itemlongitude
+     const itemlongitude = req.query.itemcoordinates || "";
      //get itemreward
      const itemreward = req.query.itemreward || "";
 
@@ -101,7 +101,7 @@ exports.addPost = functions.https.onRequest((req, res) => {
           //res.send({response :  {success : true, id : id}});
           return (current_value || 0) + 1;
       }).then(snapshot => {
-              admin.database().ref('/posts').push({itemname: itemname, itemprice : itemprice, itemdescription : itemdescription, itemcoordinates : itemcoordinates, itemreward : itemreward, id : id, iduser : decodedToken.uid, createdAt : firebase.database.ServerValue.TIMESTAMP}).then(snapshotPost => {
+              admin.database().ref('/posts').push({itemname: itemname, itemdescription : itemdescription, itemlatitude : itemlatitude, itemlongitude : itemlongitude, itemreward : itemreward, id : id, iduser : decodedToken.uid, createdAt : firebase.database.ServerValue.TIMESTAMP}).then(snapshotPost => {
                      res.send({response : {success : true}});
               }).catch(function(error) {
                 var errorCode = error.code;

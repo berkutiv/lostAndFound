@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +14,7 @@
         <!--SetLocationViewController-->
         <scene sceneID="vRE-gA-oZk">
             <objects>
-                <viewController storyboardIdentifier="SetLocationViewController" title="SetLocationViewController" id="1Qm-Tt-hrW" customClass="SetLocationViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetLocationViewController" title="SetLocationViewController" hidesBottomBarWhenPushed="YES" id="1Qm-Tt-hrW" customClass="SetLocationViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IGF-Z6-WtW"/>
                         <viewControllerLayoutGuide type="bottom" id="VG9-mM-xof"/>
@@ -42,12 +43,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZnW-CX-02v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="667"/>
+            <point key="canvasLocation" x="2135" y="-28"/>
         </scene>
         <!--AddItemViewController -->
         <scene sceneID="mu5-xZ-RSc">
             <objects>
-                <viewController storyboardIdentifier="addId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rl3-wa-SEd" userLabel="AddItemViewController " customClass="AddItemViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addId" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rl3-wa-SEd" userLabel="AddItemViewController " customClass="AddItemViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZWs-oX-PKF"/>
                         <viewControllerLayoutGuide type="bottom" id="XOC-Hg-BDo"/>
@@ -103,11 +104,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PT-Br-PlB">
-                                <rect key="frame" x="8" y="471" width="359" height="66"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="8" y="497" width="359" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Изменить местоположение">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.99479166669999997" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -133,6 +134,30 @@
                                     <constraint firstAttribute="height" constant="1" id="r2r-E7-9p7"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EKs-3G-Z5w">
+                                <rect key="frame" x="16" y="393" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CcO-kv-dNG">
+                                <rect key="frame" x="186" y="392" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKM-AE-mPZ">
+                                <rect key="frame" x="24" y="557" width="327" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                <state key="normal" title="Добавить">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addItemAction:" destination="rl3-wa-SEd" eventType="touchUpInside" id="kcs-vx-wsC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -149,25 +174,30 @@
                             <constraint firstItem="XOC-Hg-BDo" firstAttribute="top" secondItem="4PT-Br-PlB" secondAttribute="bottom" constant="130" id="NZQ-AA-0db"/>
                             <constraint firstItem="LVw-Z3-HD6" firstAttribute="height" secondItem="okW-az-utH" secondAttribute="height" id="Of0-fe-nlG"/>
                             <constraint firstItem="COw-Fu-tmo" firstAttribute="top" secondItem="ZWs-oX-PKF" secondAttribute="bottom" constant="8" id="Qhx-Q8-D79"/>
-                            <constraint firstItem="4PT-Br-PlB" firstAttribute="height" secondItem="Khf-Vk-6Vr" secondAttribute="height" multiplier="1:10" id="STJ-qr-s4N"/>
+                            <constraint firstItem="4PT-Br-PlB" firstAttribute="height" secondItem="Khf-Vk-6Vr" secondAttribute="height" multiplier="0.06" id="STJ-qr-s4N"/>
                             <constraint firstItem="off-Tv-0s2" firstAttribute="centerY" secondItem="Khf-Vk-6Vr" secondAttribute="centerY" id="TA5-Vy-ex7"/>
                             <constraint firstItem="off-Tv-0s2" firstAttribute="leading" secondItem="Khf-Vk-6Vr" secondAttribute="leading" constant="8" id="UCZ-ch-vQe"/>
                             <constraint firstAttribute="trailing" secondItem="Xhe-Ny-2Qa" secondAttribute="trailing" constant="14" id="aPs-BG-dKf"/>
+                            <constraint firstItem="XKM-AE-mPZ" firstAttribute="top" secondItem="4PT-Br-PlB" secondAttribute="bottom" constant="20" id="c2u-Wb-99g"/>
                             <constraint firstItem="off-Tv-0s2" firstAttribute="height" secondItem="Khf-Vk-6Vr" secondAttribute="height" multiplier="1:8" id="cbX-lg-ada"/>
                             <constraint firstItem="COw-Fu-tmo" firstAttribute="height" secondItem="LVw-Z3-HD6" secondAttribute="height" id="d6Q-0R-axM"/>
                             <constraint firstItem="LVw-Z3-HD6" firstAttribute="width" secondItem="okW-az-utH" secondAttribute="width" id="dD5-Pj-DkW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XKM-AE-mPZ" secondAttribute="trailing" constant="8" id="eOn-jp-1sb"/>
                             <constraint firstAttribute="trailing" secondItem="YLz-V4-woE" secondAttribute="trailing" constant="8" id="f5R-Lq-5mk"/>
                             <constraint firstAttribute="trailing" secondItem="4PT-Br-PlB" secondAttribute="trailing" constant="8" id="grM-Sa-tYj"/>
                             <constraint firstItem="UEi-mp-iuj" firstAttribute="top" secondItem="off-Tv-0s2" secondAttribute="bottom" id="has-8M-bFL"/>
                             <constraint firstItem="fNy-85-qi5" firstAttribute="leading" secondItem="Khf-Vk-6Vr" secondAttribute="leading" constant="14" id="ho1-PW-7ba"/>
+                            <constraint firstItem="XKM-AE-mPZ" firstAttribute="leading" secondItem="Khf-Vk-6Vr" secondAttribute="leadingMargin" constant="8" id="iUm-bw-EBF"/>
                             <constraint firstItem="okW-az-utH" firstAttribute="width" secondItem="Khf-Vk-6Vr" secondAttribute="width" multiplier="1:4.7" id="jD2-h6-gxk"/>
                             <constraint firstItem="COw-Fu-tmo" firstAttribute="width" secondItem="LVw-Z3-HD6" secondAttribute="width" id="kgc-86-kqc"/>
                             <constraint firstItem="Xhe-Ny-2Qa" firstAttribute="top" secondItem="fNy-85-qi5" secondAttribute="bottom" id="m1O-VF-H7O"/>
                             <constraint firstItem="off-Tv-0s2" firstAttribute="top" secondItem="Xhe-Ny-2Qa" secondAttribute="bottom" id="ncV-6l-Du2"/>
                             <constraint firstItem="okW-az-utH" firstAttribute="height" secondItem="Khf-Vk-6Vr" secondAttribute="height" multiplier="1:8.4" id="q0l-R5-MWp"/>
                             <constraint firstAttribute="trailing" secondItem="UEi-mp-iuj" secondAttribute="trailing" constant="14" id="qSF-Si-8op"/>
+                            <constraint firstItem="XKM-AE-mPZ" firstAttribute="centerX" secondItem="Khf-Vk-6Vr" secondAttribute="centerX" id="tS7-h1-0vp"/>
                             <constraint firstItem="okW-az-utH" firstAttribute="leading" secondItem="Khf-Vk-6Vr" secondAttribute="leading" constant="8" id="u2N-uO-oIe"/>
                             <constraint firstItem="UEi-mp-iuj" firstAttribute="leading" secondItem="Khf-Vk-6Vr" secondAttribute="leading" constant="14" id="uEp-lD-nzN"/>
+                            <constraint firstItem="XKM-AE-mPZ" firstAttribute="height" secondItem="Khf-Vk-6Vr" secondAttribute="height" multiplier="0.045" id="upG-zm-h3k"/>
                             <constraint firstItem="4PT-Br-PlB" firstAttribute="leading" secondItem="Khf-Vk-6Vr" secondAttribute="leading" constant="8" id="wvT-ev-ibP"/>
                             <constraint firstItem="COw-Fu-tmo" firstAttribute="leading" secondItem="LVw-Z3-HD6" secondAttribute="trailing" constant="13" id="zOp-lE-T61"/>
                         </constraints>
@@ -178,6 +208,8 @@
                         <outlet property="itemDescriptionTextView" destination="off-Tv-0s2" id="PFg-6f-zkm"/>
                         <outlet property="itemNameTextField" destination="fNy-85-qi5" id="9Ft-XN-1CK"/>
                         <outlet property="itemRewardTextFiled" destination="Xhe-Ny-2Qa" id="QnZ-Cb-Fqn"/>
+                        <outlet property="latitudeTextField" destination="CcO-kv-dNG" id="SIe-73-Qnt"/>
+                        <outlet property="longitudeTextField" destination="EKs-3G-Z5w" id="4qn-JK-keb"/>
                         <outlet property="mapButton" destination="4PT-Br-PlB" id="oXt-aX-lrb"/>
                         <outlet property="photoButton" destination="okW-az-utH" id="sj3-o4-OQ0"/>
                         <outlet property="photoButton1" destination="LVw-Z3-HD6" id="n02-1R-8gh"/>
@@ -187,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39L-yb-DPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1279" y="-28"/>
+            <point key="canvasLocation" x="1277.5999999999999" y="-28.335832083958024"/>
         </scene>
     </scenes>
     <resources>
