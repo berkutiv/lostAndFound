@@ -10,8 +10,7 @@ import UIKit
 
 class UserPageViewController: UIViewController
 {
-    
-    @IBOutlet weak var userAvatar: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     let kUserHeaderNIB = UINib(nibName: "UserHeaderTableViewCell", bundle: nil)
@@ -53,8 +52,6 @@ class UserPageViewController: UIViewController
         super.viewDidLoad()
         tableView.estimatedRowHeight = 40.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedSectionHeaderHeight = 50
-        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
         tableView.register(kUserHeaderNIB, forCellReuseIdentifier: kUserHeaderReuseIdentifier)
         tableView.register(kUserTableNIB, forCellReuseIdentifier: kUserTableReuseIdentifier)
         tableView.register(kUserButtonsNIB, forCellReuseIdentifier: kUserButtonsReuseIdentifier)
@@ -118,6 +115,16 @@ extension UserPageViewController: UITableViewDelegate, UITableViewDataSource
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: kUserHeaderReuseIdentifier, for: indexPath) as! UserHeaderTableViewCell
             cell.configureSelf(withDataModel: model as! UserHeader)
+            cell.isSelected = false
+            cell.editBlock = {[weak self] (model) in
+                    let storyBoard = UIStoryboard(name: "Profile", bundle: nil)
+                    let editUserViewController = storyBoard.instantiateViewController(withIdentifier: "userEdit") as! UserEditViewController
+                    
+                    editUserViewController.model = model
+                    self?.navigationController?.pushViewController(editUserViewController, animated: false)
+            }
+            backgroundImage.image = UIImage(named: (model as! UserHeader).photo)
+            blur()
             return cell
         }
         if model is UserButtons
@@ -175,4 +182,29 @@ extension UserPageViewController: UITableViewDelegate, UITableViewDataSource
             navigationController?.pushViewController(itemViewController, animated: true)
         }
     }
+}
+
+extension UserPageViewController
+{
+    func blur()
+    {
+        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurView = UIVisualEffectView(effect: darkBlur)
+        blurView.frame = backgroundImage.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        backgroundImage.addSubview(blurView)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
+        //print("scrooll\(scrollView.contentOffset.y)")
+        if scrollView.contentOffset.y < 0
+        {
+            self.backgroundImage.transform = CGAffineTransform(scaleX: 1 - scrollView.contentOffset.y/120, y: 1 - scrollView.contentOffset.y/120)
+        }else
+        {
+            self.backgroundImage.transform = CGAffineTransform.identity
+        }
+    }
+
 }

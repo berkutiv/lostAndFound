@@ -112,7 +112,7 @@ class MapViewController: UIViewController
         if tableView == nil
         {
             tableView = Bundle.main.loadNibNamed("MapTableView", owner: self, options: nil)![0] as? MapTableView
-            tableView?.frame = CGRect(x: 0, y: view.frame.size.height - 144, width: view.frame.width, height: view.frame.height)
+            tableView?.frame = CGRect(x: 0, y: view.frame.size.height - 144, width: view.frame.width, height: 144)
             tableView?.blockWithCoordinates = {[weak self] (longtitude, latitude) in
                 self?.locateMarker(longitude: longtitude, latitude: latitude)
                 self?.blackView.alpha = 0
