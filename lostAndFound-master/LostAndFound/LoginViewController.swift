@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController
 {
@@ -24,12 +25,12 @@ class LoginViewController: UIViewController
     {
         super.viewDidAppear(animated)
         
-        // If we have the uid stored, the user is already logger in - no need to sign in again!
+//         If we have the uid stored, the user is already logger in - no need to sign in again!
         
-        if UserDefaults.standard.value(forKey: "uid") != nil
-        {
-            self.performSegue(withIdentifier: "loginSegue", sender: nil)
-        }
+//        if UserDefaults.standard.value(forKey: "uid") != nil
+//        {
+//            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -58,11 +59,12 @@ class LoginViewController: UIViewController
                             
                             if status == "true"
                             {
+                                self?.defaults.set(self?.email.text, forKey: "email")
+                                self?.defaults.set(self?.password.text, forKey: "password")
                                 self?.defaults.set(self!.userId, forKey: "uid")
                                 self?.defaults.set(self!.token, forKey: "utoken")
                                 
-//                                MapViewController.userId = self!.userId
-//                                MapViewController.userToken = self!.token
+                                  MapViewController.token = (self?.token)!
                                 
                                 
                                 self?.performSegue(withIdentifier: "loginSegue", sender: nil)

@@ -20,7 +20,7 @@ class ChatTableViewCell: UITableViewCell
         chatUserName.text = model.chatUserName
         chatImage.image = model.chatUserPhoto
         
-        chatImage.layer.cornerRadius = self.chatImage.frame.width/6.4
+        chatImage.layer.cornerRadius = self.chatImage.frame.width/2
         chatImage.layer.masksToBounds = true
     }
 }

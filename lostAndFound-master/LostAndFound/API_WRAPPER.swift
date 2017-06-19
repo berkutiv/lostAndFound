@@ -127,12 +127,12 @@ class API_WRAPPER
     }
     
     //Добавляет пост со следующими полями (поля токен и айди обязательные)
-    class func addPost (token : String,userId : String, itemName : String, itemDescription : String, itemLatitude : String, itemLongitude : String, itemReward : String, success : @escaping (JSON) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
+    class func addPost (token : String,userId : String, itemName : String, itemDescription : String, itemLatitude : String, itemLongitude : String, itemAdress : String, itemReward : String, success : @escaping (JSON) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
     {
         
        // let url = NSURL(string : s.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
         
-        let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/addPost?token=\(token)&iduser=\(userId)&itemname=\(itemName)&itemdescription=\(itemDescription)&itemlatitude=\(itemLatitude)&itemLongitude=\(itemLongitude)&itemreward=\(itemReward)"
+        let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/addPost?token=\(token)&iduser=\(userId)&itemname=\(itemName)&itemdescription=\(itemDescription)&itemlatitude=\(itemLatitude)&itemlongitude=\(itemLongitude)&itemadress=\(itemAdress)&itemreward=\(itemReward)"
         
         //URL ENCODE
         let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)

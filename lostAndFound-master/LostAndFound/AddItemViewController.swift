@@ -12,7 +12,6 @@ import GoogleMaps
 import Firebase
 import FirebaseAuth
 
-
 class AddItemViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, BackCoordinates
 {
     @IBOutlet weak var itemDescriptionTextView: UITextView!
@@ -23,16 +22,18 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var photoButton1: UIButton!
     @IBOutlet weak var photoButton2: UIButton!
     @IBOutlet weak var photoButton3: UIButton!
+    @IBOutlet weak var createButton: UIButton!
+    
+    
     
     
     var myLocation = CLLocation()
+    var itemAdress = ""
+    var myLatitude = String()
+    var myLongitude = String()
     var id = 1
     var buttonPressed = Int()
-   
-    
-    @IBOutlet weak var latitudeTextField: UITextField!
-    @IBOutlet weak var longitudeTextField: UITextField!
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -41,6 +42,13 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
         photoButton1.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
         photoButton2.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
         photoButton3.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
+        
+        createButton.backgroundColor = .clear
+        createButton.layer.cornerRadius = 5
+        createButton.layer.borderWidth = 1
+        createButton.layer.borderColor = UIColor.black.cgColor
+        
+        mapButton.layer.cornerRadius = 5
         
         itemDescriptionTextView.setContentOffset(CGPoint.zero, animated: false)
         itemNameTextField.delegate = self
@@ -285,10 +293,16 @@ extension AddItemViewController
         dismiss(animated: true, completion: nil)
     }
     
-    func setLocation(adress: String)
+    func setLocation(adress: String, latitude: String, longitude: String)
     {
         print("Мой адрес сегодня такой - \(adress)")
+        itemAdress = adress
+        myLongitude = longitude
+        myLatitude = latitude
         mapButton.setTitle(adress, for: .normal)
+        mapButton.titleLabel?.minimumScaleFactor = 0.5
+        mapButton.titleLabel?.numberOfLines = 0
+        mapButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
 }
 //MARK: Программный переход в SetLocationViewController
@@ -305,13 +319,15 @@ extension AddItemViewController
     
     @IBAction func addItemAction(_ sender: Any)
     {
-        if (itemDescriptionTextView.text != "") && (itemNameTextField.text != "") && (itemNameTextField.text != "") && (latitudeTextField.text != "") && (longitudeTextField.text != "")
+        if (itemNameTextField.text != "")
         {
+            if (mapButton.titleLabel?.text != "Изменить местоположение")
+            {
             
             let userId : String = UserDefaults.standard.value(forKey: "uid") as! String
             let userToken : String = UserDefaults.standard.value(forKey: "utoken") as! String
 
-            AddManager.addItem(token: userToken, userId: userId, itemName: itemNameTextField.text!, itemDescription: itemDescriptionTextView.text!, itemLatitude: latitudeTextField.text!, itemLongitude: longitudeTextField.text!, itemReward: itemRewardTextFiled.text!, success: { [weak self] (response) in
+            AddManager.addItem(token: userToken, userId: userId, itemName: itemNameTextField.text!, itemDescription: itemDescriptionTextView.text!, itemLatitude: myLatitude, itemLongitude: myLongitude, itemAdress: itemAdress, itemReward: itemRewardTextFiled.text!, success: { [weak self] (response) in
                 
                 DispatchQueue.main.async
                     {
@@ -327,8 +343,6 @@ extension AddItemViewController
                                 
                                 self?.itemNameTextField.text = ""
                                 self?.itemDescriptionTextView.text = ""
-                                self?.latitudeTextField.text = ""
-                                self?.longitudeTextField.text = ""
                                 self?.itemRewardTextFiled.text = ""
                                 
                                 self?.tabBarController?.selectedIndex = 0
@@ -342,10 +356,17 @@ extension AddItemViewController
                 }, failure: {(errorCode) in
                 
                 })
+            }
+            else
+            {
+                let alert = UIAlertController(title: "Ошибка", message: "Укажите местоположение", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Назад", style: UIAlertActionStyle.cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         else
         {
-            let alert = UIAlertController(title: "Ошибка", message: "Заполните все поля", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Ошибка", message: "Введите название вещи", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Назад", style: UIAlertActionStyle.cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
