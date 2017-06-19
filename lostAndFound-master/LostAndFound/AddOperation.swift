@@ -19,11 +19,13 @@ class AddOperation : Operation
     var itemLatitude : String
     var itemLongitude : String
     var itemReward : String
+    var itemAdress : String
     
     var internetTask : URLSessionDataTask?
     
-    init (token : String, userId : String, itemName : String, itemDescription : String, itemLatitude : String, itemLongitude : String, itemReward : String, success : @escaping (String) -> Void, failure : @escaping (Int) -> Void)
+    init (token : String, userId : String, itemName : String, itemDescription : String, itemLatitude : String, itemLongitude : String, itemAdress : String, itemReward : String, success : @escaping (String) -> Void, failure : @escaping (Int) -> Void)
     {
+        self.itemAdress = itemAdress
         self.token = token
         self.userId = userId
         self.itemName = itemName
@@ -44,7 +46,7 @@ class AddOperation : Operation
     {
         let semaphore = DispatchSemaphore(value : 0)
         
-        internetTask = API_WRAPPER.addPost(token: token, userId: userId, itemName: itemName, itemDescription: itemDescription, itemLatitude: itemLatitude, itemLongitude: itemLongitude, itemReward: itemReward, success: {(jsonResponse) in
+        internetTask = API_WRAPPER.addPost(token: token, userId: userId, itemName: itemName, itemDescription: itemDescription, itemLatitude: itemLatitude, itemLongitude: itemLongitude, itemAdress: itemAdress, itemReward: itemReward, success: {(jsonResponse) in
         
             let data = jsonResponse["response"]
             let addSuccess = data["success"].stringValue
