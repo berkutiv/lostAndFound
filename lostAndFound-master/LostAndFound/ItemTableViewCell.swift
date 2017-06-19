@@ -37,7 +37,6 @@ class ItemTableViewCell: UITableViewCell
     @IBAction func buttonPressed(_ sender: Any)
     {
         let model = self.model
-        //print("long \(model.longitude)")
         coordinatesBlock(model.longitude, model.latitude)
     }
 }
