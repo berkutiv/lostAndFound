@@ -14,13 +14,11 @@ class MapViewController: UIViewController
 {
     var dataSource = NSMutableArray()
     
-    //UserDefaults.standard.value(forKey: "uid") as! String - получение Айди. См ниже
-    //UserDefaults.standard.value(forKey: "utoken") as! String - получение Токена. См ниже
-    
     @IBOutlet weak var blackView: UIView!
-    var tableView : MapTableView?
+    @IBOutlet weak var tableView: UITableView!
     var map : GMSMapView?
     var tableViewCell : ItemTableViewCell?
+    var headerView: UIView?
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
@@ -32,7 +30,8 @@ class MapViewController: UIViewController
     var selectedPlace: GMSPlace?
     let defaultLocation = CLLocation(latitude: 35, longitude: 35)
     
-    
+    let kItemTableNIB = UINib(nibName: "ItemTableViewCell", bundle: nil)
+    let kItemTableViewCellReuseIdentifier = "kItemTableViewCellReuseIdentifier"
     
     override func viewDidLoad()
     {
@@ -52,6 +51,16 @@ class MapViewController: UIViewController
         locationManager.delegate = self
         
         placesClient = GMSPlacesClient.shared()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.estimatedRowHeight = 50
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedSectionHeaderHeight = 50
+        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        tableView.register(kItemTableNIB, forCellReuseIdentifier: kItemTableViewCellReuseIdentifier)
+        
+        dataSource = ModelsFactory.generateModels() as! NSMutableArray
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -62,9 +71,7 @@ class MapViewController: UIViewController
         self.navigationController?.navigationBar.tintColor = UIColor.black
         let backButton = UIBarButtonItem(title: "Назад", style:.plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
-        
-        //
-        
+    
         if map == nil
         {
             let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
@@ -108,40 +115,12 @@ class MapViewController: UIViewController
             
             map!.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 144 )
             
-            view.addSubview(map!)
+            view.insertSubview(map!, belowSubview: blackView)
             blackView.backgroundColor = UIColor.black
             blackView.alpha = 0
-            
-            view.addSubview(blackView)
+            view.insertSubview(blackView, at: 1)
             
             listLikelyPlaces()
-        }
-        
-        if tableView == nil
-        {
-            tableView = Bundle.main.loadNibNamed("MapTableView", owner: self, options: nil)![0] as? MapTableView
-            tableView?.frame = CGRect(x: 0, y: view.frame.size.height - 144, width: view.frame.width, height: 144)
-            tableView?.blockWithCoordinates = {[weak self] (longtitude, latitude) in
-                self?.locateMarker(longitude: longtitude, latitude: latitude)
-                self?.blackView.alpha = 0
-            }
-            tableView?.blockWithAlpha = {[weak self] (float) in
-                print("высота \(self?.view.frame.height)")
-                let alpha = float/(self?.view.frame.height)!*0.8
-                self?.blackView.alpha = 1 - alpha
-                print("alpha \(self?.blackView.alpha)")
-            }
-            tableView?.pushBlock = {[weak self] (model) in
-                let storyBoard = UIStoryboard(name: "Item", bundle: nil)
-                let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
-                
-                itemViewController.id = "\(model.id)"
-                self?.navigationController?.pushViewController(itemViewController, animated: false)
-            }
-            tableView?.blockAlphaZero = {[weak self] in
-                self?.blackView.alpha = 0
-            }
-            view.addSubview(tableView!)
         }
         super.viewWillAppear(animated)
     }
@@ -182,15 +161,6 @@ class MapViewController: UIViewController
             }
         })
     }
-    
-    //    // Prepare the segue.
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == &quot;segueToSelect&quot; {
-    //            if let nextViewController = segue.destination as? PlacesViewController {
-    //                nextViewController.likelyPlaces = likelyPlaces
-    //            }
-    //        }
-    //    }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -215,7 +185,8 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     // Handle authorization for the location manager.
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
+    {
         switch status {
         case .restricted:
             print("Location access was restricted.")
@@ -232,9 +203,123 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     // Handle location manager errors.
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
         locationManager.stopUpdatingLocation()
         print("Error: \(error)")
+    }
+}
+
+
+extension MapViewController: UITableViewDelegate, UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let model = dataSource[indexPath.row] as! Item
+        let cell = tableView.dequeueReusableCell(withIdentifier: kItemTableViewCellReuseIdentifier, for: indexPath) as! ItemTableViewCell
+        cell.configureSelf(model: model)
+        cell.coordinatesBlock = {[weak self] (longtitude, latitude) in
+            self?.locateMarker(longitude: longtitude, latitude: latitude)
+            self?.hideTable()
+            tableView.isScrollEnabled = false
+            var indexPath = IndexPath(item: 0, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let model = dataSource[indexPath.row] as! Item
+        let storyBoard = UIStoryboard(name: "Item", bundle: nil)
+        let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
+        
+        itemViewController.id = "\((model).id)"
+        
+        navigationController?.pushViewController(itemViewController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        if self.headerView != nil
+        {
+            return self.headerView
+        }
+        
+        let headerView = Bundle.main.loadNibNamed("tableViewHeader", owner: nil, options: nil)?[0] as! tableViewHeader
+        self.headerView = headerView
+        
+        return headerView
+    }
+}
+
+//MARK: - анимация таблицы
+extension MapViewController
+{
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
+        let currentOffset = scrollView.contentOffset.y
+        
+        print("offset \(currentOffset) origin y \(tableView.frame.origin.y) height \(tableView.frame.size.height)")
+        if tableView.frame.origin.y > 0
+        {
+            if currentOffset > 0
+            {
+                tableView.frame.size.height += currentOffset
+                tableView.frame.origin.y -= currentOffset
+                let alpha = tableView.frame.origin.y/(self.view.frame.height)*0.8
+                blackView.alpha = 1 - alpha
+                if tableView.frame.origin.y < 400
+                {
+                    showTable()
+                }
+                
+            }
+        }
+        
+        if tableView.frame.origin.y == self.view.frame.height - 144
+        {
+            tableView.bounces = false
+        }
+        else
+        {
+            tableView.bounces = true
+        }
+        
+        if currentOffset < 0 && tableView.frame.size.height > 144
+        {
+            tableView.frame.size.height += currentOffset
+            tableView.frame.origin.y -= currentOffset
+            if tableView.frame.origin.y > 20
+            {
+                hideTable()
+            }
+        } 
+    }
+    
+    func hideTable()
+    {
+        UIView.animate(withDuration: 1)
+        {
+            self.tableView.frame.origin.y = self.view.frame.height - 144
+            self.blackView.alpha = 0
+        }
+        
+    }
+    
+    func showTable()
+    {
+        UIView.animate(withDuration: 1)
+        {
+            self.tableView.frame.origin.y = 0
+            self.tableView.frame.size.height = self.view.frame.height
+        }
     }
 }
 
@@ -254,7 +339,6 @@ extension MapViewController
         } else {
             mapView.animate(to: camera)
         }
-        
     }
 }
 
@@ -275,4 +359,3 @@ extension MapViewController: GMSMapViewDelegate
         print("нажали на окно")
     }
 }
-
