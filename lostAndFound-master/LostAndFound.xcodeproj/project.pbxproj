@@ -83,6 +83,8 @@
 		3D1CC43A1ECF084400EDD9B5 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CC4381ECF084400EDD9B5 /* ChatTableViewCell.xib */; };
 		3D1CC43D1ECF0D9E00EDD9B5 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC43C1ECF0D9E00EDD9B5 /* ChatModel.swift */; };
 		3D1CC43F1ECF8BF400EDD9B5 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */; };
+		3D1D54DE1EF426E2004C1015 /* GetLocationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1D54DD1EF426E2004C1015 /* GetLocationOperation.swift */; };
+		3D1D54E01EF43007004C1015 /* GetLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1D54DF1EF43007004C1015 /* GetLocationManager.swift */; };
 		3D7D848C1EE09C12006EDBB2 /* ItemMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7D848A1EE09C12006EDBB2 /* ItemMapTableViewCell.swift */; };
 		3D7D848E1EE09C1D006EDBB2 /* ItemMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D7D848B1EE09C12006EDBB2 /* ItemMapTableViewCell.xib */; };
 		3D7D84901EE0A6AB006EDBB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D7D848F1EE0A6AB006EDBB2 /* GoogleService-Info.plist */; };
@@ -176,6 +178,8 @@
 		3D1CC4381ECF084400EDD9B5 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		3D1CC43C1ECF0D9E00EDD9B5 /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		3D1D54DD1EF426E2004C1015 /* GetLocationOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLocationOperation.swift; sourceTree = "<group>"; };
+		3D1D54DF1EF43007004C1015 /* GetLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLocationManager.swift; sourceTree = "<group>"; };
 		3D7D848A1EE09C12006EDBB2 /* ItemMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMapTableViewCell.swift; sourceTree = "<group>"; };
 		3D7D848B1EE09C12006EDBB2 /* ItemMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemMapTableViewCell.xib; sourceTree = "<group>"; };
 		3D7D848F1EE0A6AB006EDBB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -461,6 +465,8 @@
 			children = (
 				3DF13BCB1EBBEA1B00EF5EE7 /* SetLocationManager.swift */,
 				3D1CC4321ECE523100EDD9B5 /* SetLocationOperation.swift */,
+				3D1D54DD1EF426E2004C1015 /* GetLocationOperation.swift */,
+				3D1D54DF1EF43007004C1015 /* GetLocationManager.swift */,
 			);
 			name = Internet;
 			sourceTree = "<group>";
@@ -699,8 +705,10 @@
 				3D1CC4301ECE509500EDD9B5 /* API_GEOCODER.swift in Sources */,
 				3DAA3D821EAE870E00824AAB /* SetLocationMapController.swift in Sources */,
 				0D7528611EB9DE08002919DD /* UserButtonsTableViewCell.swift in Sources */,
+				3D1D54DE1EF426E2004C1015 /* GetLocationOperation.swift in Sources */,
 				0DE626501EB115EC00FECDF4 /* MapPresenter.swift in Sources */,
 				3D1CC4191ECB968800EDD9B5 /* ItemDescriptionModel.swift in Sources */,
+				3D1D54E01EF43007004C1015 /* GetLocationManager.swift in Sources */,
 				3D1CC4101ECB894F00EDD9B5 /* ItemPresenter.swift in Sources */,
 				0D80ECB31EF16BFF00644F83 /* UserEditViewController.swift in Sources */,
 				0DD117651E9D66FD0010AD72 /* LostAndFound.xcdatamodeld in Sources */,

@@ -15,7 +15,7 @@ class API_GEOCODER : API_WRAPPER
 {
     class func getAdress ( latitude : CLLocationDegrees, longitude : CLLocationDegrees , success : @escaping (JSON) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
     {
-        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(latitude),\(longitude)&key=AIzaSyBVCSRWUlvAdb197sEG-zo05w2dq_HfF1U"
+        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(latitude),\(longitude)&language=ru&key=AIzaSyBVCSRWUlvAdb197sEG-zo05w2dq_HfF1U"
         
         let url = URL(string: urlString)!
         // url - user readable link

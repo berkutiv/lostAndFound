@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import FirebaseAuth
 
 class MapViewController: UIViewController
 {
@@ -16,6 +17,8 @@ class MapViewController: UIViewController
     
     //UserDefaults.standard.value(forKey: "uid") as! String - получение Айди. См ниже
     //UserDefaults.standard.value(forKey: "utoken") as! String - получение Токена. См ниже
+    
+    static var token : String = ""
     
     @IBOutlet weak var blackView: UIView!
     var tableView : MapTableView?
@@ -38,9 +41,12 @@ class MapViewController: UIViewController
     {
         super.viewDidLoad()
         
+        FIRAuth.auth()?.currentUser?.refreshToken
+        
         let userId : String = UserDefaults.standard.value(forKey: "uid") as! String // - АЙДИ
         let userToken : String = UserDefaults.standard.value(forKey: "utoken") as! String // - ТОКЕН
         
+        print("token - \(MapViewController.token)")
         print(userId)
         print(userToken)
         

@@ -12,9 +12,9 @@ class AddManager
 {
     static var addSuccess = ""
     
-    class func addItem (token : String, userId : String, itemName : String, itemDescription : String, itemLatitude : String, itemLongitude : String, itemReward : String, success : @escaping (String) -> Void, failure : @escaping (Int) -> Void)
+    class func addItem (token : String, userId : String, itemName : String, itemDescription : String, itemLatitude : String, itemLongitude : String, itemAdress : String, itemReward : String, success : @escaping (String) -> Void, failure : @escaping (Int) -> Void)
     {
-        let addOperation = AddOperation(token: token, userId: userId, itemName: itemName, itemDescription: itemDescription, itemLatitude: itemLatitude, itemLongitude: itemLongitude, itemReward: itemReward, success: {(response) in
+        let addOperation = AddOperation(token: token, userId: userId, itemName: itemName, itemDescription: itemDescription, itemLatitude: itemLatitude, itemLongitude: itemLongitude, itemAdress : itemAdress, itemReward: itemReward, success: {(response) in
             
             addSuccess = response
             success(addSuccess)
