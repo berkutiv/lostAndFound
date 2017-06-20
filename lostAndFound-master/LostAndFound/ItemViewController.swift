@@ -38,6 +38,11 @@ class ItemViewController: UIViewController, UINavigationControllerDelegate
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        let backButton = UIBarButtonItem(title: "Назад", style:.plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
     }
     
     override func viewDidLoad()
@@ -55,7 +60,6 @@ class ItemViewController: UIViewController, UINavigationControllerDelegate
         tableView.register(kItemDescriptionNib, forCellReuseIdentifier: kItemDescriptionReusableIdentifier)
         tableView.register(kItemContactsTableViewCellNib, forCellReuseIdentifier: kItemContactsTableViewCellReuseIdentifier)
     }
-    
 }
 
 extension ItemViewController : View
@@ -170,7 +174,9 @@ extension ItemViewController : UITableViewDelegate, UITableViewDataSource
         if let model = presenter?.model(at: indexPath) as? ItemContactsModel
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: kItemContactsTableViewCellReuseIdentifier, for: indexPath) as! ItemContactsTableViewCell
+    
             
+            cell.chatButton.addTarget(self, action: #selector(ItemViewController.buttonClicked(_:)), for: .touchUpInside)
             cell.configureSelf(withDataModel: model)
             
             return cell
@@ -182,6 +188,14 @@ extension ItemViewController : UITableViewDelegate, UITableViewDataSource
     @IBAction func backButton(_ sender: Any)
     {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func buttonClicked(_ sender: UIButton)
+    {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Chat", bundle: nil)
+        let dialogViewController = storyBoard.instantiateViewController(withIdentifier: "DialogViewController") as! DialogViewController
+        
+        self.navigationController?.pushViewController(dialogViewController, animated: true)
     }
 }
 

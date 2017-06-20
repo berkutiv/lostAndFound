@@ -10,12 +10,11 @@ import UIKit
 
 class ItemHeaderTableViewCell: UITableViewCell
 {
-    @IBOutlet weak var itemName: UILabel!
+    
     @IBOutlet weak var itemReward: UILabel!
     
     func configureSelf (withDataModel model : ItemHeaderModel)
     {
-        itemName.text = model.itemName
         itemReward.text = model.itemReward
     }
 }

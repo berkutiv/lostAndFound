@@ -12,7 +12,6 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController
 {
-    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -27,10 +26,10 @@ class LoginViewController: UIViewController
         
 //         If we have the uid stored, the user is already logger in - no need to sign in again!
         
-//        if UserDefaults.standard.value(forKey: "uid") != nil
-//        {
-//            self.performSegue(withIdentifier: "loginSegue", sender: nil)
-//        }
+        if UserDefaults.standard.value(forKey: "uid") != nil
+        {
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -63,8 +62,6 @@ class LoginViewController: UIViewController
                                 self?.defaults.set(self?.password.text, forKey: "password")
                                 self?.defaults.set(self!.userId, forKey: "uid")
                                 self?.defaults.set(self!.token, forKey: "utoken")
-                                
-                                  MapViewController.token = (self?.token)!
                                 
                                 
                                 self?.performSegue(withIdentifier: "loginSegue", sender: nil)

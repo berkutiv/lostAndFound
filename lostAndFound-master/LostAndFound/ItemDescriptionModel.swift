@@ -9,5 +9,5 @@
 import Foundation
 class ItemDescriptionModel
 {
-    var itemDescription = "Плеер ахуенный конечно, нечего сказать. Оригинальный цвет - сочетается с розовым ковролином и придает лоска владельцу."
+    var itemDescription = "Документы: Паспорт, права, кредитные карты"
 }

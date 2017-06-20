@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YUi-8g-sW1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="22" width="375" height="645"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -31,7 +31,7 @@
                             <constraint firstAttribute="trailing" secondItem="YUi-8g-sW1" secondAttribute="trailing" id="7QE-uO-ki2"/>
                             <constraint firstItem="YUi-8g-sW1" firstAttribute="leading" secondItem="1tz-wx-Sua" secondAttribute="leading" id="8ZS-az-Zo7"/>
                             <constraint firstItem="yNS-Tj-zGA" firstAttribute="top" secondItem="YUi-8g-sW1" secondAttribute="bottom" id="TeS-TN-NdI"/>
-                            <constraint firstItem="YUi-8g-sW1" firstAttribute="top" secondItem="1tz-wx-Sua" secondAttribute="top" id="UCa-Js-6aF"/>
+                            <constraint firstItem="YUi-8g-sW1" firstAttribute="top" secondItem="1tz-wx-Sua" secondAttribute="top" constant="22" id="UCa-Js-6aF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Сообщения" id="Yyt-Tj-Fly"/>
@@ -54,12 +54,24 @@
                     <view key="view" contentMode="scaleToFill" id="y7V-TT-jFQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PZE-A5-1ub">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PZE-A5-1ub" secondAttribute="trailing" id="4Cd-pS-v0A"/>
+                            <constraint firstItem="VYQ-78-d9B" firstAttribute="top" secondItem="PZE-A5-1ub" secondAttribute="bottom" constant="44" id="EiQ-Vd-9XG"/>
+                            <constraint firstItem="PZE-A5-1ub" firstAttribute="top" secondItem="Nmm-ZH-gCp" secondAttribute="bottom" constant="44" id="KFC-us-tiz"/>
+                            <constraint firstItem="PZE-A5-1ub" firstAttribute="leading" secondItem="y7V-TT-jFQ" secondAttribute="leading" id="xLa-Yu-rG0"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1S-K7-bz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3830" y="-215"/>
+            <point key="canvasLocation" x="3829.5999999999999" y="-215.44227886056973"/>
         </scene>
     </scenes>
 </document>

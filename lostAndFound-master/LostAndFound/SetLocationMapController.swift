@@ -42,7 +42,7 @@ class SetLocationViewController: UIViewController, CLLocationManagerDelegate
     
     override func viewWillAppear(_ animated: Bool)
     {
-        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     override func viewDidLoad()
@@ -70,7 +70,6 @@ class SetLocationViewController: UIViewController, CLLocationManagerDelegate
     override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
     }
    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
