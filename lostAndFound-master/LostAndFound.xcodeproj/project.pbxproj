@@ -226,6 +226,8 @@
 				0D2211A11EAF74110037E8F7 /* ItemTableViewCell.xib */,
 				0DE626691EB1366800FECDF4 /* tableViewHeader.swift */,
 				0DE626671EB133A900FECDF4 /* tableViewHeader.xib */,
+				0DFB00C21EA772480040B2A9 /* MapTableView.xib */,
+				0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */,
 			);
 			name = "Map tableView Cells";
 			sourceTree = "<group>";
@@ -351,12 +353,10 @@
 			isa = PBXGroup;
 			children = (
 				0DD1175E1E9D66FD0010AD72 /* MapViewController.swift */,
-				0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */,
 				0DD117731E9E72680010AD72 /* Map.storyboard */,
 				0DE6264F1EB115EC00FECDF4 /* MapPresenter.swift */,
 				0DE626511EB115F400FECDF4 /* MapManager.swift */,
 				0DE626531EB115FB00FECDF4 /* MapOperation.swift */,
-				0DFB00C21EA772480040B2A9 /* MapTableView.xib */,
 				0D22119F1EAF73ED0037E8F7 /* Map tableView Cells */,
 			);
 			name = Map;

@@ -14,7 +14,8 @@ import FirebaseAuth
 class MapViewController: UIViewController
 {
     var dataSource = NSMutableArray()
-
+    
+    var presenter: Presenter?
 
     @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -44,6 +45,9 @@ class MapViewController: UIViewController
         let userId : String = UserDefaults.standard.value(forKey: "uid") as! String // - АЙДИ
         let userToken : String = UserDefaults.standard.value(forKey: "utoken") as! String // - ТОКЕН
         
+
+        //print("token - \(MapViewController.token)")
+
         print(userId)
         print(userToken)
         
@@ -56,8 +60,6 @@ class MapViewController: UIViewController
         
         placesClient = GMSPlacesClient.shared()
         
-        tableView.dataSource = self
-        tableView.delegate = self
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedSectionHeaderHeight = 50
@@ -69,6 +71,11 @@ class MapViewController: UIViewController
     
     override func viewWillAppear(_ animated: Bool)
     {
+        if presenter == nil
+        {
+            DependencyInjector.obtainPresenter(view: self)
+        }
+        super.viewWillAppear(animated)
         //Настройки навигационника
         navigationController?.isNavigationBarHidden = true
         self.navigationController?.navigationBar.barTintColor = UIColor.white
@@ -167,6 +174,40 @@ class MapViewController: UIViewController
     }
 }
 
+extension MapViewController: View
+{
+    func assignPresenter(presenter: Presenter) -> Void
+    {
+        self.presenter = presenter
+        presenter.viewLoaded(view: self)
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    func reloadData() -> Void
+    {
+        tableView.reloadData()
+    }
+    
+    func addLoader() -> Void
+    {
+        
+    }
+    
+    func removeLoader() -> Void
+    {
+        
+    }
+    
+    func handleInternetErrorCode(code: Int) -> Void
+    {
+        let alertController = UIAlertController(title: "Ошибка", message: "Нет соединения", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+}
+
 extension MapViewController: CLLocationManagerDelegate {
     
     //Handle incoming location events.
@@ -219,12 +260,13 @@ extension MapViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return dataSource.count
+        return presenter!.numberOfModels(inSection: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let model = dataSource[indexPath.row] as! Item
+        let model = presenter!.model(at: indexPath) as! Item
+        print("имя \(model.title)")
         let cell = tableView.dequeueReusableCell(withIdentifier: kItemTableViewCellReuseIdentifier, for: indexPath) as! ItemTableViewCell
         cell.configureSelf(model: model)
         cell.coordinatesBlock = {[weak self] (longtitude, latitude) in
@@ -240,7 +282,7 @@ extension MapViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let model = dataSource[indexPath.row] as! Item
+        let model = presenter!.model(at: indexPath) as! Item
         let storyBoard = UIStoryboard(name: "Item", bundle: nil)
         let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
         
@@ -270,7 +312,7 @@ extension MapViewController
     {
         let currentOffset = scrollView.contentOffset.y
         
-        print("offset \(currentOffset) origin y \(tableView.frame.origin.y) height \(tableView.frame.size.height)")
+        //print("offset \(currentOffset) origin y \(tableView.frame.origin.y) height \(tableView.frame.size.height)")
         if tableView.frame.origin.y > 0
         {
             if currentOffset > 0

@@ -24,7 +24,7 @@ class LoginViewController: UIViewController
     {
         super.viewDidAppear(animated)
         
-//         If we have the uid stored, the user is already logger in - no need to sign in again!
+         //If we have the uid stored, the user is already logger in - no need to sign in again!
         
         if UserDefaults.standard.value(forKey: "uid") != nil
         {
@@ -63,6 +63,10 @@ class LoginViewController: UIViewController
                                 self?.defaults.set(self!.userId, forKey: "uid")
                                 self?.defaults.set(self!.token, forKey: "utoken")
                                 
+
+                                  //MapViewController.token = (self?.token)!
+                                
+
                                 
                                 self?.performSegue(withIdentifier: "loginSegue", sender: nil)
                             }
