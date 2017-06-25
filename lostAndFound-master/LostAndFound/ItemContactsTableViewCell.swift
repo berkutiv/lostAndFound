@@ -12,17 +12,19 @@ class ItemContactsTableViewCell: UITableViewCell
 {
     @IBOutlet weak var itemUserName: UILabel!
     @IBOutlet weak var itemUserPhoto: UIImageView!
-    @IBOutlet weak var itemUserContactNumber: UILabel!
-    @IBOutlet weak var itemUserEmail: UILabel!
+    @IBOutlet weak var chatButton: UIButton!
     
     func configureSelf (withDataModel model : ItemContactsModel)
     {
         itemUserName.text = model.itemUserName
         itemUserPhoto.image = model.itemUserPhoto
-        itemUserContactNumber.text = model.itemUserContactNumber
-        itemUserEmail.text = model.itemUserEmail
         
-        itemUserPhoto.layer.cornerRadius = self.itemUserPhoto.frame.width/6.4
+        itemUserPhoto.layer.cornerRadius = self.itemUserPhoto.frame.width/2
         itemUserPhoto.layer.masksToBounds = true
+        
+        chatButton.layer.borderWidth = 1
+        chatButton.layer.cornerRadius = self.chatButton.frame.width/18
+        chatButton.layer.masksToBounds = true
+        
     }
 }

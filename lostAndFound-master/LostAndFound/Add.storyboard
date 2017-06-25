@@ -23,14 +23,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aya-0e-hsS" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aya-0e-hsS" firstAttribute="top" secondItem="daT-Xz-9kX" secondAttribute="top" id="8TI-rp-RqA"/>
-                            <constraint firstItem="VG9-mM-xof" firstAttribute="top" secondItem="aya-0e-hsS" secondAttribute="bottom" id="9Aw-DP-ZBI"/>
+                            <constraint firstItem="VG9-mM-xof" firstAttribute="top" secondItem="aya-0e-hsS" secondAttribute="bottom" constant="44" id="9Aw-DP-ZBI"/>
                             <constraint firstAttribute="trailing" secondItem="aya-0e-hsS" secondAttribute="trailing" id="9EH-Sy-kWl"/>
                             <constraint firstItem="aya-0e-hsS" firstAttribute="leading" secondItem="daT-Xz-9kX" secondAttribute="leading" id="t0h-CE-qDX"/>
                         </constraints>

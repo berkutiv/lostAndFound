@@ -10,5 +10,6 @@ import UIKit
 
 class ItemPhotoCollectionModel
 {
-    var photosUrls : NSArray = [UIImage (named: "pleer1")!, UIImage (named: "pleer2")!]
+    var photosUrls : NSArray = [UIImage (named: "Document")!, UIImage (named: "Document1")!]
+    var itemName = "Документы"
 }

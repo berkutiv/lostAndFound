@@ -10,8 +10,6 @@ import  UIKit
 class ItemContactsModel
 {
     var itemUserId = ""
-    var itemUserName = "xxx_VA$YA_xxx"
-    var itemUserPhoto = UIImage(named: "user")
-    var itemUserContactNumber = "+7 969 696 96 69"
-    var itemUserEmail = "pussyriot@rambler.ru"
+    var itemUserName = "Игорь Верник"
+    var itemUserPhoto = UIImage(named: "vernik")
 }

@@ -64,7 +64,7 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
     override func viewWillAppear(_ animated: Bool)
     {
         //Настройки навигационника
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
         self.navigationController?.navigationBar.topItem?.title = "Создать объявление"
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.tintColor = UIColor.black
@@ -78,7 +78,6 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
     override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
     }
     
     override func viewDidLayoutSubviews()
@@ -344,8 +343,10 @@ extension AddItemViewController
                                 self?.itemNameTextField.text = ""
                                 self?.itemDescriptionTextView.text = ""
                                 self?.itemRewardTextFiled.text = ""
+                                self?.mapButton.setTitle("Изменить местоположение", for: .normal)
                                 
                                 self?.tabBarController?.selectedIndex = 0
+                                
                             }
                             
                             alert.addAction(confirmAction)
