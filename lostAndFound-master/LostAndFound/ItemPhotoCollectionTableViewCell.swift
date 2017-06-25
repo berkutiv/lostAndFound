@@ -13,8 +13,11 @@ class ItemPhotoCollectionTableViewCell: UITableViewCell
 {
     
     @IBOutlet weak var ItemPhotoCollection: UICollectionView!
+    @IBOutlet weak var itemName: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     let kItemPhotoCellNib = UINib(nibName: "ItemPhotoCollectionViewCell", bundle: nil)
+    
     let kItemPhotoCellReuseIdentifier = "kitemPhotoCellReuseIdentifier"
     
     var dataSource = NSArray()
@@ -25,12 +28,16 @@ class ItemPhotoCollectionTableViewCell: UITableViewCell
         ItemPhotoCollection.dataSource = self
         ItemPhotoCollection.register(kItemPhotoCellNib, forCellWithReuseIdentifier: kItemPhotoCellReuseIdentifier)
         
+        pageControl.hidesForSinglePage = true
         super.awakeFromNib()
     }
     
     func configureSelf (withDataModel model : ItemPhotoCollectionModel)
     {
+        itemName.text = model.itemName
         dataSource = model.photosUrls
+        pageControl.numberOfPages = model.photosUrls.count
+
         ItemPhotoCollection.reloadData()
     }
 }
@@ -48,6 +55,10 @@ extension ItemPhotoCollectionTableViewCell : UICollectionViewDelegateFlowLayout,
     {
         let side = (collectionView.frame.size.width)
         return CGSize(width: side, height: side)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.pageControl.currentPage = indexPath.item
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell

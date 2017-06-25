@@ -17,6 +17,7 @@ class DialogViewController : UIViewController
     {
         super.viewWillAppear(animated)
         navigationItem.title = userChatName
+        self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = true
     }
     

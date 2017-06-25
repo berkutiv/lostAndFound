@@ -36,7 +36,7 @@ class ChatViewController: UIViewController, UINavigationControllerDelegate
     {
         //Настройки навигационника
         self.tabBarController?.tabBar.isHidden = false
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
         self.navigationController?.navigationBar.topItem?.title = "Сообщения"
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.tintColor = UIColor.black

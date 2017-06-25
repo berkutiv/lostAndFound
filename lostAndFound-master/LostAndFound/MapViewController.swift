@@ -44,7 +44,6 @@ class MapViewController: UIViewController
         let userId : String = UserDefaults.standard.value(forKey: "uid") as! String // - АЙДИ
         let userToken : String = UserDefaults.standard.value(forKey: "utoken") as! String // - ТОКЕН
         
-        print("token - \(MapViewController.token)")
         print(userId)
         print(userToken)
         
