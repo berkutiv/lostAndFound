@@ -25,8 +25,9 @@ class ItemTableViewCell: UITableViewCell
     {
         self.model = model
         //print("photo \(model.photosURL[0])")
-        self.picture.image = UIImage(named: "\(model.photosURL[0])")
+        self.picture.image = UIImage(named: "0")
         self.titleLabel.text = model.title
+        self.descriptionLabel.text = model.description
         picture.layer.cornerRadius = self.picture.frame.width/2
         picture.layer.masksToBounds = true
         buttonPin.layer.borderWidth = 1

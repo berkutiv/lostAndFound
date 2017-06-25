@@ -29,6 +29,10 @@ class DependencyInjector
             presenter = ChatPresenter()
         }
         
+        if view is MapViewController
+        {
+            presenter = MapPresenter()
+        }
         if presenter != nil
         {
             view.assignPresenter(presenter: presenter!)
