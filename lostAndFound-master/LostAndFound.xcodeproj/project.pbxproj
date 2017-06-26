@@ -85,6 +85,8 @@
 		3D1CC43F1ECF8BF400EDD9B5 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */; };
 		3D1D54DE1EF426E2004C1015 /* GetLocationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1D54DD1EF426E2004C1015 /* GetLocationOperation.swift */; };
 		3D1D54E01EF43007004C1015 /* GetLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1D54DF1EF43007004C1015 /* GetLocationManager.swift */; };
+		3D1D54F81F0149D1004C1015 /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1D54F71F0149D1004C1015 /* CustomPresentAnimationController.swift */; };
+		3D1D54FA1F015861004C1015 /* CustomDismissController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1D54F91F015861004C1015 /* CustomDismissController.swift */; };
 		3D7D848C1EE09C12006EDBB2 /* ItemMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7D848A1EE09C12006EDBB2 /* ItemMapTableViewCell.swift */; };
 		3D7D848E1EE09C1D006EDBB2 /* ItemMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D7D848B1EE09C12006EDBB2 /* ItemMapTableViewCell.xib */; };
 		3D7D84901EE0A6AB006EDBB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D7D848F1EE0A6AB006EDBB2 /* GoogleService-Info.plist */; };
@@ -180,6 +182,8 @@
 		3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		3D1D54DD1EF426E2004C1015 /* GetLocationOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLocationOperation.swift; sourceTree = "<group>"; };
 		3D1D54DF1EF43007004C1015 /* GetLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLocationManager.swift; sourceTree = "<group>"; };
+		3D1D54F71F0149D1004C1015 /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
+		3D1D54F91F015861004C1015 /* CustomDismissController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDismissController.swift; sourceTree = "<group>"; };
 		3D7D848A1EE09C12006EDBB2 /* ItemMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMapTableViewCell.swift; sourceTree = "<group>"; };
 		3D7D848B1EE09C12006EDBB2 /* ItemMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemMapTableViewCell.xib; sourceTree = "<group>"; };
 		3D7D848F1EE0A6AB006EDBB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -317,6 +321,7 @@
 		0DD1177D1E9E77820010AD72 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				3D1D54F61F014995004C1015 /* CustomTransition */,
 				0D35F2F11EDF1162007FA968 /* Custom Tab Bar */,
 				0DD117601E9D66FD0010AD72 /* Main.storyboard */,
 			);
@@ -487,6 +492,15 @@
 				3D1CC43E1ECF8BF400EDD9B5 /* Chat.swift */,
 			);
 			name = ChatModels;
+			sourceTree = "<group>";
+		};
+		3D1D54F61F014995004C1015 /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				3D1D54F71F0149D1004C1015 /* CustomPresentAnimationController.swift */,
+				3D1D54F91F015861004C1015 /* CustomDismissController.swift */,
+			);
+			name = CustomTransition;
 			sourceTree = "<group>";
 		};
 		3D7D84921EE0AD7A006EDBB2 /* Login */ = {
@@ -730,8 +744,10 @@
 				3D1CC4331ECE523100EDD9B5 /* SetLocationOperation.swift in Sources */,
 				3D163A0D1EEB283A001B3285 /* LoginOperation.swift in Sources */,
 				0D35F2F51EDF1183007FA968 /* CustomTabBar.swift in Sources */,
+				3D1D54FA1F015861004C1015 /* CustomDismissController.swift in Sources */,
 				0D22119E1EAB65F90037E8F7 /* DependencyInjector.swift in Sources */,
 				0DE6265A1EB1161500FECDF4 /* AddManager.swift in Sources */,
+				3D1D54F81F0149D1004C1015 /* CustomPresentAnimationController.swift in Sources */,
 				3D1CC41F1ECCFE4C00EDD9B5 /* ItemViewController.swift in Sources */,
 				3DF13BCC1EBBEA1B00EF5EE7 /* SetLocationManager.swift in Sources */,
 				0DE626601EB1162F00FECDF4 /* UserOperation.swift in Sources */,

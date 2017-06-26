@@ -33,6 +33,9 @@ class MapViewController: UIViewController
     var selectedPlace: GMSPlace?
     let defaultLocation = CLLocation(latitude: 35, longitude: 35)
     
+    let customPresentAnimationController = CustomPresentAnimationController()
+    let customDismissController = CustomDismissAnimationController()
+    
     let kItemTableNIB = UINib(nibName: "ItemTableViewCell", bundle: nil)
     let kItemTableViewCellReuseIdentifier = "kItemTableViewCellReuseIdentifier"
     
@@ -65,6 +68,8 @@ class MapViewController: UIViewController
         tableView.estimatedSectionHeaderHeight = 50
         tableView.sectionHeaderHeight = UITableViewAutomaticDimension
         tableView.register(kItemTableNIB, forCellReuseIdentifier: kItemTableViewCellReuseIdentifier)
+        
+        navigationController?.delegate = self
         
         dataSource = ModelsFactory.generateModels() as! NSMutableArray
     }
@@ -134,6 +139,15 @@ class MapViewController: UIViewController
             listLikelyPlaces()
         }
         super.viewWillAppear(animated)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination.title == "ItemViewController"
+        {
+            let toViewController = segue.destination as UIViewController
+            toViewController.transitioningDelegate = self
+        }
     }
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue)
@@ -285,6 +299,7 @@ extension MapViewController: UITableViewDelegate, UITableViewDataSource
         let model = presenter!.model(at: indexPath) as! Item
         let storyBoard = UIStoryboard(name: "Item", bundle: nil)
         let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
+        itemViewController.transitioningDelegate = self
         
         itemViewController.id = "\((model).id)"
         
@@ -396,12 +411,28 @@ extension MapViewController: GMSMapViewDelegate
         let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
         
         itemViewController.id = "\(marker.title)"
-        self.navigationController?.pushViewController(itemViewController, animated: false)
+        self.navigationController?.pushViewController(itemViewController, animated: true)
         return true
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker)
     {
         print("нажали на окно")
+    }
+}
+
+extension MapViewController :  UIViewControllerTransitioningDelegate, UINavigationControllerDelegate
+{
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    {
+        if operation == .push
+        {
+            return customPresentAnimationController
+        }
+        else
+        {
+            return customDismissController
+        }
     }
 }
