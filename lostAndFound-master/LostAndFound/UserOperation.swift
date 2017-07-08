@@ -31,16 +31,36 @@ class UserOperation: Operation
     override func main()
     {
         let semaphore = DispatchSemaphore(value: 0)
-        internetTask = API_WRAPPER.getUsers(id: id, success: { (user) in
+        internetTask = API_WRAPPER.getUser(userId: id, success: { (jsonResponce) in
             
-            if self.isCancelled == false
-            {
-                self.success(user)
-            }
-            else
-            {
-                self.success(User(id: "операция нет юзера"))
-            }
+            let user = jsonResponce["response"]["user"]
+            
+            let userName = user["displayName"].stringValue
+            let userMail = user["email"].stringValue
+            let userId = user["uid"].stringValue
+            
+            let mainUser = User(id: userId)
+            let userHeader = UserHeader(id: userId, name: userName, phone: "", email: userMail, photo: "")
+            mainUser.modelsArray.add(UserHeader)
+            //print("user name \(userName)")
+            
+            API_WRAPPER.getUserItems(user: mainUser, userId: self.id, success: { (jsonResponce) in
+            
+                print("json \(jsonResponce)")
+                
+                if self.isCancelled == false
+                {
+                     self.success(mainUser)
+                }
+                else
+                {
+                    self.success(User(id: ""))
+                }
+                
+            }, failure: { (code) in
+                
+            })
+            
             
             semaphore.signal()
             

@@ -10,7 +10,7 @@ import Foundation
 
 class UserPresenter: Presenter
 {
-    var user = User(id: "презентер")
+    var user = User(id: "")
     weak var view: View?
     var userId = ""
     
