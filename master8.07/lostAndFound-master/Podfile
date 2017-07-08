@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'LostAndFound' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for LostAndFound
+pod 'GoogleMaps'
+pod 'GooglePlaces’
+pod 'SDWebImage', '~>3.8'
+pod 'SwiftyJSON'
+pod 'UITextView+Placeholder', '~> 1.2'
+pod 'RAMAnimatedTabBarController', "~> 2.0.13"
+pod 'Firebase/Core'
+pod 'JSQMessagesViewController'
+pod 'Firebase/Auth'
+pod 'Firebase/Database’
+pod 'Firebase/Storage’
+
+end

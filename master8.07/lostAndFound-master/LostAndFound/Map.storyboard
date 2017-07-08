@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fkK-Ym-MtN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Карта-->
+        <scene sceneID="Ptz-Oj-Uf5">
+            <objects>
+                <viewController restorationIdentifier="mapId" storyboardIdentifier="mapId" hidesBottomBarWhenPushed="YES" id="fkK-Ym-MtN" customClass="MapViewController" customModule="LostAndFound" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pf9-kZ-Zln"/>
+                        <viewControllerLayoutGuide type="bottom" id="jYa-I1-p9E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zxl-Sg-Tlu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-Ka-U4b">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="0.44707402019999998" blue="0.21549591800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cVA-sk-crL">
+                                <rect key="frame" x="0.0" y="523" width="375" height="144"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="S7l-kW-2W9"/>
+                                </constraints>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="95" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Xqj-Ka-U4b" secondAttribute="trailing" id="5hS-ep-gao"/>
+                            <constraint firstAttribute="bottom" secondItem="cVA-sk-crL" secondAttribute="bottom" id="FxX-mx-kqi"/>
+                            <constraint firstItem="Xqj-Ka-U4b" firstAttribute="top" secondItem="Zxl-Sg-Tlu" secondAttribute="top" id="Mtc-bZ-v4u"/>
+                            <constraint firstItem="cVA-sk-crL" firstAttribute="leading" secondItem="Zxl-Sg-Tlu" secondAttribute="leading" id="OG4-ha-9tk"/>
+                            <constraint firstItem="Xqj-Ka-U4b" firstAttribute="leading" secondItem="Zxl-Sg-Tlu" secondAttribute="leading" id="UWi-KC-bUn"/>
+                            <constraint firstAttribute="trailing" secondItem="cVA-sk-crL" secondAttribute="trailing" id="jYu-3W-pEn"/>
+                            <constraint firstItem="jYa-I1-p9E" firstAttribute="top" secondItem="Xqj-Ka-U4b" secondAttribute="bottom" id="qep-ST-o4v"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Карта" image="map_icon" selectedImage="map_icon" id="ei7-vo-XMV" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="yOffSet">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="mTo-gn-kg6"/>
+                    <connections>
+                        <outlet property="blackView" destination="Xqj-Ka-U4b" id="NQK-vx-nY7"/>
+                        <outlet property="tableView" destination="cVA-sk-crL" id="VCK-xt-uU8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18M-9X-kGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1364" y="-143.47826086956522"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="map_icon" width="32" height="32"/>
+    </resources>
+</document>
