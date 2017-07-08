@@ -11,7 +11,14 @@ import GoogleMaps
 
 class ItemMapModel
 {
-    var latitude : CLLocationDegrees = 55.688713
-    var longitude : CLLocationDegrees = 37.901073
-    var itemAdress = "г Москва, Дмитровское шоссе, дом 13"
+    var latitude : CLLocationDegrees
+    var longitude : CLLocationDegrees
+    var itemAdress : String
+    
+    init (latitude : CLLocationDegrees, longitude : CLLocationDegrees, itemAdress : String)
+    {
+        self.itemAdress = itemAdress
+        self.latitude = latitude
+        self.longitude = longitude
+    }
 }

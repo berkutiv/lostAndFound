@@ -10,6 +10,16 @@ import UIKit
 
 class ItemPhotoCollectionModel
 {
-    var photosUrls : NSArray = [UIImage (named: "Document")!, UIImage (named: "Document1")!]
-    var itemName = "Документы"
+    var photosUrls : NSArray
+    var itemName : String
+    
+    init(photosUrls : NSArray, itemName : String)
+    {
+        self.photosUrls = photosUrls
+        self.itemName = itemName
+    }
+    
+    
+//    var photosUrls : NSArray = [UIImage (named: "Document")!, UIImage (named: "Document1")!]
+//    var itemName = "Документы"
 }

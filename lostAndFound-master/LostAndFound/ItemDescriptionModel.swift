@@ -9,5 +9,10 @@
 import Foundation
 class ItemDescriptionModel
 {
-    var itemDescription = "Документы: Паспорт, права, кредитные карты"
+    var itemDescription : String
+    
+    init(itemDescription : String)
+    {
+        self.itemDescription = itemDescription
+    }
 }

@@ -33,7 +33,10 @@ class ItemViewController: UIViewController, UINavigationControllerDelegate
     
     override func viewWillAppear(_ animated: Bool)
     {
+        print("id вещи - \(id)")
+        
         super.viewWillAppear(true)
+        
         navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -47,10 +50,12 @@ class ItemViewController: UIViewController, UINavigationControllerDelegate
     
     override func viewDidLoad()
     {
-        DependencyInjector.obtainPresenter(view: self)
-        
         super.viewDidLoad()
     
+        if presenter == nil
+        {
+            DependencyInjector.obtainPresenter(view: self)
+        }
         tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -69,17 +74,23 @@ extension ItemViewController : View
      */
     func assignPresenter(presenter: Presenter) -> Void
     {
-        self.presenter = presenter
-        
-        let customData = NSMutableDictionary()
-        customData.setValue(id, forKey: "item_id")
-        
-        presenter.provide(data: customData)
-        
-        presenter.viewLoaded(view: self)
-        
-        tableView.delegate = self
+//        self.presenter = presenter
+//        
+//        let customData = NSMutableDictionary()
+//        customData.setValue(id, forKey: "item_id")
+//        
+//        presenter.provide(data: customData)
+//        
+//        presenter.viewLoaded(view: self)
+//        
+//        tableView.delegate = self
+//        tableView.dataSource = self
         tableView.dataSource = self
+        tableView.delegate = self
+        self.presenter = presenter
+        presenter.viewLoadedWithID(id: id, view: self)
+        
+        tableView.reloadData()
     }
     
     /**
@@ -111,7 +122,10 @@ extension ItemViewController : View
      */
     func handleInternetErrorCode(code: Int) -> Void
     {
-        
+        let alertController = UIAlertController(title: "Ошибка", message: "Нет соединения", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
 

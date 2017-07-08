@@ -40,4 +40,5 @@ protocol Presenter: class
      */
     func provide (data : NSDictionary)
     
+    func viewLoadedWithID (id : String, view : View) -> Void
 }

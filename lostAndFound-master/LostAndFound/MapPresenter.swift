@@ -68,4 +68,9 @@ class MapPresenter: Presenter
     {
         
     }
+    
+    func viewLoadedWithID(id: String, view: View)
+    {
+       
+    }
 }

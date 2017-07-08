@@ -9,7 +9,14 @@
 import  UIKit
 class ItemContactsModel
 {
-    var itemUserId = ""
-    var itemUserName = "Игорь Верник"
-    var itemUserPhoto = UIImage(named: "vernik")
+    var itemUserId : String
+    var itemUserName : String
+    var itemUserPhoto : UIImage
+    
+    init(itemUserId : String, itemUserName : String, itemUserPhoto : UIImage)
+    {
+        self.itemUserId = itemUserId
+        self.itemUserName = itemUserName
+        self.itemUserPhoto = itemUserPhoto
+    }
 }

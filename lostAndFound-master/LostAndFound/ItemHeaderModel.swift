@@ -10,5 +10,9 @@ import Foundation
 
 class ItemHeaderModel
 {
-    var itemReward = "Посмотреть фильмы с моим участием"
+    var itemReward : String
+    init (itemReward : String)
+    {
+        self.itemReward = itemReward
+    }
 }
