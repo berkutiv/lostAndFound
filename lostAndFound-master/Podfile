@@ -15,5 +15,7 @@ pod 'RAMAnimatedTabBarController', "~> 2.0.13"
 pod 'Firebase/Core'
 pod 'JSQMessagesViewController'
 pod 'Firebase/Auth'
+pod 'Firebase/Database’
+pod 'Firebase/Storage’
 
 end

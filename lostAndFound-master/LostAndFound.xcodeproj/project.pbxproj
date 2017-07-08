@@ -60,6 +60,8 @@
 		0DFB00C51EA7728B0040B2A9 /* MapTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */; };
 		3D163A0D1EEB283A001B3285 /* LoginOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D163A0C1EEB283A001B3285 /* LoginOperation.swift */; };
 		3D163A0F1EEB284A001B3285 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D163A0E1EEB284A001B3285 /* LoginManager.swift */; };
+		3D1BBAAB1F0D0F6800A83C1F /* ItemOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1BBAAA1F0D0F6800A83C1F /* ItemOperation.swift */; };
+		3D1BBAAD1F0D0FA100A83C1F /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1BBAAC1F0D0FA100A83C1F /* ItemManager.swift */; };
 		3D1CC3E01EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3DE1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift */; };
 		3D1CC3E81EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC3E61EC4A3FB00EDD9B5 /* ItemDescriptionTableViewCell.swift */; };
 		3D1CC4101ECB894F00EDD9B5 /* ItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC40F1ECB894F00EDD9B5 /* ItemPresenter.swift */; };
@@ -158,6 +160,8 @@
 		0DFB00C41EA7728B0040B2A9 /* MapTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableView.swift; sourceTree = "<group>"; };
 		3D163A0C1EEB283A001B3285 /* LoginOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOperation.swift; sourceTree = "<group>"; };
 		3D163A0E1EEB284A001B3285 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		3D1BBAAA1F0D0F6800A83C1F /* ItemOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemOperation.swift; sourceTree = "<group>"; };
+		3D1BBAAC1F0D0FA100A83C1F /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
 		3D1CC3DE1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPhotoCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		3D1CC3DF1EC4A27900EDD9B5 /* ItemPhotoCollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemPhotoCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		3D1CC3E31EC4A33300EDD9B5 /* ItemPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 			children = (
 				0D7528721ECB0FC4002919DD /* ItemViewController.swift */,
 				3D1CC40F1ECB894F00EDD9B5 /* ItemPresenter.swift */,
+				3D1BBAAA1F0D0F6800A83C1F /* ItemOperation.swift */,
+				3D1BBAAC1F0D0FA100A83C1F /* ItemManager.swift */,
 				3D1CC4341ECE5CD300EDD9B5 /* Item.storyboard */,
 				3D1CC3D91EC4A0A900EDD9B5 /* Item Cells */,
 			);
@@ -345,8 +351,8 @@
 			children = (
 				0D2211A41EAF77130037E8F7 /* ModelsFactory.swift */,
 				0D7528631EB9E013002919DD /* UsersFactory.swift */,
-				0DD117821E9E78980010AD72 /* Item.swift */,
 				0DD117841E9E79A20010AD72 /* User.swift */,
+				0DD117821E9E78980010AD72 /* Item.swift */,
 				0D9BE7361EDDD68D00A12D41 /* UserModels */,
 				3D1CC43B1ECF0D7900EDD9B5 /* ChatModels */,
 				3D1CC4131ECB940500EDD9B5 /* ItemModels */,
@@ -712,6 +718,7 @@
 				0DE626561EB1160800FECDF4 /* AddPresenter.swift in Sources */,
 				3D1CC41E1ECCFA3700EDD9B5 /* ItemMapModel.swift in Sources */,
 				3D1CC43F1ECF8BF400EDD9B5 /* Chat.swift in Sources */,
+				3D1BBAAB1F0D0F6800A83C1F /* ItemOperation.swift in Sources */,
 				0D9BE73A1EDDD6AF00A12D41 /* UserButtons.swift in Sources */,
 				0D35F2F71EDF118B007FA968 /* CustomTabBarItem.swift in Sources */,
 				0DE6264C1EB115CD00FECDF4 /* ChatPresenter.swift in Sources */,
@@ -740,6 +747,7 @@
 				0D7528661EC5A792002919DD /* OperationsManager.swift in Sources */,
 				0D22119C1EAB65EC0037E8F7 /* View.swift in Sources */,
 				3D96E3581EEEF264009E84AD /* RegisterOperation.swift in Sources */,
+				3D1BBAAD1F0D0FA100A83C1F /* ItemManager.swift in Sources */,
 				0DE6265C1EB1162200FECDF4 /* UserManager.swift in Sources */,
 				3D1CC4331ECE523100EDD9B5 /* SetLocationOperation.swift in Sources */,
 				3D163A0D1EEB283A001B3285 /* LoginOperation.swift in Sources */,

@@ -11,6 +11,8 @@ import CoreLocation
 import GoogleMaps
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
 class AddItemViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, BackCoordinates
 {
@@ -23,16 +25,14 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var photoButton2: UIButton!
     @IBOutlet weak var photoButton3: UIButton!
     @IBOutlet weak var createButton: UIButton!
-    
-    
-    
-    
+
     var myLocation = CLLocation()
     var itemAdress = ""
     var myLatitude = String()
     var myLongitude = String()
     var id = 1
     var buttonPressed = Int()
+    let photos = NSMutableArray()
 
     override func viewDidLoad()
     {
@@ -53,7 +53,10 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
         itemDescriptionTextView.setContentOffset(CGPoint.zero, animated: false)
         itemNameTextField.delegate = self
         itemRewardTextFiled.delegate = self
-
+        
+//        itemNameTextField.setLeftPaddingPoints(15)
+//        itemRewardTextFiled.setLeftPaddingPoints(15)
+    
         let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddItemViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
@@ -82,21 +85,9 @@ class AddItemViewController : UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidLayoutSubviews()
     {
-        let borderBottom = CALayer()
-        let borderWidth = CGFloat(2.0)
-        borderBottom.borderColor = UIColor.gray.cgColor
-        borderBottom.frame = CGRect(x: 0, y: itemNameTextField.frame.height - 1.0, width: itemNameTextField.frame.width , height: itemNameTextField.frame.height - 1.0)
-        borderBottom.borderWidth = borderWidth
-        itemNameTextField.layer.addSublayer(borderBottom)
-        itemNameTextField.layer.masksToBounds = true
-        
-        let borderBottom2 = CALayer()
-        let borderWidth2 = CGFloat(2.0)
-        borderBottom2.borderColor = UIColor.gray.cgColor
-        borderBottom2.frame = CGRect(x: 0, y: itemRewardTextFiled.frame.height - 1.0, width: itemRewardTextFiled.frame.width , height: itemRewardTextFiled.frame.height - 1.0)
-        borderBottom2.borderWidth = borderWidth2
-        itemRewardTextFiled.layer.addSublayer(borderBottom2)
-        itemRewardTextFiled.layer.masksToBounds = true
+        itemNameTextField.underlined()
+        itemRewardTextFiled.underlined()
+        super.viewDidLayoutSubviews()
     }
     
 }
@@ -143,34 +134,46 @@ extension AddItemViewController
 {
     @IBAction func photoButton(_ sender: Any)
     {
-        buttonPressed = 1
-        
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        actionSheet.addAction(UIAlertAction(title: "Камера", style: .default, handler: {
-            action in
-            self.showCamera()
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Мои фотографии", style: .default, handler: {
-            action in
-            self.showAlbum()
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: {
-            action in
-            self.photoButton.setImage(UIImage(named: "cameraIcon"), for: .normal)
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-        
-        self.present(actionSheet, animated: true, completion: nil)
-
+        if itemNameTextField.text! == ""
+        {
+            enterItemNameAlert()
+        }
+        else
+        {
+            buttonPressed = 0
+            
+            let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            
+            actionSheet.addAction(UIAlertAction(title: "Камера", style: .default, handler: {
+                action in
+                self.showCamera()
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "Мои фотографии", style: .default, handler: {
+                action in
+                self.showAlbum()
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: {
+                action in
+                self.photoButton.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+            
+            self.present(actionSheet, animated: true, completion: nil)
+        }
     }
     
     @IBAction func photoButton1(_ sender: Any)
     {
-        buttonPressed = 2
+        if itemNameTextField.text! == ""
+        {
+            enterItemNameAlert()
+        }
+        else
+        {
+        buttonPressed = 1
 
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
@@ -186,17 +189,24 @@ extension AddItemViewController
         
         actionSheet.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: {
             action in
-            self.photoButton1.setImage(UIImage(named: "cameraIcon"), for: .normal)
+            self.photoButton1.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
+        }
     }
     
-    @IBAction func photoButton2(_ sender: Any)
+    @IBAction func photoButton2(_ sender: UIButton)
     {
-        buttonPressed = 3
+        if itemNameTextField.text! == ""
+        {
+            enterItemNameAlert()
+        }
+        else
+        {
+        buttonPressed = 2
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         
@@ -212,17 +222,25 @@ extension AddItemViewController
         
         actionSheet.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: {
             action in
-            self.photoButton2.setImage(UIImage(named: "cameraIcon"), for: .normal)
+            self.photoButton2.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
+        }
     }
     
     @IBAction func photoButton3(_ sender: Any)
     {
-        buttonPressed = 4
+        if itemNameTextField.text! == ""
+        {
+            enterItemNameAlert()
+        }
+        else
+        {
+
+        buttonPressed = 3
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Камера", style: .default, handler: {
@@ -237,12 +255,13 @@ extension AddItemViewController
         
         actionSheet.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: {
             action in
-            self.photoButton3.setImage(UIImage(named: "cameraIcon"), for: .normal)
+            self.photoButton3.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
+        }
     }
   
 
@@ -265,24 +284,52 @@ extension AddItemViewController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [NSObject : AnyObject]!)
     {
         print(buttonPressed)
-        if buttonPressed == 1
+        if buttonPressed == 0
         {
             photoButton.setImage(image, for: .normal)
+            
+            uploadMedia(image: image, buttonnumber: buttonPressed, itemName: itemNameTextField.text!, completion: { (url) in
+              
+                print("URL фотографии - \(url)")
+                self.photos.add(url!)
+            })
+            
             self.dismiss(animated: true, completion: nil)
           }
-        else if buttonPressed == 2
+        else if buttonPressed == 1
         {
             photoButton1.setImage(image, for: .normal)
+            
+            uploadMedia(image: image, buttonnumber: buttonPressed, itemName: itemNameTextField.text!, completion: { (url) in
+                
+                print("URL фотографии - \(url)")
+                self.photos.add(url!)
+            })
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        else if buttonPressed == 2
+        {
+            photoButton2.setImage(image, for: .normal)
+            
+            uploadMedia(image: image, buttonnumber: buttonPressed, itemName: itemNameTextField.text!, completion: { (url) in
+                
+                print("URL фотографии - \(url)")
+                self.photos.add(url!)
+            })
+            
             self.dismiss(animated: true, completion: nil)
         }
         else if buttonPressed == 3
         {
-            photoButton2.setImage(image, for: .normal)
-            self.dismiss(animated: true, completion: nil)
-        }
-        else if buttonPressed == 4
-        {
             photoButton3.setImage(image, for: .normal)
+            
+            uploadMedia(image: image, buttonnumber: buttonPressed, itemName: itemNameTextField.text!, completion: { (url) in
+                
+                print("URL фотографии - \(url)")
+                self.photos.add(url!)
+            })
+            
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -320,47 +367,72 @@ extension AddItemViewController
     {
         if (itemNameTextField.text != "")
         {
-            if (mapButton.titleLabel?.text != "Изменить местоположение")
+            if (itemRewardTextFiled.text != "")
             {
-            
-            let userId : String = UserDefaults.standard.value(forKey: "uid") as! String
-            let userToken : String = UserDefaults.standard.value(forKey: "utoken") as! String
-
-            AddManager.addItem(token: userToken, userId: userId, itemName: itemNameTextField.text!, itemDescription: itemDescriptionTextView.text!, itemLatitude: myLatitude, itemLongitude: myLongitude, itemAdress: itemAdress, itemReward: itemRewardTextFiled.text!, success: { [weak self] (response) in
-                
-                DispatchQueue.main.async
+                if (mapButton.titleLabel?.text != "Указать местоположение")
+                {
+                    if (photoButton.currentImage == #imageLiteral(resourceName: "camerаIcon")) || (photoButton1.currentImage == #imageLiteral(resourceName: "camerаIcon")) || (photoButton2.currentImage == #imageLiteral(resourceName: "camerаIcon")) || (photoButton3.currentImage == #imageLiteral(resourceName: "camerаIcon"))
                     {
-                        let addSuccess = response
                         
-                        if (addSuccess == "true")
-                        {
-                            let alert = UIAlertController(title: "Объявление создано", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+                        let userId : String = UserDefaults.standard.value(forKey: "uid") as! String
+                        let userToken : String = UserDefaults.standard.value(forKey: "utoken") as! String
+                        
+                        AddManager.addItem(token: userToken, userId: userId, itemName: itemNameTextField.text!, itemDescription: itemDescriptionTextView.text!, itemLatitude: myLatitude, itemLongitude: myLongitude, itemAdress: itemAdress, itemReward: itemRewardTextFiled.text!, photos : photos, success: { [weak self] (response) in
                             
-                            
-                            let confirmAction = UIAlertAction(title: "Продолжить", style: UIAlertActionStyle.default) { (action) in
-                                
-                                
-                                self?.itemNameTextField.text = ""
-                                self?.itemDescriptionTextView.text = ""
-                                self?.itemRewardTextFiled.text = ""
-                                self?.mapButton.setTitle("Изменить местоположение", for: .normal)
-                                
-                                self?.tabBarController?.selectedIndex = 0
-                                
+                            DispatchQueue.main.async
+                                {
+                                    let addSuccess = response
+                                    
+                                    if (addSuccess == "true")
+                                    {
+                                        let alert = UIAlertController(title: "Объявление создано", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+                                        
+                                        
+                                        let confirmAction = UIAlertAction(title: "Продолжить", style: UIAlertActionStyle.default) { (action) in
+                                            
+                                            
+                                            self?.itemNameTextField.text = ""
+                                            self?.itemDescriptionTextView.text = ""
+                                            self?.itemRewardTextFiled.text = ""
+                                            self?.mapButton.setTitle("Изменить местоположение", for: .normal)
+                                            
+                                            self?.photoButton.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
+                                            self?.photoButton1.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
+                                            self?.photoButton2.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
+                                            self?.photoButton3.setImage(#imageLiteral(resourceName: "camerаIcon"), for: .normal)
+                                            
+                                            self?.photos.removeAllObjects()
+                                            
+                                            self?.tabBarController?.selectedIndex = 0
+                                            
+                                        }
+                                        
+                                        alert.addAction(confirmAction)
+                                        self?.present(alert, animated: true, completion: nil)
+                                    }
                             }
                             
-                            alert.addAction(confirmAction)
-                            self?.present(alert, animated: true, completion: nil)
-                        }
+                            }, failure: {(errorCode) in
+                                
+                        })
                     }
-                
-                }, failure: {(errorCode) in
-                
-                })
+                    else
+                    {
+                        let alert = UIAlertController(title: "Ошибка", message: "Добавьте хотя бы одну фотографию", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Назад", style: UIAlertActionStyle.cancel, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+                else
+                {
+                    let alert = UIAlertController(title: "Ошибка", message: "Укажите местоположение", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Назад", style: UIAlertActionStyle.cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
             else
             {
-                let alert = UIAlertController(title: "Ошибка", message: "Укажите местоположение", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Ошибка", message: "Укажите награду за находку вещи (Например: угостить кофе)", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Назад", style: UIAlertActionStyle.cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
@@ -373,5 +445,73 @@ extension AddItemViewController
         }
     }
 }
+
+//Вспомогательные функции
+
+extension AddItemViewController
+{
+    func uploadMedia(image : UIImage, buttonnumber : Int, itemName : String, completion: @escaping (_ url: String?) -> Void)
+    {
+        let storageRef = FIRStorage.storage().reference().child("itemsPics/\(itemName)/\(buttonnumber)")
+        
+        let metadata = FIRStorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        if let uploadData = UIImageJPEGRepresentation(image, 0.2) {
+            storageRef.put(uploadData, metadata: metadata) { (metadata, error) in
+                if error != nil
+                {
+                    print("error")
+                    completion(nil)
+                }
+                else
+                {
+                    completion((metadata?.downloadURL()?.absoluteString))
+                    // your uploaded photo url.
+                }
+            }
+        }
+    }
+    
+    func enterItemNameAlert ()
+    {
+        let actionSheet = UIAlertController(title: "Ошибка", message: "Введите название вещи", preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        actionSheet.addAction(UIAlertAction(title: "Назад", style: UIAlertActionStyle.cancel, handler: {
+        action in
+            
+            self.itemNameTextField.becomeFirstResponder()
+            
+        }))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+}
+
+extension UITextField
+{
+    func underlined()
+    {
+        let borderBottom = CALayer()
+        let borderWidth = CGFloat(1.0)
+        borderBottom.borderColor = UIColor.groupTableViewBackground.cgColor
+        borderBottom.frame = CGRect(x: 0, y: self.frame.height - 1.0, width: self.frame.width, height: self.frame.height - 1.0)
+        borderBottom.borderWidth = borderWidth
+        self.layer.addSublayer(borderBottom)
+        self.layer.masksToBounds = true
+    }
+    func setLeftPaddingPoints(_ amount:CGFloat){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+    func setRightPaddingPoints(_ amount:CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
+    }
+}
+
 
 

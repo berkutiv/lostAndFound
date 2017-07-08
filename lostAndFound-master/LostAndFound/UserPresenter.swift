@@ -66,5 +66,9 @@ class UserPresenter: Presenter
         return self
     }
     
+    func viewLoadedWithID(id: String, view: View) {
+        
+    }
+    
     
 }

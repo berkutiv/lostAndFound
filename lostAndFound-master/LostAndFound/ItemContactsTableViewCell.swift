@@ -25,6 +25,5 @@ class ItemContactsTableViewCell: UITableViewCell
         chatButton.layer.borderWidth = 1
         chatButton.layer.cornerRadius = self.chatButton.frame.width/18
         chatButton.layer.masksToBounds = true
-        
     }
 }

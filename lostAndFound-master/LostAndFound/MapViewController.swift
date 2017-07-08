@@ -302,6 +302,7 @@ extension MapViewController: UITableViewDelegate, UITableViewDataSource
         itemViewController.transitioningDelegate = self
         
         itemViewController.id = "\((model).id)"
+        print(itemViewController.id)
         
         navigationController?.pushViewController(itemViewController, animated: true)
     }
@@ -411,6 +412,7 @@ extension MapViewController: GMSMapViewDelegate
         let itemViewController = storyBoard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
         
         itemViewController.id = "\(marker.title)"
+        
         self.navigationController?.pushViewController(itemViewController, animated: true)
         return true
     }

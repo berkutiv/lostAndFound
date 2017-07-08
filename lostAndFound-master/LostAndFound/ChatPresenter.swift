@@ -69,4 +69,8 @@ extension ChatPresenter
         }
         
     }
+    
+    func viewLoadedWithID(id: String, view: View) {
+        
+    }
 }
