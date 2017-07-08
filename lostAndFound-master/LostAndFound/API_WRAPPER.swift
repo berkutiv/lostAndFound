@@ -11,6 +11,31 @@ import SwiftyJSON
 
 class API_WRAPPER
 {
+    class func getUserItems (user: User, userId : String, success : @escaping (JSON) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
+    {
+        
+        let urlString = "https://us-central1-lostandfound-69075.cloudfunctions.net/getUserPosts?id=\(userId)"
+        
+        let url = URL(string: urlString)!
+        // url - user readable link
+        let request = URLRequest(url: url)
+        
+        print("zapros skontruirovan")
+        print(url)
+        let task = URLSession.shared.dataTask(with: request, completionHandler: {data , response, error in
+            
+            
+            self.genericCompletionCallback(data: data, response: response, error: error, success: success, failure: failure)
+            
+        })
+        
+        task.resume()
+        print("zapros ushel")
+        
+        return task
+    }
+
+    
     class func getUsers (id: String, success : @escaping (User) -> Void , failure : @escaping (Int) -> Void) -> URLSessionDataTask
     {
         let urlString = "https://api.vk.com/method/newsfeed.get?count=10&start_from=&access_token=&filter=posts&v=5.63"
@@ -186,6 +211,7 @@ class API_WRAPPER
         return task
     }
 }
+
 
 extension API_WRAPPER
 {
