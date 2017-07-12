@@ -26,10 +26,10 @@ class LoginViewController: UIViewController
         
          //If we have the uid stored, the user is already logger in - no need to sign in again!
         
-//        if UserDefaults.standard.value(forKey: "uid") != nil
-//        {
-//            self.performSegue(withIdentifier: "loginSegue", sender: nil)
-//        }
+        if UserDefaults.standard.value(forKey: "uid") != nil
+        {
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool)

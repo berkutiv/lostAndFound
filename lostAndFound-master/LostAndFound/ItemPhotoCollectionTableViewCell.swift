@@ -37,6 +37,8 @@ class ItemPhotoCollectionTableViewCell: UITableViewCell
         itemName.text = model.itemName
         dataSource = model.photosUrls
         pageControl.numberOfPages = model.photosUrls.count
+        
+        
 
         ItemPhotoCollection.reloadData()
     }
@@ -47,6 +49,7 @@ extension ItemPhotoCollectionTableViewCell : UICollectionViewDelegateFlowLayout,
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
+        print(dataSource.count)
         return dataSource.count
     }
     
@@ -63,13 +66,13 @@ extension ItemPhotoCollectionTableViewCell : UICollectionViewDelegateFlowLayout,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let url = dataSource[indexPath.item] as! UIImage
+        let url = dataSource[indexPath.item]
         
         let cell = ItemPhotoCollection.dequeueReusableCell(withReuseIdentifier: kItemPhotoCellReuseIdentifier, for: indexPath)
         
         let imageView = cell.contentView.viewWithTag(1111) as! UIImageView
         
-        imageView.image = url
+        imageView.sd_setImage(with: url as! URL)
         
         return cell
     }
