@@ -19,6 +19,7 @@ class DialogViewController : UIViewController
         navigationItem.title = userChatName
         self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = true
+        
     }
     
     @IBAction func backButton(_ sender: Any)

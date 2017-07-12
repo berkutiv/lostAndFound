@@ -35,7 +35,7 @@ class ItemOperation : Operation
         let semaphore = DispatchSemaphore(value: 0)
         
         internetTask = API_WRAPPER.getPost(itemID: itemID, success: {(jsonResponse) in
-        
+            
             let out = NSMutableArray()
             
             let id = jsonResponse["id"].stringValue
@@ -52,7 +52,18 @@ class ItemOperation : Operation
             let itemLatitude = CLLocationDegrees(itemLatitudeStr)
             let itemLongitude = CLLocationDegrees(itemLongitudeStr)
             
-            let itemPhotoCollectionModel = ItemPhotoCollectionModel(photosUrls: NSArray(), itemName: itemName)
+            let imagesArray = jsonResponse["images"].arrayValue
+            print("массив - \(imagesArray.count)")
+            let photosUrls = NSMutableArray()
+            
+            for i in 0..<imagesArray.count
+            {
+                let image = imagesArray[i]
+                let photo = image.url!
+                photosUrls.add(photo)
+            }
+            
+            let itemPhotoCollectionModel = ItemPhotoCollectionModel(photosUrls: photosUrls, itemName: itemName)
             let itemHeaderModel = ItemHeaderModel(itemReward: itemReward)
             let itemMapModel = ItemMapModel(latitude: itemLatitude!, longitude: itemLongitude!, itemAdress: itemAdress)
             let itemDescriptionModel = ItemDescriptionModel(itemDescription: itemDescription)
@@ -61,7 +72,7 @@ class ItemOperation : Operation
             out.add(itemHeaderModel)
             out.add(itemMapModel)
             out.add(itemDescriptionModel)
-          
+            
             self.internetTask = API_WRAPPER.getUser(userId: idUser, success: {(response) in
                 
                 let userName = response["response"]["user"]["displayName"].stringValue
@@ -73,14 +84,11 @@ class ItemOperation : Operation
                 
                 self.success(out)
                 semaphore.signal()
-
                 
             }, failure: {code in
                 
                 semaphore.signal()
                 self.failure(code)
-
-            
             })
             
             
@@ -91,7 +99,7 @@ class ItemOperation : Operation
         })
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
     }
-
+    
 }
 
 

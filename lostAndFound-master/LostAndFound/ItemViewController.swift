@@ -11,7 +11,7 @@ import UIKit
 class ItemViewController: UIViewController, UINavigationControllerDelegate
 {
     @IBOutlet weak var tableView: UITableView!
-
+    
     var id = "no id"
     var presenter : Presenter?
     
@@ -51,7 +51,7 @@ class ItemViewController: UIViewController, UINavigationControllerDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    
+        
         if presenter == nil
         {
             DependencyInjector.obtainPresenter(view: self)
@@ -74,17 +74,17 @@ extension ItemViewController : View
      */
     func assignPresenter(presenter: Presenter) -> Void
     {
-//        self.presenter = presenter
-//        
-//        let customData = NSMutableDictionary()
-//        customData.setValue(id, forKey: "item_id")
-//        
-//        presenter.provide(data: customData)
-//        
-//        presenter.viewLoaded(view: self)
-//        
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        //        self.presenter = presenter
+        //
+        //        let customData = NSMutableDictionary()
+        //        customData.setValue(id, forKey: "item_id")
+        //
+        //        presenter.provide(data: customData)
+        //
+        //        presenter.viewLoaded(view: self)
+        //
+        //        tableView.delegate = self
+        //        tableView.dataSource = self
         tableView.dataSource = self
         tableView.delegate = self
         self.presenter = presenter
@@ -156,7 +156,7 @@ extension ItemViewController : UITableViewDelegate, UITableViewDataSource
             
             return cell
         }
-       
+        
         if let model = presenter?.model(at: indexPath) as? ItemHeaderModel
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: kItemHeaderTableViewCellReuseIdentifier, for: indexPath) as!
@@ -172,7 +172,7 @@ extension ItemViewController : UITableViewDelegate, UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: kItemMapTableViewCellReuseIdentifier, for: indexPath) as! ItemMapTableViewCell
             
             cell.configureSelf(withDataModel: model)
-          
+            
             return cell
         }
         
@@ -188,7 +188,7 @@ extension ItemViewController : UITableViewDelegate, UITableViewDataSource
         if let model = presenter?.model(at: indexPath) as? ItemContactsModel
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: kItemContactsTableViewCellReuseIdentifier, for: indexPath) as! ItemContactsTableViewCell
-    
+            
             
             cell.chatButton.addTarget(self, action: #selector(ItemViewController.buttonClicked(_:)), for: .touchUpInside)
             cell.configureSelf(withDataModel: model)

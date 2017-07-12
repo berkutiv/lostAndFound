@@ -18,8 +18,4 @@ class ItemPhotoCollectionModel
         self.photosUrls = photosUrls
         self.itemName = itemName
     }
-    
-    
-//    var photosUrls : NSArray = [UIImage (named: "Document")!, UIImage (named: "Document1")!]
-//    var itemName = "Документы"
 }
