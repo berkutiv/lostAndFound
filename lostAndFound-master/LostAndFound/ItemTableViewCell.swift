@@ -19,13 +19,13 @@ class ItemTableViewCell: UITableViewCell
     
     var coordinatesBlock: ((String, String) -> Void)!
     var model = Item(id: "", title: "", description: "", photosURL: [], longitude: "1", latitude: "1", userId: "")
-
-   
+    
+    
     func configureSelf(model: Item)
     {
         self.model = model
         //print("photo \(model.photosURL[0])")
-        self.picture.image = UIImage(named: "0")
+        self.picture.sd_setImage(with: URL(string: model.photosURL[0] as! String))
         self.titleLabel.text = model.title
         self.descriptionLabel.text = model.description
         picture.layer.cornerRadius = self.picture.frame.width/2

@@ -49,9 +49,18 @@ class MapOperation: Operation
                 let itemLatitude = post["itemlatitude"].stringValue
                 let itemAdress = post["itemadress"].stringValue
                 let itemReward = post["itemreward"].stringValue
+                
+                let images = post["images"].arrayValue
+                var imageArray = NSMutableArray()
+                for i in 0..<images.count
+                {
+                    let image = images[i].stringValue
+                    imageArray.add(image)
+                }
+                
                 print("имя весчи \(itemName)")
                 
-                let item = Item(id: "\(itemId)", title: itemName, description: itemDescription, photosURL: [], longitude: itemLongitude, latitude: itemLatitude, userId: itemIdUser)
+                let item = Item(id: "\(itemId)", title: itemName, description: itemDescription, photosURL: imageArray, longitude: itemLongitude, latitude: itemLatitude, userId: itemIdUser)
                 outData.add(item)
             }
             
@@ -74,5 +83,5 @@ class MapOperation: Operation
         
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
     }
-
+    
 }

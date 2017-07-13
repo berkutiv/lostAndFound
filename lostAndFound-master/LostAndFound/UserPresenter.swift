@@ -12,13 +12,15 @@ class UserPresenter: Presenter
 {
     var user = User(id: "")
     weak var view: View?
-    var userId = ""
+    var userId = UserDefaults.standard.value(forKey: "uid") as! String
+    
     
     func viewLoaded(view: View) -> Void
     {
         self.view = view
         view.addLoader()
         getData(id: userId)
+        
     }
     
     func numberOfModels(inSection section: Int) -> Int
@@ -42,7 +44,6 @@ class UserPresenter: Presenter
             DispatchQueue.main.async{
                 self.view?.removeLoader()
                 self.user = user
-                print("user name \(self.user.id)")
                 self.view?.reloadData()
             }
         }) { [weak self](code) in
@@ -55,18 +56,16 @@ class UserPresenter: Presenter
     
     func provide(data: NSDictionary)
     {
-        if let userId = data["user_id"] as? String
-        {
-            self.userId = userId
-        }
+        
     }
     
     func model (at indexPath : IndexPath) ->Any
     {
-        return self
+        return user.modelsArray[indexPath.row]
     }
     
-    func viewLoadedWithID(id: String, view: View) {
+    func viewLoadedWithID(id: String, view: View)
+    {
         
     }
     

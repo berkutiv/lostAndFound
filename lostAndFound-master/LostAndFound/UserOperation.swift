@@ -34,6 +34,7 @@ class UserOperation: Operation
         internetTask = API_WRAPPER.getUser(userId: id, success: { (jsonResponce) in
             
             let user = jsonResponce["response"]["user"]
+            print("json \(jsonResponce)")
             
             let userName = user["displayName"].stringValue
             let userMail = user["email"].stringValue
@@ -41,28 +42,61 @@ class UserOperation: Operation
             
             let mainUser = User(id: userId)
             let userHeader = UserHeader(id: userId, name: userName, phone: "", email: userMail, photo: "")
-            mainUser.modelsArray.add(UserHeader)
-            //print("user name \(userName)")
+            mainUser.modelsArray.add(userHeader)
             
-            API_WRAPPER.getUserItems(user: mainUser, userId: self.id, success: { (jsonResponce) in
-            
-                print("json \(jsonResponce)")
+            API_WRAPPER.getUserItems(user: mainUser, userId: mainUser.id, success: { (jsonResponce) in
+                
+                let itemsArray = NSMutableArray()
+                
+                let posts = jsonResponce["posts"].arrayValue
+                
+                for i in 0..<posts.count
+                {
+                    let post = posts[i]
+                    let postName = post["itemname"].stringValue
+                    let postDescription = post["itemdescription"].stringValue
+                    let postAddress = post["itemadress"].stringValue
+                    let postId = post["id"].stringValue
+                    let longitude = post["itemlongitude"].stringValue
+                    let latitide = post["itemlatitude"].stringValue
+                    
+                    let images = post["images"].arrayValue
+                    var imageArray = NSMutableArray()
+                    for i in 0..<images.count
+                    {
+                        let image = images[i].stringValue
+                        imageArray.add(image)
+                    }
+                    
+                    let postModel = Item(id: postId, title: postName, description: postDescription, photosURL: imageArray, longitude: longitude, latitude: latitide, userId: mainUser.id)
+                    
+                    let model = UserItem(item: postModel)
+                    
+                    
+                    mainUser.modelsArray.add(model)
+                    itemsArray.add(postModel)
+                    
+                }
+                
+                
+                print("main user array \(mainUser.modelsArray)")
                 
                 if self.isCancelled == false
                 {
-                     self.success(mainUser)
+                    self.success(mainUser)
                 }
                 else
                 {
                     self.success(User(id: ""))
                 }
+                semaphore.signal()
                 
             }, failure: { (code) in
                 
             })
             
             
-            semaphore.signal()
+            
             
         }, failure: { (code) in
             semaphore.signal()
@@ -72,5 +106,5 @@ class UserOperation: Operation
         
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
     }
-
+    
 }
