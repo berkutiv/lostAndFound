@@ -19,7 +19,8 @@ class UserHeaderTableViewCell: UITableViewCell
     {
         self.model = model
         userNameLabel.text = model.name
-        userAvatar.image = UIImage(named: model.photo)
+        print("ячейка имя \(model.name)")
+        userAvatar.image = UIImage(named: "1")
         userAvatar.layer.cornerRadius = self.userAvatar.frame.width/2
         userAvatar.layer.masksToBounds = true
     }
